@@ -1,0 +1,1001 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Intelligenter Stundenplan §34a – BAD</title>
+  <style>
+  
+  /* … hier steht ja schon dein bestehendes CSS … */
+
+  .app-logo {
+    height: 70px;
+    margin-right: 18px;
+  }
+
+  header .brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+    :root {
+      /* Farbwelt an euer Branding angelehnt */
+      --bg: #f4f6f8;
+      --bg-gradient: radial-gradient(circle at top left, #e0f2f5, #f4f6f8 45%, #ffffff);
+      --primary: #007d8c;
+      --primary-dark: #024c55;
+      --primary-soft: #e0f6f9;
+      --accent: #00a6b8;
+      --accent-soft: #e3fbff;
+      --border-subtle: #dde3ea;
+      --text-main: #1f2933;
+      --text-muted: #6b7280;
+      --card-bg: #ffffff;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.08);
+      --radius-lg: 18px;
+      --radius-md: 12px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg-gradient);
+      margin: 0;
+      padding: 24px 0 40px;
+      color: var(--text-main);
+    }
+
+    .app-shell {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 16px;
+    }
+
+    .app {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 24px;
+      box-shadow: var(--shadow-soft);
+      padding: 20px 22px 26px;
+      border: 1px solid rgba(209, 213, 219, 0.6);
+      backdrop-filter: blur(6px);
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .brand-text h1 {
+      font-size: 1.2rem;
+      margin: 0;
+      color: var(--primary-dark);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+
+    .brand-sub {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 4px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-secondary {
+      background: var(--accent-soft);
+      color: var(--primary-dark);
+    }
+
+    .header-right {
+      text-align: right;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      min-width: 180px;
+    }
+
+    #progressInfo {
+      font-weight: 500;
+      color: var(--primary-dark);
+    }
+
+    /* Control-Bar */
+
+    .controls-wrapper {
+      background: linear-gradient(135deg, #f7fcfd, #f3f5f9);
+      border-radius: var(--radius-lg);
+      padding: 10px 12px;
+      border: 1px solid var(--border-subtle);
+      margin-bottom: 18px;
+    }
+
+    .controls-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--text-muted);
+      margin: 0 0 6px 2px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .controls-title::before {
+      content: "";
+      width: 22px;
+      height: 2px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--primary), var(--accent));
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      row-gap: 8px;
+      column-gap: 12px;
+      align-items: center;
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 3px;
+      min-width: 150px;
+    }
+
+    .control-group label {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    select, input[type="date"] {
+      padding: 6px 9px;
+      border-radius: 999px;
+      border: 1px solid #cbd3de;
+      font-size: 0.85rem;
+      background: #ffffff;
+      color: var(--text-main);
+      min-width: 160px;
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    select:focus, input[type="date"]:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(0, 125, 140, 0.12);
+    }
+
+    .controls-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-left: auto;
+    }
+
+    button {
+      padding: 6px 11px;
+      border-radius: 999px;
+      border: 1px solid #cbd3de;
+      background: #ffffff;
+      font-size: 0.8rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--text-main);
+      transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+    }
+
+    button.primary-btn {
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      color: #ffffff;
+      border-color: transparent;
+      box-shadow: 0 8px 18px rgba(0, 125, 140, 0.35);
+    }
+
+    button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 16px rgba(15, 23, 42, 0.06);
+      background: #f9fafb;
+    }
+
+    button.primary-btn:hover {
+      background: linear-gradient(135deg, var(--primary-dark), var(--accent));
+    }
+
+    button:active {
+      transform: translateY(0);
+      box-shadow: none;
+    }
+
+    /* Week view / Day cards */
+
+    .week-view {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+
+    .day-card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 14px 15px 12px;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
+      border: 1px solid rgba(209, 213, 219, 0.7);
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .day-card::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to bottom right, rgba(0, 125, 140, 0.06), transparent 40%);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.2s ease;
+    }
+
+    .day-card:hover::before {
+      opacity: 1;
+    }
+
+    .day-card.highlight {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 2px rgba(0, 125, 140, 0.25);
+    }
+
+    .day-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 6px;
+    }
+
+    .day-header-left {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .day-date {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+
+    .day-weekday {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .day-header-right {
+      text-align: right;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+
+    .module-tag {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.75rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      margin-top: 2px;
+      max-width: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      gap: 6px;
+    }
+
+    .module-tag::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--primary), var(--accent));
+      flex-shrink: 0;
+    }
+
+    .meta {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 6px;
+      font-size: 0.78rem;
+    }
+
+    th, td {
+      padding: 4px 3px;
+      text-align: left;
+      vertical-align: top;
+    }
+
+    th {
+      font-weight: 600;
+      border-bottom: 1px solid #e5e7eb;
+      color: #4b5563;
+      background: #f9fafb;
+    }
+
+    tr:nth-child(even) td {
+      background: #f9fafb;
+    }
+
+    .break-row td {
+      background: #f3f4f6 !important;
+      font-style: italic;
+      color: #4b5563;
+    }
+
+    .ue-col {
+      width: 3rem;
+      white-space: nowrap;
+    }
+
+    .time-col {
+      width: 5.3rem;
+      white-space: nowrap;
+    }
+
+    .topic-col {
+      width: auto;
+    }
+
+    .footer-note {
+      margin-top: 18px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .legend {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    .legend-swatch {
+      width: 14px;
+      height: 10px;
+      border-radius: 4px;
+      background: #f3f4f6;
+      border: 1px solid #d1d5db;
+    }
+
+    @media (max-width: 720px) {
+      header {
+        align-items: flex-start;
+      }
+      .header-right {
+        text-align: left;
+      }
+      .controls-buttons {
+        margin-left: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="app-shell">
+  <div class="app">
+    <header>
+      <div class="brand">
+        <img src="assets/Logo-bad.png.jpeg" class="app-logo" alt="BAD Logo">
+
+        <div class="brand-text">
+          <h1>Bildungsakademie Deutschland</h1>
+          <div class="brand-sub">
+            Intelligenter Stundenplan · Sachkunde §34a & Zusatzqualifikationen
+          </div>
+          <div class="badge-row">
+            <span class="badge">Live-Unterricht & Hybridstruktur</span>
+            <span class="badge badge-secondary">Dozenten- & Kursfilter</span>
+          </div>
+        </div>
+      </div>
+      <div class="header-right">
+        <div id="progressInfo"></div>
+        <div style="margin-top:4px;font-size:0.75rem;">
+          Vollzeit · 09:00–16:15 · 480 UE
+        </div>
+      </div>
+    </header>
+
+    <div class="controls-wrapper">
+      <div class="controls-title">Filter & Navigation</div>
+      <section class="controls">
+        <div class="control-group">
+          <label for="trainerSelect">Dozent</label>
+          <select id="trainerSelect"></select>
+        </div>
+
+        <div class="control-group">
+          <label for="courseSelect">Kurs</label>
+          <select id="courseSelect"></select>
+        </div>
+
+        <div class="control-group">
+          <label for="weekSelect">Woche</label>
+          <select id="weekSelect"></select>
+        </div>
+
+        <div class="control-group">
+          <label for="dateSearch">Zu Datum springen</label>
+          <input type="date" id="dateSearch">
+        </div>
+
+        <div class="controls-buttons">
+          <button class="primary-btn" id="todayBtn">Heute</button>
+          <button id="dateSearchBtn">Datum anzeigen</button>
+        </div>
+      </section>
+    </div>
+
+    <section id="weekView" class="week-view"></section>
+
+    <div class="footer-note">
+      <div class="legend">
+        <div class="legend-item">
+          <div class="legend-swatch"></div> <span>Pausen werden als eigene Zeile dargestellt.</span>
+        </div>
+      </div>
+      <div>
+        Datum & Wochentag werden pro Tag nur einmal im Kopf angezeigt. Berliner Feiertage & Wochenenden werden automatisch übersprungen.
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- 1) Data-Datei laden -->
+<script src="stundenplan_data.js"></script>
+
+<!-- 2) App-Logik -->
+<script>
+  // ------------------------------------
+  // Berliner Feiertage 2024–2030
+  // ------------------------------------
+  const BERLIN_HOLIDAYS = new Set([
+    // --- 2024 ---
+    "2024-01-01",
+    "2024-03-08",
+    "2024-03-29",
+    "2024-04-01",
+    "2024-05-01",
+    "2024-05-09",
+    "2024-05-20",
+    "2024-10-03",
+    "2024-12-25",
+    "2024-12-26",
+
+    // --- 2025 ---
+    "2025-01-01",
+    "2025-03-08",
+    "2025-04-18",
+    "2025-04-21",
+    "2025-05-01",
+    "2025-05-29",
+    "2025-06-09",
+    "2025-10-03",
+    "2025-12-25",
+    "2025-12-26",
+
+    // --- 2026 ---
+    "2026-01-01",
+    "2026-03-08",
+    "2026-04-03",
+    "2026-04-06",
+    "2026-05-01",
+    "2026-05-14",
+    "2026-05-25",
+    "2026-10-03",
+    "2026-12-25",
+    "2026-12-26",
+
+    // --- 2027 ---
+    "2027-01-01",
+    "2027-03-08",
+    "2027-03-26",
+    "2027-03-29",
+    "2027-05-01",
+    "2027-05-06",
+    "2027-05-17",
+    "2027-10-03",
+    "2027-12-25",
+    "2027-12-26",
+
+    // --- 2028 ---
+    "2028-01-01",
+    "2028-03-08",
+    "2028-04-14",
+    "2028-04-17",
+    "2028-05-01",
+    "2028-05-25",
+    "2028-06-05",
+    "2028-10-03",
+    "2028-12-25",
+    "2028-12-26",
+
+    // --- 2029 ---
+    "2029-01-01",
+    "2029-03-08",
+    "2029-03-30",
+    "2029-04-02",
+    "2029-05-01",
+    "2029-05-10",
+    "2029-05-21",
+    "2029-10-03",
+    "2029-12-25",
+    "2029-12-26",
+
+    // --- 2030 ---
+    "2030-01-01",
+    "2030-03-08",
+    "2030-04-19",
+    "2030-04-22",
+    "2030-05-01",
+    "2030-05-30",
+    "2030-06-10",
+    "2030-10-03",
+    "2030-12-25",
+    "2030-12-26"
+  ]);
+
+  // ------------------------------------
+  // Datums-Helfer (lokal, ohne UTC-Shift)
+  // ------------------------------------
+  function parseISODate(str) {
+    const [year, month, day] = str.split("-").map(Number);
+    return new Date(year, month - 1, day);
+  }
+
+  function addDays(date, days) {
+    const d = new Date(date);
+    d.setDate(d.getDate() + days);
+    return d;
+  }
+
+  function formatISODate(date) {
+    const yyyy = date.getFullYear();
+    const mm = String(date.getMonth() + 1).padStart(2, "0");
+    const dd = String(date.getDate()).padStart(2, "0");
+    return `${yyyy}-${mm}-${dd}`;
+  }
+
+  function isWeekend(date) {
+    const weekday = date.getDay(); // 0 = So, 6 = Sa
+    return weekday === 0 || weekday === 6;
+  }
+
+  function isBerlinHoliday(date) {
+    const iso = formatISODate(date);
+    return BERLIN_HOLIDAYS.has(iso);
+  }
+
+  function formatDisplayDate(date) {
+    return date.toLocaleDateString("de-DE", {
+      day: "2-digit",
+      month: "2-digit",
+      year: "numeric"
+    });
+  }
+
+  function formatWeekday(date) {
+    return date.toLocaleDateString("de-DE", { weekday: "long" });
+  }
+
+  // ------------------------------------
+  // Curriculum-Feiertags-Platzhalter erkennen
+  // Nur Tage rauswerfen, an denen WIRKLICH keine Unterrichtseinheit geplant ist
+  // (alle Topics enthalten "keine Unterrichtseinheit" o. "keine reguläre Unterrichtseinheit").
+  // Selbstlern-/Wiederholungs-/Reflexionstage bleiben drin.
+  // ------------------------------------
+  function isTemplateHolidayDay(day) {
+    if (!day || !Array.isArray(day.units)) return false;
+    if (day.units.length === 0) return false;
+
+    const allNoTeaching = day.units.every(u => {
+      const t = (u.topic || "").toLowerCase();
+      return t.includes("keine unterrichtseinheit") ||
+             t.includes("keine reguläre unterrichtseinheit");
+    });
+
+    return allNoTeaching;
+  }
+
+  // ------------------------------------
+  // Lehrplan-Datenstruktur für einen Kurs
+  // ------------------------------------
+  function getCourseTeachingPlan(course) {
+    // Alle realen Unterrichtstage (ohne echte "keine Unterrichtseinheit"-Feiertage)
+    const teachingDays = [];
+    course.weeks.forEach((week, weekIndex) => {
+      week.days.forEach((day, dayIndex) => {
+        if (!isTemplateHolidayDay(day)) {
+          teachingDays.push({ weekIndex, dayIndex });
+        }
+      });
+    });
+
+    const totalTeachingDays = teachingDays.length;
+
+    // Kalenderdaten aus Startdatum generieren, Wochenenden & Berliner Feiertage überspringen
+    const teachingDates = [];
+    let current = parseISODate(course.startDate);
+
+    while (teachingDates.length < totalTeachingDays) {
+      if (!isWeekend(current) && !isBerlinHoliday(current)) {
+        teachingDates.push(new Date(current));
+      }
+      current = addDays(current, 1);
+    }
+
+    return { teachingDays, teachingDates };
+  }
+
+  function findDateForDay(course, plan, weekIndex, dayIndex) {
+    const idx = plan.teachingDays.findIndex(
+      d => d.weekIndex === weekIndex && d.dayIndex === dayIndex
+    );
+    if (idx === -1) return null;
+    const dateObj = plan.teachingDates[idx];
+    return {
+      date: formatISODate(dateObj),
+      displayDate: formatDisplayDate(dateObj),
+      weekday: formatWeekday(dateObj)
+    };
+  }
+
+  // feste Pausenzeiten
+  const BREAKS = [
+    { time: "10:30–10:45", label: "Pause" },
+    { time: "12:15–13:00", label: "Mittagspause" },
+    { time: "14:30–14:45", label: "Pause" }
+  ];
+
+  // Progress-Info (nur echte Unterrichtstage)
+  function updateProgressInfo() {
+    let totalUE = 0;
+    data.trainers.forEach(t => {
+      t.courses.forEach(c => {
+        c.weeks.forEach(w => {
+          w.days.forEach(d => {
+            if (!isTemplateHolidayDay(d)) {
+              totalUE += d.units.length;
+            }
+          });
+        });
+      });
+    });
+    const targetUE = 480;
+    const percent = Math.min(100, Math.round((totalUE / targetUE) * 100));
+    document.getElementById("progressInfo").textContent =
+      `Im System: ${totalUE} UE (Ziel: ${targetUE} · ${percent} %)`;
+  }
+
+  function getSelectedTrainer() {
+    const trainerId = document.getElementById("trainerSelect").value;
+    return data.trainers.find(t => t.id === trainerId) || null;
+  }
+
+  function getSelectedCourse() {
+    const trainer = getSelectedTrainer();
+    if (!trainer) return null;
+    const courseId = document.getElementById("courseSelect").value;
+    return trainer.courses.find(c => c.id === courseId) || null;
+  }
+
+  function initTrainerSelect() {
+    const trainerSelect = document.getElementById("trainerSelect");
+    trainerSelect.innerHTML = "";
+
+    data.trainers.forEach(tr => {
+      const opt = document.createElement("option");
+      opt.value = tr.id;
+      opt.textContent = tr.name;
+      trainerSelect.appendChild(opt);
+    });
+
+    trainerSelect.onchange = () => {
+      initCourseSelect();
+    };
+
+    if (data.trainers.length > 0) {
+      trainerSelect.value = data.trainers[0].id;
+      initCourseSelect();
+    }
+  }
+
+  function initCourseSelect() {
+    const courseSelect = document.getElementById("courseSelect");
+    const trainer = getSelectedTrainer();
+    courseSelect.innerHTML = "";
+
+    if (!trainer) return;
+
+    trainer.courses.forEach(c => {
+      const opt = document.createElement("option");
+      opt.value = c.id;
+      opt.textContent = c.label;
+      courseSelect.appendChild(opt);
+    });
+
+    courseSelect.onchange = () => {
+      initWeekSelect();
+    };
+
+    if (trainer.courses.length > 0) {
+      courseSelect.value = trainer.courses[0].id;
+      initWeekSelect();
+    }
+  }
+
+  function initWeekSelect() {
+    const weekSelect = document.getElementById("weekSelect");
+    const course = getSelectedCourse();
+    weekSelect.innerHTML = "";
+
+    if (!course) return;
+
+    const plan = getCourseTeachingPlan(course);
+
+    // Hilfsstruktur: WeekIndex -> Liste von Indizes in teachingDates
+    const weekToIndices = new Map();
+    plan.teachingDays.forEach((td, idx) => {
+      if (!weekToIndices.has(td.weekIndex)) {
+        weekToIndices.set(td.weekIndex, []);
+      }
+      weekToIndices.get(td.weekIndex).push(idx);
+    });
+
+    course.weeks.forEach((w, weekIndex) => {
+      const idxs = weekToIndices.get(weekIndex);
+      if (!idxs || idxs.length === 0) {
+        // Woche ohne echte Unterrichtstage (nur Feiertags-Platzhalter) -> nicht anzeigen
+        return;
+      }
+      const startIdx = idxs[0];
+      const endIdx = idxs[idxs.length - 1];
+      const startDate = plan.teachingDates[startIdx];
+      const endDate = plan.teachingDates[endIdx];
+
+      const label = `Woche ${w.id} · ${formatDisplayDate(startDate)} – ${formatDisplayDate(endDate)}`;
+      const opt = document.createElement("option");
+      opt.value = String(w.id);
+      opt.textContent = label;
+      weekSelect.appendChild(opt);
+    });
+
+    weekSelect.onchange = () => {
+      const selectedId = weekSelect.value;
+      renderWeek(selectedId);
+    };
+
+    if (weekSelect.options.length > 0) {
+      const firstId = weekSelect.options[0].value;
+      weekSelect.value = firstId;
+      renderWeek(firstId);
+    } else {
+      document.getElementById("weekView").innerHTML = "";
+    }
+  }
+
+  function renderWeek(weekId, highlightDate = null) {
+    const container = document.getElementById("weekView");
+    container.innerHTML = "";
+    const course = getSelectedCourse();
+    if (!course) return;
+
+    const weekIndex = course.weeks.findIndex(w => String(w.id) === String(weekId));
+    if (weekIndex === -1) return;
+    const week = course.weeks[weekIndex];
+
+    const plan = getCourseTeachingPlan(course);
+
+    week.days.forEach((day, dayIndex) => {
+      if (isTemplateHolidayDay(day)) {
+        // „keine Unterrichtseinheit geplant“-Tage werden komplett übersprungen
+        return;
+      }
+
+      const rendered = findDateForDay(course, plan, weekIndex, dayIndex);
+      if (!rendered) return;
+
+      const card = document.createElement("article");
+      card.className = "day-card";
+      card.dataset.date = rendered.date;
+      if (highlightDate && rendered.date === highlightDate) {
+        card.classList.add("highlight");
+      }
+
+      const header = document.createElement("div");
+      header.className = "day-header";
+
+      const left = document.createElement("div");
+      left.className = "day-header-left";
+      const dateEl = document.createElement("div");
+      dateEl.className = "day-date";
+      dateEl.textContent = rendered.displayDate;
+      const weekdayEl = document.createElement("div");
+      weekdayEl.className = "day-weekday";
+      weekdayEl.textContent = rendered.weekday;
+      left.appendChild(dateEl);
+      left.appendChild(weekdayEl);
+
+      const right = document.createElement("div");
+      right.className = "day-header-right";
+      right.textContent = day.units.length + " UE";
+
+      header.appendChild(left);
+      header.appendChild(right);
+
+      const moduleTag = document.createElement("div");
+      moduleTag.className = "module-tag";
+      moduleTag.title = day.module;
+      moduleTag.textContent = day.module;
+
+      const meta = document.createElement("div");
+      meta.className = "meta";
+      meta.textContent = "Tagesstruktur nach Curriculum (45-Minuten-UE)";
+
+      const table = document.createElement("table");
+      const thead = document.createElement("thead");
+      thead.innerHTML = `
+        <tr>
+          <th class="time-col">Zeit</th>
+          <th class="ue-col">UE</th>
+          <th class="topic-col">Inhalt</th>
+        </tr>
+      `;
+      table.appendChild(thead);
+
+      const tbody = document.createElement("tbody");
+
+      const timeline = [
+        ...day.units.map(u => ({ type: "unit", ...u })),
+        ...BREAKS.map(b => ({ type: "break", ...b }))
+      ].sort((a, b) => {
+        const ta = a.time.slice(0, 5);
+        const tb = b.time.slice(0, 5);
+        return ta.localeCompare(tb);
+      });
+
+      timeline.forEach(item => {
+        const tr = document.createElement("tr");
+
+        if (item.type === "break") {
+          tr.className = "break-row";
+          tr.innerHTML = `
+            <td class="time-col">${item.time}</td>
+            <td class="ue-col">–</td>
+            <td class="topic-col">${item.label}</td>
+          `;
+        } else {
+          tr.innerHTML = `
+            <td class="time-col">${item.time}</td>
+            <td class="ue-col">${item.ue}</td>
+            <td class="topic-col">${item.topic}</td>
+          `;
+        }
+
+        tbody.appendChild(tr);
+      });
+
+      table.appendChild(tbody);
+
+      card.appendChild(header);
+      card.appendChild(moduleTag);
+      card.appendChild(meta);
+      card.appendChild(table);
+
+      container.appendChild(card);
+    });
+  }
+
+  function jumpToDate(targetDateStr) {
+    const course = getSelectedCourse();
+    if (!course) return;
+
+    const plan = getCourseTeachingPlan(course);
+
+    const idx = plan.teachingDates.findIndex(
+      d => formatISODate(d) === targetDateStr
+    );
+    if (idx === -1) {
+      alert("Für dieses Datum ist im ausgewählten Kurs kein Unterrichtstag hinterlegt.");
+      return;
+    }
+
+    const td = plan.teachingDays[idx];
+    const week = course.weeks[td.weekIndex];
+    const weekId = week.id;
+
+    const weekSelect = document.getElementById("weekSelect");
+    weekSelect.value = String(weekId);
+    renderWeek(weekId, targetDateStr);
+  }
+
+  function initDateControls() {
+    document.getElementById("todayBtn").addEventListener("click", () => {
+      const today = new Date();
+      const target = formatISODate(today);
+      jumpToDate(target);
+    });
+
+    document.getElementById("dateSearchBtn").addEventListener("click", () => {
+      const val = document.getElementById("dateSearch").value;
+      if (!val) {
+        alert("Bitte ein Datum auswählen.");
+        return;
+      }
+      jumpToDate(val);
+    });
+  }
+
+  // Initialisierung
+  updateProgressInfo();
+  initTrainerSelect();
+  initDateControls();
+</script>
+</body>
+</html>
