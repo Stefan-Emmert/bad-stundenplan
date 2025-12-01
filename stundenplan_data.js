@@ -3005,12 +3005,11 @@ const data = {
         weeks: [
             {
               id: 1,
-              label: "Woche 1 · 13.10.2025 – 17.10.2025",
-              days: [
-                {
-                  date: "2025-10-13",
-                  displayDate: "13.10.2025",
-                  weekday: "Montag",
+  label: "Woche 1",
+  days: [
+    {
+      // Montag, 13.10. – Öffentliche Sicherheit & Ordnung
+      weekday: "Montag",
         module: "Recht der öffentlichen Sicherheit und Ordnung",
         units: [
           { ue: 1, time: "09:00–09:45", topic: "Begrüßung und Einweisung in den Ablauf der Maßnahme" },
@@ -3021,1086 +3020,917 @@ const data = {
           { ue: 6, time: "13:45–14:30", topic: "Gewaltenteilung – Exekutive & Judikative Legislative" },
           { ue: 7, time: "14:45–15:30", topic: "Aufbau der BRD – Bund Länder Kommunen" },
           { ue: 8, time: "15:30–16:15", topic: "Staatsgewalten & deren Kompetenzen" }
-                  ]
-                },
-
-                {
-                  date: "2025-10-14",
-                  displayDate: "14.10.2025",
-                  weekday: "Dienstag",
-                  module: "Öffentliche Sicherheit & Ordnung",
-                  units: [
-                    { ue: 9,  time: "09:00–09:45", topic: "Grundgesetz – Bedeutung & Entstehung" },
-                    { ue: 10, time: "09:45–10:30", topic: "Grundgesetz – Artikelübersicht" },
-                    { ue: 11, time: "10:45–11:30", topic: "Ewigkeitsklausel" },
-                    { ue: 12, time: "11:30–12:15", topic: "Drittwirkung des Grundgesetzes" },
-                    { ue: 13, time: "13:00–13:45", topic: "Gefahrenabwehr – Grundlagen" },
-                    { ue: 14, time: "13:45–14:30", topic: "Gefahrenabwehr – präventive Maßnahmen" },
-                    { ue: 15, time: "14:45–15:30", topic: "Zuständigkeiten bei Störungen" },
-                    { ue: 16, time: "15:30–16:15", topic: "Zuständigkeiten bei Störungen" }
-                  ]
-                },
-
-                {
-                  date: "2025-10-15",
-                  displayDate: "15.10.2025",
-                  weekday: "Mittwoch",
-                  module: "Öffentliche Sicherheit & Ordnung",
-                  units: [
-                    { ue: 17, time: "09:00–09:45", topic: "Zusammenarbeit Sicherheitsdienst – Polizei" },
-                    { ue: 18, time: "09:45–10:30", topic: "Zusammenarbeit Sicherheitsdienst – Kommunen" },
-                    { ue: 19, time: "10:45–11:30", topic: "Gefahrenlagen – Begriffe & Einstufung" },
-                    { ue: 20, time: "11:30–12:15", topic: "Umgang mit besonderen Gefahrenlagen" },
-                    { ue: 21, time: "13:00–13:45", topic: "Öffentliche Sicherheit vs. öffentliche Ordnung" },
-                    { ue: 22, time: "13:45–14:30", topic: "Dokumentation von sicherheitsrelevanten Ereignissen" },
-                    { ue: 23, time: "14:45–15:30", topic: "Praktische Fallbeispiele – öffentlicher Raum" },
-                    { ue: 24, time: "15:30–16:15", topic: "Praktische Fallbeispiele – öffentlicher Raum" }
-                  ]
-                },
-
-                {
-                  date: "2025-10-16",
-                  displayDate: "16.10.2025",
-                  weekday: "Donnerstag",
-                  module: "Öffentliche Sicherheit & Ordnung",
-                  units: [
-                    { ue: 25, time: "09:00–09:45", topic: "Wiederholung GG & Gewaltenteilung" },
-                    { ue: 26, time: "09:45–10:30", topic: "Vertiefung Gefahrenabwehr" },
-                    { ue: 27, time: "10:45–11:30", topic: "Wiederholung Polizei & Ordnungsbehörden" },
-                    { ue: 28, time: "11:30–12:15", topic: "Wiederholung Zusammenarbeit Behörden" },
-                    { ue: 29, time: "13:00–13:45", topic: "Rollenspiele – Polizei" },
-                    { ue: 30, time: "13:45–14:30", topic: "Rollenspiele – Kommunen" },
-                    { ue: 31, time: "14:45–15:30", topic: "Abschlusstest Lernfeld 1" },
-                    { ue: 32, time: "15:30–16:15", topic: "Besprechung Abschlusstest" }
-                  ]
-                },
-
-                {
-                  date: "2025-10-17",
-                  displayDate: "17.10.2025",
-                  weekday: "Freitag",
-                  module: "Öffentliche Sicherheit & Ordnung",
-                  units: [
-                    { ue: 33, time: "09:00–09:45", topic: "Vertiefung Gefahrenabwehr in der Praxis" },
-                    { ue: 34, time: "09:45–10:30", topic: "Praxisfälle – öffentliche Sicherheit" },
-                    { ue: 35, time: "10:45–11:30", topic: "Praxisfälle – Zuständigkeiten" },
-                    { ue: 36, time: "11:30–12:15", topic: "Abschluss Lernfeld 1 – Rückblick" },
-                    { ue: 37, time: "13:00–13:45", topic: "Eigenreflexion – Rolle Sicherheitsmitarbeiter" },
-                    { ue: 38, time: "13:45–14:30", topic: "Eigenreflexion – Umgang mit Behörden" },
-                    { ue: 39, time: "14:45–15:30", topic: "Wiederholung & Wissenscheck" },
-                    { ue: 40, time: "15:30–16:15", topic: "Wiederholung & Wissenscheck" }
-                  ]
-                }
-              ]
-            },
-
-            {
-              id: 2,
-              label: "Woche 2 · 20.10.2025 – 24.10.2025",
-              days: [
-                {
-                  date: "2025-10-20",
-                  displayDate: "20.10.2025",
-                  weekday: "Montag",
-                  module: "Gewerberecht",
-                  units: [
-                    { ue: 41, time: "09:00–09:45", topic: "§34a GewO – Grundlagen" },
-                    { ue: 42, time: "09:45–10:30", topic: "Bewachungsgewerbe – Definition" },
-                    { ue: 43, time: "10:45–11:30", topic: "Voraussetzungen für Bewachungsunternehmer" },
-                    { ue: 44, time: "11:30–12:15", topic: "Pflichten des Bewachungsunternehmers" },
-                    { ue: 45, time: "13:00–13:45", topic: "Pflichten der Wachpersonen" },
-                    { ue: 46, time: "13:45–14:30", topic: "Zuverlässigkeit & Sachkunde" },
-                    { ue: 47, time: "14:45–15:30", topic: "Erlaubnispflichtige Tätigkeiten" },
-                    { ue: 48, time: "15:30–16:15", topic: "Erlaubnispflichtige Tätigkeiten – Beispiele" }
-                  ]
-                },
-
-                {
-                  date: "2025-10-21",
-                  displayDate: "21.10.2025",
-                  weekday: "Dienstag",
-                  module: "Gewerberecht",
-                  units: [
-                    { ue: 49, time: "09:00–09:45", topic: "Anzeigepflichten nach GewO" },
-                    { ue: 50, time: "09:45–10:30", topic: "Bewacherregister – Grundlagen" },
-                    { ue: 51, time: "10:45–11:30", topic: "Bewacherregister – Anwendung" },
-                    { ue: 52, time: "11:30–12:15", topic: "Aufzeichnungspflichten" },
-                    { ue: 53, time: "13:00–13:45", topic: "Kontrollen durch Behörden" },
-                    { ue: 54, time: "13:45–14:30", topic: "Rechtsfolgen bei Verstößen" },
-                    { ue: 55, time: "14:45–15:30", topic: "Musterfälle Gewerberecht" },
-                    { ue: 56, time: "15:30–16:15", topic: "Musterfälle – Besprechung" }
-                  ]
-                },
-
-                {
-                  date: "2025-10-22",
-                  displayDate: "22.10.2025",
-                  weekday: "Mittwoch",
-                  module: "Gewerberecht",
-                  units: [
-                    { ue: 57, time: "09:00–09:45", topic: "Bewacherregister – Praxis" },
-                    { ue: 58, time: "09:45–10:30", topic: "Erlaubnispflichtige Bewachung" },
-                    { ue: 59, time: "10:45–11:30", topic: "Rechte & Pflichten der Unternehmer" },
-                    { ue: 60, time: "11:30–12:15", topic: "Rechte & Pflichten der Wachpersonen" },
-                    { ue: 61, time: "13:00–13:45", topic: "Haftung im Bewachungsgewerbe" },
-                    { ue: 62, time: "13:45–14:30", topic: "Sorgfaltspflichten" },
-                    { ue: 63, time: "14:45–15:30", topic: "Fallbeispiele – Gewerberecht" },
-                    { ue: 64, time: "15:30–16:15", topic: "Fallbeispiele – Auswertung" }
-                  ]
-                },
-
-                {
-                  date: "2025-10-23",
-                  displayDate: "23.10.2025",
-                  weekday: "Donnerstag",
-                  module: "Gewerberecht",
-                  units: [
-                    { ue: 65, time: "09:00–09:45", topic: "Gewerberechtliche Überwachung" },
-                    { ue: 66, time: "09:45–10:30", topic: "Gefährdungsanalyse aus Gewerberecht" },
-                    { ue: 67, time: "10:45–11:30", topic: "Bußgeldverfahren" },
-                    { ue: 68, time: "11:30–12:15", topic: "Verwaltungsverfahren" },
-                    { ue: 69, time: "13:00–13:45", topic: "Gewerberecht – Wiederholung" },
-                    { ue: 70, time: "13:45–14:30", topic: "Gewerberecht – Vertiefung" },
-                    { ue: 71, time: "14:45–15:30", topic: "Abschlusstest Gewerberecht" },
-                    { ue: 72, time: "15:30–16:15", topic: "Besprechung Abschlusstest" }
-                  ]
-                },
-
-                {
-                  date: "2025-10-24",
-                  displayDate: "24.10.2025",
-                  weekday: "Freitag",
-                  module: "Gewerberecht",
-                  units: [
-                    { ue: 73, time: "09:00–09:45", topic: "Fallstudien aus dem Bewachungsgewerbe" },
-                    { ue: 74, time: "09:45–10:30", topic: "Praktische Aufgaben – Gewerberecht" },
-                    { ue: 75, time: "10:45–11:30", topic: "Praxisfälle – Diskussion" },
-                    { ue: 76, time: "11:30–12:15", topic: "Wiederholung wichtige Paragraphen" },
-                    { ue: 77, time: "13:00–13:45", topic: "Vertiefung Bewacherregister" },
-                    { ue: 78, time: "13:45–14:30", topic: "Fragen & Antworten" },
-                    { ue: 79, time: "14:45–15:30", topic: "Lernkontrolle" },
-                    { ue: 80, time: "15:30–16:15", topic: "Lernkontrolle – Besprechung" }
-                  ]
-                }
-              ]
-            },
-
-            // Platzhalter für weitere Wochen des 3-Monats-Kurses:
-            {
-              id: 3,
-              label: "Woche 3 · 27.10.2025 – 31.10.2025",
-
-              days: [
-  {
-    date: "2025-10-27",
-    displayDate: "27.10.2025",
-    weekday: "Montag",
-    module: "Bürgerliches Recht (BGB)",
-    units: [
-      { ue: 81, time: "09:00–09:45", topic: "Jedermannsrechte – Übersicht StGB/BGB" },
-      { ue: 82, time: "09:45–10:30", topic: "Praxisbeispiele Sicherheitsdienst – Hausrecht" },
-      { ue: 83, time: "10:45–11:30", topic: "Praxisbeispiele Zutrittskontrollen" },
-      { ue: 84, time: "11:30–12:15", topic: "Eingreifen in Notfallsituationen" },
-      { ue: 85, time: "13:00–13:45", topic: "Jedermannsrechte – Rollenspiele" },
-      { ue: 86, time: "13:45–14:30", topic: "Fallanalyse – Notwehr / Selbsthilfe" },
-      { ue: 87, time: "14:45–15:30", topic: "Abgrenzung rechtmäßiges Handeln vs. strafbare Handlung" },
-      { ue: 88, time: "15:30–16:15", topic: "Wiederholung & Lernzielkontrolle Modul 3" }
-    ]
-  },
-
-  {
-    date: "2025-10-28",
-    displayDate: "28.10.2025",
-    weekday: "Dienstag",
-    module: "Straf- & Strafverfahrensrecht",
-    units: [
-      { ue: 89, time: "09:00–09:45", topic: "Materielles Strafrecht – Tatbestand" },
-      { ue: 90, time: "09:45–10:30", topic: "Schuld, Vorsatz, Fahrlässigkeit" },
-      { ue: 91, time: "10:45–11:30", topic: "Versuch – Rechtsfolgen" },
-      { ue: 92, time: "11:30–12:15", topic: "Aufbau Straftat – Tatbestandsmerkmale" },
-      { ue: 93, time: "13:00–13:45", topic: "Rechtswidrigkeit & Schuld" },
-      { ue: 94, time: "13:45–14:30", topic: "Verbrechen vs. Vergehen – Unterschiede & Beispiele" },
-      { ue: 95, time: "14:45–15:30", topic: "Garantenstellung – Pflichten zur Abwendung von Schäden" },
-      { ue: 96, time: "15:30–16:15", topic: "Echtes und unechtes Unterlassungsdelikt" }
-    ]
-  },
-
-  {
-    date: "2025-10-29",
-    displayDate: "29.10.2025",
-    weekday: "Mittwoch",
-    module: "Straf- & Strafverfahrensrecht",
-    units: [
-      { ue: 97, time: "09:00–09:45", topic: "Strafverfahrensrecht – Ablauf eines Verfahrens" },
-      { ue: 98, time: "09:45–10:30", topic: "Rechte & Pflichten Beschuldigter" },
-      { ue: 99, time: "10:45–11:30", topic: "Rechte & Pflichten Zeugen" },
-      { ue: 100, time: "11:30–12:15", topic: "Aufbau StGB – Allgemeiner & Besonderer Teil" },
-      { ue: 101, time: "13:00–13:45", topic: "Nebengesetze (StPO, BtMG, JuSchG)" },
-      { ue: 102, time: "13:45–14:30", topic: "Besonderer Teil StGB – Diebstahl §§242, 243" },
-      { ue: 103, time: "14:45–15:30", topic: "Diebstahl mit Waffen / Bandendiebstahl §244" },
-      { ue: 104, time: "15:30–16:15", topic: "Unterschlagung §§246, 248a" }
-    ]
-  },
-
-  {
-    date: "2025-10-30",
-    displayDate: "30.10.2025",
-    weekday: "Donnerstag",
-    module: "Straf- & Strafverfahrensrecht",
-    units: [
-      { ue: 105, time: "09:00–09:45", topic: "Raub §249, Räuberischer Diebstahl §252" },
-      { ue: 106, time: "09:45–10:30", topic: "Erpressung §253" },
-      { ue: 107, time: "10:45–11:30", topic: "Hehlerei §259" },
-      { ue: 108, time: "11:30–12:15", topic: "Betrug §§263, 263a" },
-      { ue: 109, time: "13:00–13:45", topic: "Untreue §266 / Veruntreuung §265a" },
-      { ue: 110, time: "13:45–14:30", topic: "Körperverletzung §223" },
-      { ue: 111, time: "14:45–15:30", topic: "Sachbeschädigung §303" },
-      { ue: 112, time: "15:30–16:15", topic: "Brandstiftung §306" }
-    ]
-  },
-
-  {
-    date: "2025-10-31",
-    displayDate: "31.10.2025",
-    weekday: "Freitag",
-    module: "Prüfungstag – Straf- & Zivilrecht",
-    units: [
-      { ue: 113, time: "09:00–09:45", topic: "Schadensersatz §281, Unterlassungsdelikte §323c" },
-      { ue: 114, time: "09:45–10:30", topic: "Notwehr §§32, 34, 35" },
-      { ue: 115, time: "10:45–11:30", topic: "Verhältnismäßigkeit & Erforderlichkeit" },
-      { ue: 116, time: "11:30–12:15", topic: "StPO – Rechte & Pflichten der Sicherheitskraft" },
-      { ue: 117, time: "13:00–13:45", topic: "Festnahme durch Privatperson §127 StPO" },
-      { ue: 118, time: "13:45–14:30", topic: "Beweissicherung & Anzeigeerstattung" },
-      { ue: 119, time: "14:45–15:30", topic: "Praxisfallanalyse / Simulationen" },
-      { ue: 120, time: "15:30–16:15", topic: "Besprechung schriftliche Übung / Lernzielkontrolle" }
-    ]
-  }
-]
-
-            },
-            {
-              id: 4,
-              label: "Woche 4 · 03.11.2025 – 07.11.2025",
-
-             days: [
-  {
-    date: "2025-11-03",
-    displayDate: "03.11.2025",
-    weekday: "Montag",
-    module: "Straf- & Strafverfahrensrecht",
-    units: [
-      { ue: 121, time: "09:00–09:45", topic: "Notwehr & rechtfertigender Notstand §§32, 34" },
-      { ue: 122, time: "09:45–10:30", topic: "Aggressiver Notstand §35" },
-      { ue: 123, time: "10:45–11:30", topic: "Verhältnismäßigkeit & Erforderlichkeit in Jedermannsrechten" },
-      { ue: 124, time: "11:30–12:15", topic: "Fallbeispiele Notwehr / Notstand" },
-      { ue: 125, time: "13:00–13:45", topic: "StPO – Rechte & Pflichten der Sicherheitskraft" },
-      { ue: 126, time: "13:45–14:30", topic: "Festnahme durch Privatperson §127 StPO" },
-      { ue: 127, time: "14:45–15:30", topic: "Beweissicherung & Anzeigeerstattung" },
-      { ue: 128, time: "15:30–16:15", topic: "Praxisbeispiele – Strafverfahren" }
-    ]
-  },
-
-  {
-    date: "2025-11-04",
-    displayDate: "04.11.2025",
-    weekday: "Dienstag",
-    module: "Straf- & Strafverfahrensrecht",
-    units: [
-      { ue: 129, time: "09:00–09:45", topic: "Computerbetrug, Untreue, Veruntreuung (Vertiefung)" },
-      { ue: 130, time: "09:45–10:30", topic: "Körperverletzung, Sachbeschädigung (Vertiefung)" },
-      { ue: 131, time: "10:45–11:30", topic: "Raub, Erpressung, Hehlerei (Vertiefung)" },
-      { ue: 132, time: "11:30–12:15", topic: "Betrug §263 / Computerbetrug §263a (Fallanalyse)" },
-      { ue: 133, time: "13:00–13:45", topic: "Praxisfall – Diebstahl & Unterschlagung" },
-      { ue: 134, time: "13:45–14:30", topic: "Praxisfall – Brandstiftung & Schadensersatz" },
-      { ue: 135, time: "14:45–15:30", topic: "Rollenspiel – Strafverfolgung" },
-      { ue: 136, time: "15:30–16:15", topic: "Lernzielkontrolle Modul 4 Teil 1" }
-    ]
-  },
-
-  {
-    date: "2025-11-05",
-    displayDate: "05.11.2025",
-    weekday: "Mittwoch",
-    module: "Straf- & Strafverfahrensrecht",
-    units: [
-      { ue: 137, time: "09:00–09:45", topic: "Praxisübungen: Notwehr / Notstand" },
-      { ue: 138, time: "09:45–10:30", topic: "Praxisübungen: Festnahme §127 StPO" },
-      { ue: 139, time: "10:45–11:30", topic: "Beweissicherung & Anzeigeerstattung" },
-      { ue: 140, time: "11:30–12:15", topic: "Fallanalyse – Unterlassungsdelikte §323c" },
-      { ue: 141, time: "13:00–13:45", topic: "Aggressiver vs. rechtfertigender Notstand" },
-      { ue: 142, time: "13:45–14:30", topic: "Verhältnismäßigkeit / Erforderlichkeit" },
-      { ue: 143, time: "14:45–15:30", topic: "Praxis: Simulation Notfallsituationen" },
-      { ue: 144, time: "15:30–16:15", topic: "Wiederholung & Lernzielkontrolle" }
-    ]
-  },
-
-  {
-    date: "2025-11-06",
-    displayDate: "06.11.2025",
-    weekday: "Donnerstag",
-    module: "Straf- & Strafverfahrensrecht",
-    units: [
-      { ue: 145, time: "09:00–09:45", topic: "Rechte & Pflichten Sicherheitskraft – Fallanalyse" },
-      { ue: 146, time: "09:45–10:30", topic: "Praxis – Anzeigeerstattung" },
-      { ue: 147, time: "10:45–11:30", topic: "Notwehr / Notstand – Vertiefung" },
-      { ue: 148, time: "11:30–12:15", topic: "Fallbeispiele aus Sicherheitsdienst" },
-      { ue: 149, time: "13:00–13:45", topic: "Praxis: Dokumentation & Berichterstattung" },
-      { ue: 150, time: "13:45–14:30", topic: "Rollenspiel – Konfliktsituationen" },
-      { ue: 151, time: "14:45–15:30", topic: "Prüfungsvorbereitung – Strafrecht" },
-      { ue: 152, time: "15:30–16:15", topic: "Zusammenfassung Strafrecht" }
-    ]
-  },
-
-  {
-    date: "2025-11-07",
-    displayDate: "07.11.2025",
-    weekday: "Freitag",
-    module: "Straf- & Strafverfahrensrecht",
-    units: [
-      { ue: 153, time: "09:00–09:45", topic: "Simulation Strafverfahren – schriftliche Übung" },
-      { ue: 154, time: "09:45–10:30", topic: "Besprechung schriftliche Übung" },
-      { ue: 155, time: "10:45–11:30", topic: "Praxis – Notwehr / Notstand" },
-      { ue: 156, time: "11:30–12:15", topic: "Praxis – Festnahme §127 StPO" },
-      { ue: 157, time: "13:00–13:45", topic: "Praxis – Anzeige & Beweissicherung" },
-      { ue: 158, time: "13:45–14:30", topic: "Vertiefung Fallanalyse" },
-      { ue: 159, time: "14:45–15:30", topic: "Besprechung & Rückmeldung" },
-      { ue: 160, time: "15:30–16:15", topic: "Lernzielkontrolle Strafrecht" }
-    ]
-  }
-]
-
-            },
-            {
-              id: 5,
-             label: "Woche 5 · 10.11.2025 – 14.11.2025",
-
-              days: [
-  {
-    date: "2025-11-10",
-    displayDate: "10.11.2025",
-    weekday: "Montag",
-    module: "Bürgerliches Recht (BGB) & Zivilrecht",
-    units: [
-      { ue: 161, time: "09:00–09:45", topic: "Einführung BGB – Aufbau & Systematik" },
-      { ue: 162, time: "09:45–10:30", topic: "Rechtsfähigkeit, Geschäftsfähigkeit, Willenserklärung" },
-      { ue: 163, time: "10:45–11:30", topic: "Vertragsschluss – Angebot & Annahme" },
-      { ue: 164, time: "11:30–12:15", topic: "Anfechtung, Nichtigkeit, Sittenwidrigkeit" },
-      { ue: 165, time: "13:00–13:45", topic: "Schuldverhältnis & Leistungsstörungen" },
-      { ue: 166, time: "13:45–14:30", topic: "Verzug, Unmöglichkeit, Rücktritt" },
-      { ue: 167, time: "14:45–15:30", topic: "Schadensersatzgrundlagen (§§ 249 ff. BGB)" },
-      { ue: 168, time: "15:30–16:15", topic: "Praxisbeispiele – Verträge im Sicherheitsdienst" }
-    ]
-  },
-
-  {
-    date: "2025-11-11",
-    displayDate: "11.11.2025",
-    weekday: "Dienstag",
-    module: "Bürgerliches Recht (BGB) & Zivilrecht",
-    units: [
-      { ue: 169, time: "09:00–09:45", topic: "Eigentum, Besitz, Besitzschutz (§§ 854 ff. BGB)" },
-      { ue: 170, time: "09:45–10:30", topic: "Besitzkehr, Selbsthilferecht nach BGB" },
-      { ue: 171, time: "10:45–11:30", topic: "Hausrecht – zivilrechtliche Grundlage" },
-      { ue: 172, time: "11:30–12:15", topic: "Hausverbot – Voraussetzungen & Form" },
-      { ue: 173, time: "13:00–13:45", topic: "Schadensersatzpflicht bei Pflichtverletzung" },
-      { ue: 174, time: "13:45–14:30", topic: "Haftung des Sicherheitsdienstes gegenüber Auftraggebern" },
-      { ue: 175, time: "14:45–15:30", topic: "Deliktsrecht (§§ 823 ff. BGB)" },
-      { ue: 176, time: "15:30–16:15", topic: "Praxisfälle – Haftung bei Personen- & Sachschäden" }
-    ]
-  },
-
-  {
-    date: "2025-11-12",
-    displayDate: "12.11.2025",
-    weekday: "Mittwoch",
-    module: "Bürgerliches Recht (BGB) & Zivilrecht",
-    units: [
-      { ue: 177, time: "09:00–09:45", topic: "Vertragsarten im Sicherheitsdienst (Werk-, Dienstvertrag, Subunternehmer)" },
-      { ue: 178, time: "09:45–10:30", topic: "AGB – Grundlagen & Bedeutung im Bewachungsgewerbe" },
-      { ue: 179, time: "10:45–11:30", topic: "Haftungsbeschränkungen in AGB – was ist zulässig?" },
-      { ue: 180, time: "11:30–12:15", topic: "Kündigung von Verträgen, Laufzeiten, Verlängerungen" },
-      { ue: 181, time: "13:00–13:45", topic: "Zivilrechtliche Folgen fehlerhafter Leistung" },
-      { ue: 182, time: "13:45–14:30", topic: "Regress & Innenverhältnis – Unternehmer/Mitarbeiter" },
-      { ue: 183, time: "14:45–15:30", topic: "Fallstudien aus der Praxis – zivilrechtliche Konflikte" },
-      { ue: 184, time: "15:30–16:15", topic: "Auswertung der Fallstudien" }
-    ]
-  },
-
-  {
-    date: "2025-11-13",
-    displayDate: "13.11.2025",
-    weekday: "Donnerstag",
-    module: "Bürgerliches Recht (BGB) & Zivilrecht",
-    units: [
-      { ue: 185, time: "09:00–09:45", topic: "Zusammenfassung BGB – wichtigste Paragraphen für Sicherheitskräfte" },
-      { ue: 186, time: "09:45–10:30", topic: "Wiederholung: Hausrecht, Schadensersatz, Haftung" },
-      { ue: 187, time: "10:45–11:30", topic: "Rollenspiele – Kommunikation bei Hausverbot & Schadensfällen" },
-      { ue: 188, time: "11:30–12:15", topic: "Dokumentation zivilrechtlich relevanter Vorfälle" },
-      { ue: 189, time: "13:00–13:45", topic: "Prüfungsvorbereitung BGB/Zivilrecht" },
-      { ue: 190, time: "13:45–14:30", topic: "Schriftliche Lernzielkontrolle – BGB/Zivilrecht" },
-      { ue: 191, time: "14:45–15:30", topic: "Besprechung Lernzielkontrolle" },
-      { ue: 192, time: "15:30–16:15", topic: "Fragerunde & Klärung offener Punkte" }
-    ]
-  },
-
-  {
-    date: "2025-11-14",
-    displayDate: "14.11.2025",
-    weekday: "Freitag",
-    module: "Bürgerliches Recht (BGB) & Zivilrecht · Praxis & Transfer",
-    units: [
-      { ue: 193, time: "09:00–09:45", topic: "Praxisworkshop – Fallbearbeitung in Gruppen" },
-      { ue: 194, time: "09:45–10:30", topic: "Präsentation der Gruppenergebnisse" },
-      { ue: 195, time: "10:45–11:30", topic: "Reflexion – Rolle der Sicherheitskraft im Zivilrecht" },
-      { ue: 196, time: "11:30–12:15", topic: "Vertiefung komplexer Fälle (Haftung, Schadensersatz)" },
-      { ue: 197, time: "13:00–13:45", topic: "Verzahnung Strafrecht – Zivilrecht – Gewerberecht" },
-      { ue: 198, time: "13:45–14:30", topic: "Überleitung zum nächsten Modul (z. B. Datenschutz, Arbeitsrecht)" },
-      { ue: 199, time: "14:45–15:30", topic: "Individueller Wissenscheck & Feedbackrunde" },
-      { ue: 200, time: "15:30–16:15", topic: "Zusammenfassung Woche 5 & Ausblick" }
-    ]
-  }
-]
-
-            },
-            {
-              id: 6,
-            label: "Woche 6 · 17.11.2025 – 21.11.2025",
-
-             days: [
-  {
-    date: "2025-11-17",
-    displayDate: "17.11.2025",
-    weekday: "Montag",
-    module: "Umgang mit Menschen",
-    units: [
-      { ue: 201, time: "09:00–09:45", topic: "Einführung – Bedürfnisse, Motive, Motivation" },
-      { ue: 202, time: "09:45–10:30", topic: "Selbstwertgefühl & Wahrnehmung" },
-      { ue: 203, time: "10:45–11:30", topic: "Diversität & Vorurteile" },
-      { ue: 204, time: "11:30–12:15", topic: "Menschenkenntnis & erster Eindruck" },
-      { ue: 205, time: "13:00–13:45", topic: "Verhalten des Menschen & Steuerung" },
-      { ue: 206, time: "13:45–14:30", topic: "Interkulturelle Kompetenz" },
-      { ue: 207, time: "14:45–15:30", topic: "Kommunikationsarten & Modelle" },
-      { ue: 208, time: "15:30–16:15", topic: "Eisberg-Modell – Sachebene / Beziehungsebene" }
-    ]
-  },
-
-  {
-    date: "2025-11-18",
-    displayDate: "18.11.2025",
-    weekday: "Dienstag",
-    module: "Umgang mit Menschen",
-    units: [
-      { ue: 209, time: "09:00–09:45", topic: "Gesprächstechniken: Schallplatte mit Sprung, Vernebelung" },
-      { ue: 210, time: "09:45–10:30", topic: "Kommunikationsabstände" },
-      { ue: 211, time: "10:45–11:30", topic: "Maslow-Pyramide" },
-      { ue: 212, time: "11:30–12:15", topic: "Stress und Auswirkung auf Gesundheit" },
-      { ue: 213, time: "13:00–13:45", topic: "Frustration, Aggression, Resignation & Zusammenhang" },
-      { ue: 214, time: "13:45–14:30", topic: "Deeskalation, Konflikte & Konfliktlösung" },
-      { ue: 215, time: "14:45–15:30", topic: "Aktives Zuhören, Sender & Empfänger" },
-      { ue: 216, time: "15:30–16:15", topic: "Gruppen, Menschenmengen, Menschenmassen" }
-    ]
-  },
-
-  {
-    date: "2025-11-19",
-    displayDate: "19.11.2025",
-    weekday: "Mittwoch",
-    module: "Umgang mit Menschen",
-    units: [
-      { ue: 217, time: "09:00–09:45", topic: "Besonderheiten & Verhaltensweisen besonderer Personengruppen" },
-      { ue: 218, time: "09:45–10:30", topic: "Jugendliche, Betrunkene, Drogenabhängige, Senioren" },
-      { ue: 219, time: "10:45–11:30", topic: "Massenpsychologische Phänomene" },
-      { ue: 220, time: "11:30–12:15", topic: "Massenpanik, Panikarten & Verhaltensweisen" },
-      { ue: 221, time: "13:00–13:45", topic: "Besonderheiten Großveranstaltungen" },
-      { ue: 222, time: "13:45–14:30", topic: "Besonderheiten Flüchtlingsunterkünfte" },
-      { ue: 223, time: "14:45–15:30", topic: "Praxisbeispiele Sicherheitsdienst" },
-      { ue: 224, time: "15:30–16:15", topic: "Fallanalysen & Diskussion" }
-    ]
-  },
-
-  {
-    date: "2025-11-20",
-    displayDate: "20.11.2025",
-    weekday: "Donnerstag",
-    module: "Umgang mit Menschen",
-    units: [
-      { ue: 225, time: "09:00–09:45", topic: "Kommunikationsübungen – Rollenspiele" },
-      { ue: 226, time: "09:45–10:30", topic: "Konfliktmanagement in Gruppen" },
-      { ue: 227, time: "10:45–11:30", topic: "Deeskalationsstrategien" },
-      { ue: 228, time: "11:30–12:15", topic: "Praxis: Intervention bei Konflikten" },
-      { ue: 229, time: "13:00–13:45", topic: "Simulationen – Menschenmengensteuerung" },
-      { ue: 230, time: "13:45–14:30", topic: "Beobachtung & Verhaltenstraining" },
-      { ue: 231, time: "14:45–15:30", topic: "Reflexion & Feedback" },
-      { ue: 232, time: "15:30–16:15", topic: "Besprechung – Rollenspielauswertung" }
-    ]
-  },
-
-  {
-    date: "2025-11-21",
-    displayDate: "21.11.2025",
-    weekday: "Freitag",
-    module: "Umgang mit Menschen",
-    units: [
-      { ue: 233, time: "09:00–09:45", topic: "Wiederholung – Bedürfnisse & Motivation" },
-      { ue: 234, time: "09:45–10:30", topic: "Wiederholung – Kommunikationsarten & Eisberg-Modell" },
-      { ue: 235, time: "10:45–11:30", topic: "Praxisbeispiele – Konfliktbewältigung" },
-      { ue: 236, time: "11:30–12:15", topic: "Fallanalyse – Menschenmassensteuerung" },
-      { ue: 237, time: "13:00–13:45", topic: "Lernzielkontrolle Umgang mit Menschen" },
-      { ue: 238, time: "13:45–14:30", topic: "Besprechung der Ergebnisse" },
-      { ue: 239, time: "14:45–15:30", topic: "Feedback & offene Fragen" },
-      { ue: 240, time: "15:30–16:15", topic: "Zusammenfassung Umgang mit Menschen" }
-    ]
-  }
-]
-
-            },
-            {
-              id: 7,
-              label: "Woche 7 · 24.11.2025 – 28.11.2025",
-
-             days: [
-  {
-    date: "2025-11-24",
-    displayDate: "24.11.2025",
-    weekday: "Montag",
-    module: "Umgang mit Verteidigungswaffen",
-    units: [
-      { ue: 241, time: "09:00–09:45", topic: "Einführung – Waffengesetz (WaffG) §§1–10, 25, 27, 42" },
-      { ue: 242, time: "09:45–10:30", topic: "Bewachungsverordnung (BewachV)" },
-      { ue: 243, time: "10:45–11:30", topic: "Grenzen der Notwehr und des Notstands (§§32, 34 StGB)" },
-      { ue: 244, time: "11:30–12:15", topic: "Haftung, straf- und zivilrechtliche Folgen unsachgemäßen Einsatzes" },
-      { ue: 245, time: "13:00–13:45", topic: "Besitz: Wer eine Schusswaffe rechtmäßig besitzt (§§14–17 WaffG)" },
-      { ue: 246, time: "13:45–14:30", topic: "Erwerb: Erwerbsvoraussetzungen, Genehmigungen (§§21–23 WaffG)" },
-      { ue: 247, time: "14:45–15:30", topic: "Führen: Transport und Mitführen im öffentlichen Raum (§§25–27 WaffG)" },
-      { ue: 248, time: "15:30–16:15", topic: "Verbotene Waffen: Definitionen, Beispiele" }
-    ]
-  },
-
-  {
-    date: "2025-11-25",
-    displayDate: "25.11.2025",
-    weekday: "Dienstag",
-    module: "Umgang mit Verteidigungswaffen",
-    units: [
-      { ue: 249, time: "09:00–09:45", topic: "Arten von Verteidigungswaffen" },
-      { ue: 250, time: "09:45–10:30", topic: "Praktische Handhabung – Sicherheitsregeln" },
-      { ue: 251, time: "10:45–11:30", topic: "Praktische Übungen – Handhabung und Einsatzlimits" },
-      { ue: 252, time: "11:30–12:15", topic: "Rollenspiele – Einsatz im Bewachungsdienst" },
-      { ue: 253, time: "13:00–13:45", topic: "Rechtliche Grenzen beim Einsatz von Verteidigungswaffen" },
-      { ue: 254, time: "13:45–14:30", topic: "Dokumentation von Vorfällen mit Verteidigungswaffen" },
-      { ue: 255, time: "14:45–15:30", topic: "Fallbeispiele – Einsatzanalyse" },
-      { ue: 256, time: "15:30–16:15", topic: "Besprechung & Feedback" }
-    ]
-  },
-
-  {
-    date: "2025-11-26",
-    displayDate: "26.11.2025",
-    weekday: "Mittwoch",
-    module: "Umgang mit Verteidigungswaffen",
-    units: [
-      { ue: 257, time: "09:00–09:45", topic: "Wiederholung – Waffengesetz & Bewachungsverordnung" },
-      { ue: 258, time: "09:45–10:30", topic: "Praxisübungen – Handhabung & Einsatz" },
-      { ue: 259, time: "10:45–11:30", topic: "Simulation – Notwehr & Verteidigungswaffen" },
-      { ue: 260, time: "11:30–12:15", topic: "Dokumentation & Berichtswesen" },
-      { ue: 261, time: "13:00–13:45", topic: "Rollenspiele – Einsatzübungen" },
-      { ue: 262, time: "13:45–14:30", topic: "Praxisübungen – Einsatzlimits beachten" },
-      { ue: 263, time: "14:45–15:30", topic: "Lernzielkontrolle Umgang mit Verteidigungswaffen" },
-      { ue: 264, time: "15:30–16:15", topic: "Besprechung & Feedback" }
-    ]
-  },
-
-  {
-    date: "2025-11-27",
-    displayDate: "27.11.2025",
-    weekday: "Donnerstag",
-    module: "Umgang mit Verteidigungswaffen & Erste Hilfe",
-    units: [
-      { ue: 265, time: "09:00–09:45", topic: "Wiederholung – Umgang mit Verteidigungswaffen" },
-      { ue: 266, time: "09:45–10:30", topic: "Fallbeispiele – Einsatz im Sicherheitsdienst" },
-      { ue: 267, time: "10:45–11:30", topic: "Besprechung – Praxisübungen & Dokumentation" },
-      { ue: 268, time: "11:30–12:15", topic: "Abschlussbesprechung Umgang mit Verteidigungswaffen" },
-      { ue: 269, time: "13:00–13:45", topic: "Lebensrettende Sofortmaßnahmen – HLW" },
-      { ue: 270, time: "13:45–14:30", topic: "Stabile Seitenlage & Bewusstseinskontrolle" },
-      { ue: 271, time: "14:45–15:30", topic: "Umgang mit Blutungen, Schock & Bewusstlosigkeit" },
-      { ue: 272, time: "15:30–16:15", topic: "Notfallmanagement und Kommunikation mit Rettungsdiensten" }
-    ]
-  },
-
-  {
-    date: "2025-11-28",
-    displayDate: "28.11.2025",
-    weekday: "Freitag",
-    module: "Erste Hilfe & Brandschutz / Evakuierungshelfer",
-    units: [
-      { ue: 273, time: "09:00–09:45", topic: "Praktische Übungen – HLW & stabile Seitenlage" },
-      { ue: 274, time: "09:45–10:30", topic: "Praktische Übungen – Blutungen, Schock & Bewusstlosigkeit" },
-      { ue: 275, time: "10:45–11:30", topic: "Fallbeispiele & Notfallmanagement" },
-      { ue: 276, time: "11:30–12:15", topic: "Abschlusszertifikat Erste Hilfe & Besprechung" },
-      { ue: 277, time: "13:00–13:45", topic: "Brandklassen, Feuerlöscher, Brandverhütung" },
-      { ue: 278, time: "13:45–14:30", topic: "Evakuierungspläne, Alarmierungsmaßnahmen, Personenrettung" },
-      { ue: 279, time: "14:45–15:30", topic: "Praktische Übungen Brandschutz & Evakuierung" },
-      { ue: 280, time: "15:30–16:15", topic: "Abschlussbesprechung & Zertifikat" }
-    ]
-  }
-]
-
-            },
-            {
-              id: 8,
-             label: "Woche 8 · 01.12.2025 – 05.12.2025",
-
-             days: [
-  {
-    date: "2025-12-01",
-    displayDate: "01.12.2025",
-    weekday: "Montag",
-    module: "Objekt- & Werkschutz · Grundlagen",
-    units: [
-      { ue: 281, time: "09:00–09:45", topic: "Einführung Objekt- & Werkschutz – Ziele & Aufgaben" },
-      { ue: 282, time: "09:45–10:30", topic: "Schutzbedarfsanalyse – Personen, Werte, Informationen" },
-      { ue: 283, time: "10:45–11:30", topic: "Sicherheitskonzepte – Aufbau & Bestandteile" },
-      { ue: 284, time: "11:30–12:15", topic: "Gefährdungen: Diebstahl, Sabotage, Spionage, Vandalismus" },
-      { ue: 285, time: "13:00–13:45", topic: "Sicherheitszonen & Zutrittsberechtigungen" },
-      { ue: 286, time: "13:45–14:30", topic: "Perimeterschutz, Tor- & Pfortendienst" },
-      { ue: 287, time: "14:45–15:30", topic: "Rund- & Kontrollgänge – Grundlagen" },
-      { ue: 288, time: "15:30–16:15", topic: "Dokumentation im Objekt- & Werkschutz (Wachbuch, Checklisten)" }
-    ]
-  },
-
-  {
-    date: "2025-12-02",
-    displayDate: "02.12.2025",
-    weekday: "Dienstag",
-    module: "Objekt- & Werkschutz · Kontroll- & Meldesysteme",
-    units: [
-      { ue: 289, time: "09:00–09:45", topic: "Kontrollrundensysteme (Schlüssel-/Chip-Systeme, elektronische Kontrolle)" },
-      { ue: 290, time: "09:45–10:30", topic: "Alarmierungsketten & Meldewege" },
-      { ue: 291, time: "10:45–11:30", topic: "Umgang mit Alarmen – Fehlarlarm vs. Echtalarm" },
-      { ue: 292, time: "11:30–12:15", topic: "Zusammenarbeit mit NSL / Leitstelle" },
-      { ue: 293, time: "13:00–13:45", topic: "Besondere Objekte: Rechenzentren, Produktionsanlagen, Logistik" },
-      { ue: 294, time: "13:45–14:30", topic: "Besucher- & Lieferantenmanagement" },
-      { ue: 295, time: "14:45–15:30", topic: "Kontrolle von Personen & Fahrzeugen – rechtliche Rahmenbedingungen" },
-      { ue: 296, time: "15:30–16:15", topic: "Praxisfälle – Objekt- & Werkschutz" }
-    ]
-  },
-
-  {
-    date: "2025-12-03",
-    displayDate: "03.12.2025",
-    weekday: "Mittwoch",
-    module: "Dienstkunde & Dienstorganisation",
-    units: [
-      { ue: 297, time: "09:00–09:45", topic: "Dienstanweisungen – Aufbau, Inhalte, Verbindlichkeit" },
-      { ue: 298, time: "09:45–10:30", topic: "Posten- & Dienstanweisungen im Objekt" },
-      { ue: 299, time: "10:45–11:30", topic: "Berichtswesen – Grundregeln für professionelle Berichte" },
-      { ue: 300, time: "11:30–12:15", topic: "Meldungen vs. Berichte vs. Notizen" },
-      { ue: 301, time: "13:00–13:45", topic: "Schichtübergabe – Informationsweitergabe & Verantwortung" },
-      { ue: 302, time: "13:45–14:30", topic: "Verhalten bei Störungen & besonderen Vorkommnissen" },
-      { ue: 303, time: "14:45–15:30", topic: "Kommunikation mit Auftraggeber & Vorgesetzten" },
-      { ue: 304, time: "15:30–16:15", topic: "Rollenspiele – Meldung & Bericht" }
-    ]
-  },
-
-  {
-    date: "2025-12-04",
-    displayDate: "04.12.2025",
-    weekday: "Donnerstag",
-    module: "Dienstkunde & Objekt- & Werkschutz · Praxis",
-    units: [
-      { ue: 305, time: "09:00–09:45", topic: "Praxis: Erstellung von Dienstanweisungen (Gruppenarbeit)" },
-      { ue: 306, time: "09:45–10:30", topic: "Präsentation & Besprechung der Dienstanweisungen" },
-      { ue: 307, time: "10:45–11:30", topic: "Fallbeispiele: Fehler in Dienstanweisungen & Konsequenzen" },
-      { ue: 308, time: "11:30–12:15", topic: "Praxisübung: Bericht schreiben nach vorgegebenem Szenario" },
-      { ue: 309, time: "13:00–13:45", topic: "Auswertung der Berichte – typische Fehler & Optimierung" },
-      { ue: 310, time: "13:45–14:30", topic: "Praxisübung: Schichtübergabe im Rollenspiel" },
-      { ue: 311, time: "14:45–15:30", topic: "Simulation eines Störfalls im Objekt- & Werkschutz" },
-      { ue: 312, time: "15:30–16:15", topic: "Reflexion & Feedback zu den Übungen" }
-    ]
-  },
-
-  {
-    date: "2025-12-05",
-    displayDate: "05.12.2025",
-    weekday: "Freitag",
-    module: "Objekt- & Werkschutz / Dienstkunde · Vertiefung & Test",
-    units: [
-      { ue: 313, time: "09:00–09:45", topic: "Wiederholung: Aufgaben im Objekt- & Werkschutz" },
-      { ue: 314, time: "09:45–10:30", topic: "Wiederholung: Kontrollgänge, Meldesysteme, Alarmierung" },
-      { ue: 315, time: "10:45–11:30", topic: "Wiederholung: Dienstanweisungen & Berichtswesen" },
-      { ue: 316, time: "11:30–12:15", topic: "Wissenscheck – Objekt- & Werkschutz / Dienstkunde" },
-      { ue: 317, time: "13:00–13:45", topic: "Besprechung Wissenscheck & Klärung offener Fragen" },
-      { ue: 318, time: "13:45–14:30", topic: "Praxisworkshop: Planung eines Objektschutzkonzeptes" },
-      { ue: 319, time: "14:45–15:30", topic: "Präsentation der Konzepte (Gruppenarbeit)" },
-      { ue: 320, time: "15:30–16:15", topic: "Zusammenfassung Woche 8 & Ausblick auf nächste Module" }
-    ]
-  }
-]
-
-            },
-            {
-              id: 9,
-             label: "Woche 9 · 08.12.2025 – 12.12.2025",
-
-             days: [
-  {
-    date: "2025-12-08",
-    displayDate: "08.12.2025",
-    weekday: "Montag",
-    module: "Unfallverhütungsvorschriften",
-    units: [
-      { ue: 321, time: "09:00–09:45", topic: "DGUV Vorschrift 1 – Grundsätze der Prävention" },
-      { ue: 322, time: "09:45–10:30", topic: "Grundpflichten des Unternehmers (§2)" },
-      { ue: 323, time: "10:45–11:30", topic: "Unterweisung der Versicherten (§4)" },
-      { ue: 324, time: "11:30–12:15", topic: "Zutritts- und Aufenthaltsverbote (§9)" },
-      { ue: 325, time: "13:00–13:45", topic: "Zugang zu Vorschriften & Regeln (§12)" },
-      { ue: 326, time: "13:45–14:30", topic: "Erste Hilfe – Pflichten des Unternehmers (§24)" },
-      { ue: 327, time: "14:45–15:30", topic: "Erforderliche Einrichtungen & Sachmittel (§25)" },
-      { ue: 328, time: "15:30–16:15", topic: "Zahl & Ausbildung der Ersthelfer (§26)" }
-    ]
-  },
-
-  {
-    date: "2025-12-09",
-    displayDate: "09.12.2025",
-    weekday: "Dienstag",
-    module: "Unfallverhütungsvorschriften",
-    units: [
-      { ue: 329, time: "09:00–09:45", topic: "DGUV Vorschrift 23 – Wach- & Sicherungsdienste" },
-      { ue: 330, time: "09:45–10:30", topic: "Dienstanweisung & Arbeitssicherheit" },
-      { ue: 331, time: "10:45–11:30", topic: "Verbot berauschender Mittel" },
-      { ue: 332, time: "11:30–12:15", topic: "Objektsicherung & besondere Gefahren" },
-      { ue: 333, time: "13:00–13:45", topic: "Überprüfung & Objekteinweisung (§9)" },
-      { ue: 334, time: "13:45–14:30", topic: "Ausrüstung des Personals (§10), Regelungen für Brillenträger (§11)" },
-      { ue: 335, time: "14:45–15:30", topic: "Hunde – Haltung, Führung, Transport (§12–17)" },
-      { ue: 336, time: "15:30–16:15", topic: "Schusswaffen – Ausrüstung & Beschusszeichen (§18–19)" }
-    ]
-  },
-
-  {
-    date: "2025-12-10",
-    displayDate: "10.12.2025",
-    weekday: "Mittwoch",
-    module: "Unfallverhütungsvorschriften",
-    units: [
-      { ue: 337, time: "09:00–09:45", topic: "Führung & Aufbewahrung von Munition (§20–22)" },
-      { ue: 338, time: "09:45–10:30", topic: "Eignung (§24) & Geldtransporte (§25–26)" },
-      { ue: 339, time: "10:45–11:30", topic: "Führungspflichten & Dokumentation (§16)" },
-      { ue: 340, time: "11:30–12:15", topic: "ASR A1.3 – Sicherheits- & Gesundheitsschutzkennzeichnung" },
-      { ue: 341, time: "13:00–13:45", topic: "Verbotszeichen, Warnzeichen, Gebotszeichen" },
-      { ue: 342, time: "13:45–14:30", topic: "Rettungszeichen, Brandschutzzeichen, Zusatzzeichen" },
-      { ue: 343, time: "14:45–15:30", topic: "Grafische Symbole, Farben & deren Bedeutung" },
-      { ue: 344, time: "15:30–16:15", topic: "Flucht- & Rettungspläne – Praxis & Übungen" }
-    ]
-  },
-
-  {
-    date: "2025-12-11",
-    displayDate: "11.12.2025",
-    weekday: "Donnerstag",
-    module: "Waffensachkunde § 7 WaffG",
-    units: [
-      { ue: 345, time: "09:00–09:45", topic: "Waffengesetz – Definitionen & Kategorien" },
-      { ue: 346, time: "09:45–10:30", topic: "Arten von Waffen – Überblick" },
-      { ue: 347, time: "10:45–11:30", topic: "Munition – Klassifizierung & Umgang" },
-      { ue: 348, time: "11:30–12:15", topic: "Rechtliche Grundlagen Besitz/Erwerb (§§14–17, 21–23 WaffG)" },
-      { ue: 349, time: "13:00–13:45", topic: "Transport & Führen von Schusswaffen (§§25–27 WaffG)" },
-      { ue: 350, time: "13:45–14:30", topic: "Aufbewahrungspflichten (§36 WaffG)" },
-      { ue: 351, time: "14:45–15:30", topic: "Verbotene Waffen (§2 WaffG) – Beispiele" },
-      { ue: 352, time: "15:30–16:15", topic: "Bewachungsverordnung (BewachV) zum Waffeneinsatz" }
-    ]
-  },
-
-  {
-    date: "2025-12-12",
-    displayDate: "12.12.2025",
-    weekday: "Freitag",
-    module: "Waffensachkunde § 7 WaffG",
-    units: [
-      { ue: 353, time: "09:00–09:45", topic: "Grenzen der Notwehr & Notstands (§§32, 34 StGB)" },
-      { ue: 354, time: "09:45–10:30", topic: "Haftung, straf- & zivilrechtliche Folgen" },
-      { ue: 355, time: "10:45–11:30", topic: "Sicherheitsrelevante Einsatzszenarien" },
-      { ue: 356, time: "11:30–12:15", topic: "Fallanalyse Waffenmissbrauch" },
-      { ue: 357, time: "13:00–13:45", topic: "Dokumentation & Nachweispflichten" },
-      { ue: 358, time: "13:45–14:30", topic: "Kontrollmechanismen & Aufsichtspflichten" },
-      { ue: 359, time: "14:45–15:30", topic: "Vorbereitung auf praktische Schulung" },
-      { ue: 360, time: "15:30–16:15", topic: "Wiederholung & Quiz" }
-    ]
-  }
-]
-
-            },
-            {
-              id: 10,
-       label: "Woche 10 · 15.12.2025 – 19.12.2025",
-
-             days: [
-  {
-    date: "2025-12-15",
-    displayDate: "15.12.2025",
-    weekday: "Montag",
-    module: "Waffensachkunde § 7 WaffG",
-    units: [
-      { ue: 361, time: "09:00–09:45", topic: "Praktische Schulung – Waffenhandhabung (Theorie)" },
-      { ue: 362, time: "09:45–10:30", topic: "Sicherheitsvorschriften im Umgang" },
-      { ue: 363, time: "10:45–11:30", topic: "Lagerung & Transport praktisch" },
-      { ue: 364, time: "11:30–12:15", topic: "Kontrollübung Waffenrecht" },
-      { ue: 365, time: "13:00–13:45", topic: "Schießstandordnung – Grundlagen" },
-      { ue: 366, time: "13:45–14:30", topic: "Verhalten am Schießstand" },
-      { ue: 367, time: "14:45–15:30", topic: "Munition praktisch – Zuweisung & Kontrolle" },
-      { ue: 368, time: "15:30–16:15", topic: "Besprechung Tagespraxis" }
-    ]
-  },
-
-  {
-    date: "2025-12-16",
-    displayDate: "16.12.2025",
-    weekday: "Dienstag",
-    module: "Waffensachkunde § 7 WaffG",
-    units: [
-      { ue: 369, time: "09:00–09:45", topic: "Praktische Schulung – Handhabung Waffenattrappen" },
-      { ue: 370, time: "09:45–10:30", topic: "Zielübungen (Trockenübungen)" },
-      { ue: 371, time: "10:45–11:30", topic: "Sicherheitscheck Waffen" },
-      { ue: 372, time: "11:30–12:15", topic: "Ablauf einer Waffenkontrolle" },
-      { ue: 373, time: "13:00–13:45", topic: "Aufbewahrung & Übergabe – Praxis" },
-      { ue: 374, time: "13:45–14:30", topic: "Dokumentationsübung Waffenbuch" },
-      { ue: 375, time: "14:45–15:30", topic: "Rechtliche Wiederholung WaffG" },
-      { ue: 376, time: "15:30–16:15", topic: "Diskussion – Sicherheitsrisiken" }
-    ]
-  },
-
-  {
-    date: "2025-12-17",
-    displayDate: "17.12.2025",
-    weekday: "Mittwoch",
-    module: "Waffensachkunde § 7 WaffG",
-    units: [
-      { ue: 377, time: "09:00–09:45", topic: "Prüfungsvorbereitung Waffensachkunde" },
-      { ue: 378, time: "09:45–10:30", topic: "Fallstudien & Übungen" },
-      { ue: 379, time: "10:45–11:30", topic: "Schriftliche Testsimulation" },
-      { ue: 380, time: "11:30–12:15", topic: "Mündliche Übungssimulation" },
-      { ue: 381, time: "13:00–13:45", topic: "Praxisübung – Verhalten in Notwehrsituationen" },
-      { ue: 382, time: "13:45–14:30", topic: "Praxisübung – Übergabe/Transport Waffen" },
-      { ue: 383, time: "14:45–15:30", topic: "Abschlussprüfungsvorbereitung" },
-      { ue: 384, time: "15:30–16:15", topic: "Besprechung & Waffensachkunde" }
-    ]
-  },
-
-  {
-    date: "2025-12-18",
-    displayDate: "18.12.2025",
-    weekday: "Donnerstag",
-    module: "Prüfungsvorbereitung",
-    units: [
-      { ue: 385, time: "09:00–09:45", topic: "Wiederholung Strafrecht – Tatbestände" },
-      { ue: 386, time: "09:45–10:30", topic: "Wiederholung Strafverfahrensrecht" },
-      { ue: 387, time: "10:45–11:30", topic: "Jedermannsrechte – Übungen" },
-      { ue: 388, time: "11:30–12:15", topic: "Datenschutz – Grundlagen & Wiederholung" },
-      { ue: 389, time: "13:00–13:45", topic: "Kommunikationspraxis & Deeskalation" },
-      { ue: 390, time: "13:45–14:30", topic: "Wiederholung Sicherheitsdienste – Hausrecht" },
-      { ue: 391, time: "14:45–15:30", topic: "Fallübungen Sicherheitsdienst" },
-      { ue: 392, time: "15:30–16:15", topic: "Dokumentations- & Berichtswesen" }
-    ]
-  },
-
-  {
-    date: "2025-12-19",
-    displayDate: "19.12.2025",
-    weekday: "Freitag",
-    module: "Prüfungsvorbereitung",
-    units: [
-      { ue: 393, time: "09:00–09:45", topic: "Prüfungstraining schriftlich – Block 1" },
-      { ue: 394, time: "09:45–10:30", topic: "Prüfungstraining schriftlich – Block 2" },
-      { ue: 395, time: "10:45–11:30", topic: "Prüfungstraining schriftlich – Block 3" },
-      { ue: 396, time: "11:30–12:15", topic: "Besprechung & Korrektur der Tests" },
-      { ue: 397, time: "13:00–13:45", topic: "Praxisbeispiele – Sicherheitsdienst Alltag" },
-      { ue: 398, time: "13:45–14:30", topic: "Praxisbeispiele – Notwehr/Notstand" },
-      { ue: 399, time: "14:45–15:30", topic: "Praxisbeispiele – Festnahmerechte" },
-      { ue: 400, time: "15:30–16:15", topic: "Rollenspiel – Konfliktlösung" }
-    ]
-  }
-]
-
-            },
-            {
-              id: 11,
-           label: "Woche 11 · 22.12.2025 – 26.12.2025",
-
-             days: [
-  {
-    date: "2025-12-22",
-    displayDate: "22.12.2025",
-    weekday: "Montag",
-    module: "Gesamtwiederholung Recht (GewO, BGB, StGB, StPO, UVV, Datenschutz)",
-    units: [
-      { ue: 401, time: "09:00–09:45", topic: "Überblick über alle Rechtsgebiete der Sachkundeprüfung" },
-      { ue: 402, time: "09:45–10:30", topic: "§34a GewO & BewachV – Kerninhalte & typische Prüfungsfragen" },
-      { ue: 403, time: "10:45–11:30", topic: "Gewerberecht – Bewacherregister, Zuverlässigkeit, Erlaubnis" },
-      { ue: 404, time: "11:30–12:15", topic: "Strafrecht – Tatbestandsaufbau & wichtige Delikte (Diebstahl, Betrug, KV)" },
-      { ue: 405, time: "13:00–13:45", topic: "Strafverfahrensrecht – Festnahme §127 StPO, Anzeige, Beweissicherung" },
-      { ue: 406, time: "13:45–14:30", topic: "BGB/Zivilrecht – Hausrecht, Schadensersatz, Haftung" },
-      { ue: 407, time: "14:45–15:30", topic: "Unfallverhütung (DGUV) – Pflichten, Ersthelfer, DGUV V1 & 23" },
-      { ue: 408, time: "15:30–16:15", topic: "Datenschutz & Schweigepflicht – DSGVO, BDSG, Umgang mit Daten" }
-    ]
-  },
-
-  {
-    date: "2025-12-23",
-    displayDate: "23.12.2025",
-    weekday: "Dienstag",
-    module: "Prüfungsvorbereitung – schriftliche Prüfung",
-    units: [
-      { ue: 409, time: "09:00–09:45", topic: "Struktur der IHK-Prüfung – Ablauf & Bewertung" },
-      { ue: 410, time: "09:45–10:30", topic: "Strategien für Multiple-Choice & Zeitmanagement" },
-      { ue: 411, time: "10:45–11:30", topic: "Schriftliche Probeklausur – Teil 1 (Recht allgemein)" },
-      { ue: 412, time: "11:30–12:15", topic: "Schriftliche Probeklausur – Teil 2 (Gewerberecht & Strafrecht)" },
-      { ue: 413, time: "13:00–13:45", topic: "Auswertung der Probeklausur – Korrektur & Feedback" },
-      { ue: 414, time: "13:45–14:30", topic: "Besprechung typischer Fehler & Fallstricke" },
-      { ue: 415, time: "14:45–15:30", topic: "Zweiter Kurztest – Wiederholung kritischer Themen" },
-      { ue: 416, time: "15:30–16:15", topic: "Individuelle Rückmeldung & Lernempfehlungen" }
-    ]
-  },
-
-  {
-    date: "2025-12-24",
-    displayDate: "24.12.2025",
-    weekday: "Mittwoch",
-    module: "Optional / Selbstlern- & Wiederholungsphase",
-    units: [
-      { ue: 417, time: "09:00–09:45", topic: "Selbstlernphase – Wiederholung eigener Schwachstellen" },
-      { ue: 418, time: "09:45–10:30", topic: "Bearbeitung zusätzlicher Übungsaufgaben" },
-      { ue: 419, time: "10:45–11:30", topic: "Eigenständige Wiederholung: Strafrecht & Jedermannsrechte" },
-      { ue: 420, time: "11:30–12:15", topic: "Eigenständige Wiederholung: BGB/Zivilrecht & Gewerberecht" },
-      { ue: 421, time: "13:00–13:45", topic: "Lernkarten, Übersichten & Mindmaps erstellen" },
-      { ue: 422, time: "13:45–14:30", topic: "Online-Tests / Übungsfragen bearbeiten" },
-      { ue: 423, time: "14:45–15:30", topic: "Wiederholung in Partner- oder Gruppenarbeit (falls Präsenz)" },
-      { ue: 424, time: "15:30–16:15", topic: "Offene Fragerunde / individuelle Klärung durch Dozent*in (optional)" }
-    ]
-  },
-
-  {
-    date: "2025-12-25",
-    displayDate: "25.12.2025",
-    weekday: "Donnerstag",
-    module: "Feiertag / keine reguläre Unterrichtung",
-    units: [
-      { ue: 425, time: "09:00–09:45", topic: "Feiertag – keine Unterrichtseinheit geplant" },
-      { ue: 426, time: "09:45–10:30", topic: "Feiertag – keine Unterrichtseinheit geplant" },
-      { ue: 427, time: "10:45–11:30", topic: "Feiertag – keine Unterrichtseinheit geplant" },
-      { ue: 428, time: "11:30–12:15", topic: "Feiertag – keine Unterrichtseinheit geplant" },
-      { ue: 429, time: "13:00–13:45", topic: "Feiertag – keine Unterrichtseinheit geplant" },
-      { ue: 430, time: "13:45–14:30", topic: "Feiertag – keine Unterrichtseinheit geplant" },
-      { ue: 431, time: "14:45–15:30", topic: "Feiertag – keine Unterrichtseinheit geplant" },
-      { ue: 432, time: "15:30–16:15", topic: "Feiertag – keine Unterrichtseinheit geplant" }
-    ]
-  },
-
-  {
-    date: "2025-12-26",
-    displayDate: "26.12.2025",
-    weekday: "Freitag",
-    module: "Feiertag / optionale Wiederholung zuhause",
-    units: [
-      { ue: 433, time: "09:00–09:45", topic: "Eigenständige Wiederholung – Prüfungsrelevante Paragraphen" },
-      { ue: 434, time: "09:45–10:30", topic: "Eigenständige Wiederholung – BewachV & DGUV" },
-      { ue: 435, time: "10:45–11:30", topic: "Eigenständige Wiederholung – Objekt- & Werkschutz / Dienstkunde" },
-      { ue: 436, time: "11:30–12:15", topic: "Eigenständige Wiederholung – Umgang mit Menschen, Deeskalation" },
-      { ue: 437, time: "13:00–13:45", topic: "Wiederholung mit Lernkarten & Übersichten" },
-      { ue: 438, time: "13:45–14:30", topic: "Selbsttest – Prüfungsfragen beantworten" },
-      { ue: 439, time: "14:45–15:30", topic: "Planung der letzten Lernwoche bis zur Prüfung" },
-      { ue: 440, time: "15:30–16:15", topic: "Reflexion: Eigene Sicherheit & Prüfungsgefühl" }
-    ]
-  }
-]
-
-            },
-            {
-              id: 12,
-             label: "Woche 12 · 29.12.2025 – 02.01.2026",
-
-             days: [
-  {
-    date: "2025-12-29",
-    displayDate: "29.12.2025",
-    weekday: "Montag",
-    module: "Intensive Prüfungsvorbereitung – schriftlich & mündlich",
-    units: [
-      { ue: 441, time: "09:00–09:45", topic: "Überblick über alle Prüfungsbereiche (Recht, Umgang mit Menschen, Dienstkunde)" },
-      { ue: 442, time: "09:45–10:30", topic: "Typische Prüfungsfallen & Strategien zur Fehlervermeidung" },
-      { ue: 443, time: "10:45–11:30", topic: "Wiederholung: Strafrecht & Jedermannsrechte" },
-      { ue: 444, time: "11:30–12:15", topic: "Wiederholung: BGB/Zivilrecht & Hausrecht" },
-      { ue: 445, time: "13:00–13:45", topic: "Wiederholung: Gewerberecht (§34a GewO, BewachV, Bewacherregister)" },
-      { ue: 446, time: "13:45–14:30", topic: "Wiederholung: Unfallverhütung & DGUV, Arbeitsschutz" },
-      { ue: 447, time: "14:45–15:30", topic: "Wiederholung: Umgang mit Menschen, Deeskalation, Kommunikation" },
-      { ue: 448, time: "15:30–16:15", topic: "Fragerunde & individuelle Schwerpunkte" }
-    ]
-  },
-
-  {
-    date: "2025-12-30",
-    displayDate: "30.12.2025",
-    weekday: "Dienstag",
-    module: "Prüfungstraining – schriftliche IHK-Sachkundeprüfung",
-    units: [
-      { ue: 449, time: "09:00–09:45", topic: "Schriftliche Probeklausur unter Echtbedingungen – Teil 1" },
-      { ue: 450, time: "09:45–10:30", topic: "Schriftliche Probeklausur unter Echtbedingungen – Teil 2" },
-      { ue: 451, time: "10:45–11:30", topic: "Schriftliche Probeklausur unter Echtbedingungen – Teil 3" },
-      { ue: 452, time: "11:30–12:15", topic: "Abgabe, Auswertung & erste Korrektur der Probeklausur" },
-      { ue: 453, time: "13:00–13:45", topic: "Besprechung der Ergebnisse – Schwerpunkte & Fehlermuster" },
-      { ue: 454, time: "13:45–14:30", topic: "Gemeinsame Lösung schwieriger Prüfungsfragen" },
-      { ue: 455, time: "14:45–15:30", topic: "Kurztest zu kritischen Themen (z. B. Notwehr, Hausrecht, §127 StPO)" },
-      { ue: 456, time: "15:30–16:15", topic: "Individuelle Lernempfehlungen bis zur Prüfung" }
-    ]
-  },
-
-  {
-    date: "2025-12-31",
-    displayDate: "31.12.2025",
-    weekday: "Mittwoch",
-    module: "Prüfungstraining – mündliche / situative Prüfungsteile",
-    units: [
-      { ue: 457, time: "09:00–09:45", topic: "Ablauf der mündlichen bzw. situativen Prüfung – Erwartungen der IHK" },
-      { ue: 458, time: "09:45–10:30", topic: "Verhalten in der mündlichen Prüfung – Auftreten, Sprache, Struktur" },
-      { ue: 459, time: "10:45–11:30", topic: "Rollenspiel: Prüfungssimulation – Gespräch mit Prüfern" },
-      { ue: 460, time: "11:30–12:15", topic: "Rollenspiel: Umgang mit Konfliktsituationen vor Prüfern darstellen" },
-      { ue: 461, time: "13:00–13:45", topic: "Fallbeispiele zur mündlichen Prüfung (z. B. Hausverbot, Festnahme, Deeskalation)" },
-      { ue: 462, time: "13:45–14:30", topic: "Feedbackrunde – individuelle Hinweise zum Auftreten" },
-      { ue: 463, time: "14:45–15:30", topic: "Letzter Wissenscheck (Kurztest + offene Fragen)" },
-      { ue: 464, time: "15:30–16:15", topic: "Mentale Vorbereitung – Umgang mit Prüfungsstress" }
-    ]
-  },
-
-  {
-    date: "2026-01-01",
-    displayDate: "01.01.2026",
-    weekday: "Donnerstag",
-    module: "Feiertag / keine reguläre Unterrichtung",
-    units: [
-      { ue: 465, time: "09:00–09:45", topic: "Neujahr – keine reguläre Unterrichtseinheit geplant" },
-      { ue: 466, time: "09:45–10:30", topic: "Neujahr – keine reguläre Unterrichtseinheit geplant" },
-      { ue: 467, time: "10:45–11:30", topic: "Neujahr – keine reguläre Unterrichtseinheit geplant" },
-      { ue: 468, time: "11:30–12:15", topic: "Neujahr – keine reguläre Unterrichtseinheit geplant" },
-      { ue: 469, time: "13:00–13:45", topic: "Neujahr – keine reguläre Unterrichtseinheit geplant" },
-      { ue: 470, time: "13:45–14:30", topic: "Neujahr – keine reguläre Unterrichtseinheit geplant" },
-      { ue: 471, time: "14:45–15:30", topic: "Neujahr – keine reguläre Unterrichtseinheit geplant" },
-      { ue: 472, time: "15:30–16:15", topic: "Neujahr – keine reguläre Unterrichtseinheit geplant" }
-    ]
-  },
+      ]
+    },
 
     {
-    date: "2026-01-02",
-    displayDate: "02.01.2026",
-    weekday: "Freitag",
-    module: "Abschluss & Übergang in die Prüfungsphase",
-    units: [
-      { ue: 473, time: "09:00–09:45", topic: "Letzte Wiederholung der individuellen Schwachstellen" },
-      { ue: 474, time: "09:45–10:30", topic: "Checkliste für den Prüfungstag (Unterlagen, Zeiten, Ablauf)" },
-      { ue: 475, time: "10:45–11:30", topic: "Organisation: Prüfungstermine, Anfahrt, IHK-Formalitäten" },
-      { ue: 476, time: "11:30–12:15", topic: "Verhalten nach der Prüfung – Einsicht, Wiederholungsmöglichkeiten" },
-      { ue: 477, time: "13:00–13:45", topic: "Ausblick: Einsatzgebiete & Perspektiven im Sicherheitsgewerbe" },
-      { ue: 478, time: "13:45–14:30", topic: "Übergabe an Recruiting / Jobvermittlung (Kooperationspartner etc.)" },
-      { ue: 479, time: "14:45–15:30", topic: "Feedbackrunde zum Kurs – was hat geholfen, was nicht?" },
-      { ue: 480, time: "15:30–16:15", topic: "Abschlussgespräch & Verabschiedung" }
+      // Dienstag, 14.10. – Öffentliche Sicherheit & Ordnung
+      weekday: "Dienstag",
+      module: "Öffentliche Sicherheit & Ordnung",
+      units: [
+        { ue: 9,  time: "09:00–09:45", topic: "Grundgesetz – Bedeutung & Entstehung" },
+        { ue: 10, time: "09:45–10:30", topic: "Grundgesetz – Artikelübersicht" },
+        { ue: 11, time: "10:45–11:30", topic: "Ewigkeitsklausel" },
+        { ue: 12, time: "11:30–12:15", topic: "Drittwirkung des Grundgesetzes" },
+        { ue: 13, time: "13:00–13:45", topic: "Gefahrenabwehr – Grundlagen" },
+        { ue: 14, time: "13:45–14:30", topic: "Gefahrenabwehr – präventive Maßnahmen" },
+        { ue: 15, time: "14:45–15:30", topic: "Zuständigkeiten bei Störungen" },
+        { ue: 16, time: "15:30–16:15", topic: "Zuständigkeiten bei Störungen" }
+      ]
+    },
+
+    {
+      // Mittwoch, 15.10. – Öffentliche Sicherheit & Ordnung
+      weekday: "Mittwoch",
+      module: "Öffentliche Sicherheit & Ordnung",
+      units: [
+        { ue: 17, time: "09:00–09:45", topic: "Zusammenarbeit Sicherheitsdienst – Polizei" },
+        { ue: 18, time: "09:45–10:30", topic: "Zusammenarbeit mit Kommunen" },
+        { ue: 19, time: "10:45–11:30", topic: "Dokumentation – Grundlagen" },
+        { ue: 20, time: "11:30–12:15", topic: "Berichterstattung – Fallbeispiele" },
+        { ue: 21, time: "13:00–13:45", topic: "Eingriffs- & Handlungsmöglichkeiten – Theorie" },
+        { ue: 22, time: "13:45–14:30", topic: "Eingriffs- & Handlungsmöglichkeiten – Praxis" },
+        { ue: 23, time: "14:45–15:30", topic: "Wiederholung Modul 1 – Teil 1" },
+        { ue: 24, time: "15:30–16:15", topic: "Wiederholung Modul 1 – Teil 2" }
+      ]
+    },
+
+    {
+      // Donnerstag, 16.10. – Öffentliche Sicherheit & Ordnung
+      weekday: "Donnerstag",
+      module: "Öffentliche Sicherheit & Ordnung",
+      units: [
+        { ue: 25, time: "09:00–09:45", topic: "Zusammenfassung GG & Gewaltenteilung" },
+        { ue: 26, time: "09:45–10:30", topic: "Vertiefung Gefahrenabwehr" },
+        { ue: 27, time: "10:45–11:30", topic: "Vertiefung Zuständigkeiten" },
+        { ue: 28, time: "11:30–12:15", topic: "Rollenspiel – Sicherheitslage" },
+        { ue: 29, time: "13:00–13:45", topic: "Praxisübungen – Dokumentation" },
+        { ue: 30, time: "13:45–14:30", topic: "Praxisübungen – Eingriffsrechte" },
+        { ue: 31, time: "14:45–15:30", topic: "Wiederholung aller Inhalte" },
+        { ue: 32, time: "15:30–16:15", topic: "Lernzielkontrolle Modul 1" }
+      ]
+    },
+
+    {
+      // Freitag, 17.10. – Gewerberecht
+      weekday: "Freitag",
+      module: "Gewerberecht",
+      units: [
+        { ue: 33, time: "09:00–09:45", topic: "§34a GewO – Grundlagen" },
+        { ue: 34, time: "09:45–10:30", topic: "§34a GewO – Befugnisse" },
+        { ue: 35, time: "10:45–11:30", topic: "Bewachungsunternehmen – Pflichten" },
+        { ue: 36, time: "11:30–12:15", topic: "Mitarbeiter – Voraussetzungen" },
+        { ue: 37, time: "13:00–13:45", topic: "Bewacherregister" },
+        { ue: 38, time: "13:45–14:30", topic: "Antragsstellung – Praxisbeispiele" },
+        { ue: 39, time: "14:45–15:30", topic: "Sachkundeprüfung & U40" },
+        { ue: 40, time: "15:30–16:15", topic: "Befreiung & Tätigkeitsfelder" }
+      ]
+    }
+  ]
+},
+
+           {
+  id: 2,
+  label: "Woche 2",
+  days: [
+    {
+      // Montag, 20.10. – Gewerberecht
+      weekday: "Montag",
+      module: "Gewerberecht",
+      units: [
+        { ue: 41, time: "09:00–09:45", topic: "Gewerbeordnung – Anzeigepflicht §14" },
+        { ue: 42, time: "09:45–10:30", topic: "Gewerbeordnung – Auskunft & Nachschau §29" },
+        { ue: 43, time: "10:45–11:30", topic: "Bewachungsverordnung §§14 & 15" },
+        { ue: 44, time: "11:30–12:15", topic: "Bewachungsverordnung §§17–18" },
+        { ue: 45, time: "13:00–13:45", topic: "Bewachungsverordnung §§19–21" },
+        { ue: 46, time: "13:45–14:30", topic: "Aufsichtspflichten & Kontrollmechanismen" },
+        { ue: 47, time: "14:45–15:30", topic: "Konsequenzen bei Verstößen" },
+        { ue: 48, time: "15:30–16:15", topic: "Anmeldung von Tätigkeiten & Dokumentationspflichten" }
+      ]
+    },
+
+    {
+      // Dienstag, 21.10. – Bürgerliches Recht (BGB)
+      weekday: "Dienstag",
+      module: "Bürgerliches Recht (BGB)",
+      units: [
+        { ue: 49, time: "09:00–09:45", topic: "Grundlagen BGB – Fundrecht" },
+        { ue: 50, time: "09:45–10:30", topic: "Privatrecht – Abgrenzung" },
+        { ue: 51, time: "10:45–11:30", topic: "Rechtsfähigkeit – Beginn & Ende" },
+        { ue: 52, time: "11:30–12:15", topic: "Schikaneverbot" },
+        { ue: 53, time: "13:00–13:45", topic: "Gefährdungshaftung – Einführung" },
+        { ue: 54, time: "13:45–14:30", topic: "Verschuldensunabhängige Haftung" },
+        { ue: 55, time: "14:45–15:30", topic: "Verschuldensabhängige Haftung" },
+        { ue: 56, time: "15:30–16:15", topic: "Praxisbeispiele Haftung" }
+      ]
+    },
+
+    {
+      // Mittwoch, 22.10. – Bürgerliches Recht (BGB)
+      weekday: "Mittwoch",
+      module: "Bürgerliches Recht (BGB)",
+      units: [
+        { ue: 57, time: "09:00–09:45", topic: "Besitz & Eigentum" },
+        { ue: 58, time: "09:45–10:30", topic: "Besitzdiener" },
+        { ue: 59, time: "10:45–11:30", topic: "Sachen & Tiere" },
+        { ue: 60, time: "11:30–12:15", topic: "Besitz & übertragene Rechte" },
+        { ue: 61, time: "13:00–13:45", topic: "Vertragsrecht – Grundlagen" },
+        { ue: 62, time: "13:45–14:30", topic: "Vertragsabschluss" },
+        { ue: 63, time: "14:45–15:30", topic: "Rechte & Pflichten aus Verträgen" },
+        { ue: 64, time: "15:30–16:15", topic: "Vertragsverletzungen" }
+      ]
+    },
+
+    {
+      // Donnerstag, 23.10. – Bürgerliches Recht (BGB)
+      weekday: "Donnerstag",
+      module: "Bürgerliches Recht (BGB)",
+      units: [
+        { ue: 65, time: "09:00–09:45", topic: "Schadensersatz – Grundlagen" },
+        { ue: 66, time: "09:45–10:30", topic: "Haftung – Grenzen privater Eingriffe" },
+        { ue: 67, time: "10:45–11:30", topic: "Unerlaubte Handlung" },
+        { ue: 68, time: "11:30–12:15", topic: "Folgen unerlaubter Handlung" },
+        { ue: 69, time: "13:00–13:45", topic: "Abgrenzung rechtmäßiges Handeln" },
+        { ue: 70, time: "13:45–14:30", topic: "Abgrenzung strafbare Handlung" },
+        { ue: 71, time: "14:45–15:30", topic: "Praxisbeispiel: Hausrecht" },
+        { ue: 72, time: "15:30–16:15", topic: "Praxisbeispiel: Zutrittskontrollen" }
+      ]
+    },
+
+    {
+      // Freitag, 24.10. – Bürgerliches Recht (BGB)
+      weekday: "Freitag",
+      module: "Bürgerliches Recht (BGB)",
+      units: [
+        { ue: 73, time: "09:00–09:45", topic: "Jedermannsrechte nach BGB – Einführung" },
+        { ue: 74, time: "09:45–10:30", topic: "§227 Notwehr & §228 Verteidigungsnotstand" },
+        { ue: 75, time: "10:45–11:30", topic: "§229 Selbsthilfe & §859 Selbsthilfe des Besitzers" },
+        { ue: 76, time: "11:30–12:15", topic: "§860 Selbsthilfe des Besitzdieners & §904 Angriffsnotstand" },
+        { ue: 77, time: "13:00–13:45", topic: "Praxisbeispiel: Eingreifen in Notfällen" },
+        { ue: 78, time: "13:45–14:30", topic: "Rollenspiel – Zutrittskontrolle mit Konflikt" },
+        { ue: 79, time: "14:45–15:30", topic: "Wiederholung & Zusammenfassung BGB" },
+        { ue: 80, time: "15:30–16:15", topic: "Lernzielkontrolle – BGB" }
+      ]
+    }
+  ]
+},
+
+
+            // Platzhalter für weitere Wochen des 3-Monats-Kurses:
+           {
+  id: 3,
+  label: "Woche 3",
+  days: [
+    {
+      // Montag, 27.10. – Bürgerliches Recht (BGB)
+      weekday: "Montag",
+      module: "Bürgerliches Recht (BGB)",
+      units: [
+        { ue: 81, time: "09:00–09:45", topic: "Jedermannsrechte – Übersicht StGB/BGB" },
+        { ue: 82, time: "09:45–10:30", topic: "Praxisbeispiele Sicherheitsdienst – Hausrecht" },
+        { ue: 83, time: "10:45–11:30", topic: "Praxisbeispiele Zutrittskontrollen" },
+        { ue: 84, time: "11:30–12:15", topic: "Eingreifen in Notfallsituationen" },
+        { ue: 85, time: "13:00–13:45", topic: "Jedermannsrechte – Rollenspiele" },
+        { ue: 86, time: "13:45–14:30", topic: "Fallanalyse – Notwehr / Selbsthilfe" },
+        { ue: 87, time: "14:45–15:30", topic: "Abgrenzung rechtmäßiges Handeln vs. strafbare Handlung" },
+        { ue: 88, time: "15:30–16:15", topic: "Wiederholung & Lernzielkontrolle Modul 3" }
+      ]
+    },
+
+    {
+      // Dienstag, 28.10. – Straf- & Strafverfahrensrecht
+      weekday: "Dienstag",
+      module: "Straf- & Strafverfahrensrecht",
+      units: [
+        { ue: 89, time: "09:00–09:45", topic: "Materielles Strafrecht – Tatbestand" },
+        { ue: 90, time: "09:45–10:30", topic: "Schuld, Vorsatz, Fahrlässigkeit" },
+        { ue: 91, time: "10:45–11:30", topic: "Versuch, Rechtsfolgen" },
+        { ue: 92, time: "11:30–12:15", topic: "Aufbau Straftat – Tatbestandsmerkmale" },
+        { ue: 93, time: "13:00–13:45", topic: "Rechtswidrigkeit & Schuld" },
+        { ue: 94, time: "13:45–14:30", topic: "Verbrechen vs. Vergehen – Unterschiede & Beispiele" },
+        { ue: 95, time: "14:45–15:30", topic: "Garantenstellung – Pflichten zur Abwendung von Schäden" },
+        { ue: 96, time: "15:30–16:15", topic: "Echtes und unechtes Unterlassungsdelikt" }
+      ]
+    },
+
+    {
+      // Mittwoch, 29.10. – Straf- & Strafverfahrensrecht
+      weekday: "Mittwoch",
+      module: "Straf- & Strafverfahrensrecht",
+      units: [
+        { ue: 97,  time: "09:00–09:45", topic: "Strafverfahrensrecht – Ablauf eines Verfahrens" },
+        { ue: 98,  time: "09:45–10:30", topic: "Rechte & Pflichten Beschuldigter" },
+        { ue: 99,  time: "10:45–11:30", topic: "Rechte & Pflichten Zeugen" },
+        { ue: 100, time: "11:30–12:15", topic: "Aufbau StGB – Allgemeiner & Besonderer Teil" },
+        { ue: 101, time: "13:00–13:45", topic: "Nebengesetze (StPO, BtMG, JuSchG)" },
+        { ue: 102, time: "13:45–14:30", topic: "Besonderer Teil StGB – Diebstahl §§242, 243" },
+        { ue: 103, time: "14:45–15:30", topic: "Diebstahl mit Waffen / Bandendiebstahl §244" },
+        { ue: 104, time: "15:30–16:15", topic: "Unterschlagung §§246, 248a" }
+      ]
+    },
+
+    {
+      // Donnerstag, 30.10. – Straf- & Strafverfahrensrecht
+      weekday: "Donnerstag",
+      module: "Straf- & Strafverfahrensrecht",
+      units: [
+        { ue: 105, time: "09:00–09:45", topic: "Raub §249, Räuberischer Diebstahl §252" },
+        { ue: 106, time: "09:45–10:30", topic: "Erpressung §253" },
+        { ue: 107, time: "10:45–11:30", topic: "Hehlerei §259" },
+        { ue: 108, time: "11:30–12:15", topic: "Betrug §§263, 263a" },
+        { ue: 109, time: "13:00–13:45", topic: "Untreue §266 / Veruntreuung §265a" },
+        { ue: 110, time: "13:45–14:30", topic: "Körperverletzung §223" },
+        { ue: 111, time: "14:45–15:30", topic: "Sachbeschädigung §303" },
+        { ue: 112, time: "15:30–16:15", topic: "Brandstiftung §306" }
+      ]
+    },
+
+    {
+      // Freitag, 31.10. – Prüfungstag
+      weekday: "Freitag",
+      module: "Prüfungstag – Straf- & Zivilrecht",
+      units: [
+        { ue: 113, time: "09:00–09:45", topic: "Schadensersatz §281, Unterlassungsdelikte §323c" },
+        { ue: 114, time: "09:45–10:30", topic: "Notwehr §§32, 34, 35" },
+        { ue: 115, time: "10:45–11:30", topic: "Verhältnismäßigkeit & Erforderlichkeit" },
+        { ue: 116, time: "11:30–12:15", topic: "StPO – Rechte & Pflichten Sicherheitskraft" },
+        { ue: 117, time: "13:00–13:45", topic: "Festnahme durch Privatperson §127 StPO" },
+        { ue: 118, time: "13:45–14:30", topic: "Beweissicherung & Anzeigeerstattung" },
+        { ue: 119, time: "14:45–15:30", topic: "Praxisfallanalyse / Simulationen" },
+        { ue: 120, time: "15:30–16:15", topic: "Besprechung schriftliche Übung / Lernzielkontrolle" }
+      ]
+    }
+  ]
+},
+
+            {
+  id: 4,
+  label: "Woche 4",
+  days: [
+    {
+      // Montag, 03.11. – Straf- & Strafverfahrensrecht
+      weekday: "Montag",
+      module: "Straf- & Strafverfahrensrecht",
+      units: [
+        { ue: 121, time: "09:00–09:45", topic: "Notwehr & rechtfertigender Notstand §§32, 34" },
+        { ue: 122, time: "09:45–10:30", topic: "Aggressiver Notstand §35" },
+        { ue: 123, time: "10:45–11:30", topic: "Verhältnismäßigkeit & Erforderlichkeit in Jedermannsrechten" },
+        { ue: 124, time: "11:30–12:15", topic: "Fallbeispiele Notwehr / Notstand" },
+        { ue: 125, time: "13:00–13:45", topic: "StPO – Rechte & Pflichten der Sicherheitskraft" },
+        { ue: 126, time: "13:45–14:30", topic: "Festnahme durch Privatperson §127 StPO" },
+        { ue: 127, time: "14:45–15:30", topic: "Beweissicherung & Anzeigeerstattung" },
+        { ue: 128, time: "15:30–16:15", topic: "Praxisbeispiele – Strafverfahren" }
+      ]
+    },
+
+    {
+      // Dienstag, 04.11. – Straf- & Strafverfahrensrecht
+      weekday: "Dienstag",
+      module: "Straf- & Strafverfahrensrecht",
+      units: [
+        { ue: 129, time: "09:00–09:45", topic: "Computerbetrug, Untreue, Veruntreuung (Vertiefung)" },
+        { ue: 130, time: "09:45–10:30", topic: "Körperverletzung, Sachbeschädigung (Vertiefung)" },
+        { ue: 131, time: "10:45–11:30", topic: "Raub, Erpressung, Hehlerei (Vertiefung)" },
+        { ue: 132, time: "11:30–12:15", topic: "Betrug §263 / Computerbetrug §263a (Fallanalyse)" },
+        { ue: 133, time: "13:00–13:45", topic: "Praxisfall – Diebstahl & Unterschlagung" },
+        { ue: 134, time: "13:45–14:30", topic: "Praxisfall – Brandstiftung & Schadensersatz" },
+        { ue: 135, time: "14:45–15:30", topic: "Rollenspiel – Strafverfolgung" },
+        { ue: 136, time: "15:30–16:15", topic: "Lernzielkontrolle Modul 4 Teil 1" }
+      ]
+    },
+
+    {
+      // Mittwoch, 05.11. – Straf- & Strafverfahrensrecht
+      weekday: "Mittwoch",
+      module: "Straf- & Strafverfahrensrecht",
+      units: [
+        { ue: 137, time: "09:00–09:45", topic: "Praxisübungen: Notwehr / Notstand" },
+        { ue: 138, time: "09:45–10:30", topic: "Praxisübungen: Festnahme §127 StPO" },
+        { ue: 139, time: "10:45–11:30", topic: "Beweissicherung & Anzeigeerstattung" },
+        { ue: 140, time: "11:30–12:15", topic: "Fallanalyse – Unterlassungsdelikte §323c" },
+        { ue: 141, time: "13:00–13:45", topic: "Aggressiver vs. rechtfertigender Notstand" },
+        { ue: 142, time: "13:45–14:30", topic: "Verhältnismäßigkeit / Erforderlichkeit" },
+        { ue: 143, time: "14:45–15:30", topic: "Praxis: Simulation Notfallsituationen" },
+        { ue: 144, time: "15:30–16:15", topic: "Wiederholung & Lernzielkontrolle" }
+      ]
+    },
+
+    {
+      // Donnerstag, 06.11. – Straf- & Strafverfahrensrecht
+      weekday: "Donnertag",
+      module: "Straf- & Strafverfahrensrecht",
+      units: [
+        { ue: 145, time: "09:00–09:45", topic: "Rechte & Pflichten Sicherheitskraft – Fallanalyse" },
+        { ue: 146, time: "09:45–10:30", topic: "Praxis – Anzeigeerstattung" },
+        { ue: 147, time: "10:45–11:30", topic: "Notwehr / Notstand – Vertiefung" },
+        { ue: 148, time: "11:30–12:15", topic: "Fallbeispiele aus Sicherheitsdienst" },
+        { ue: 149, time: "13:00–13:45", topic: "Praxis: Dokumentation & Berichterstattung" },
+        { ue: 150, time: "13:45–14:30", topic: "Rollenspiel – Konfliktsituationen" },
+        { ue: 151, time: "14:45–15:30", topic: "Prüfungsvorbereitung – Strafrecht" },
+        { ue: 152, time: "15:30–16:15", topic: "Zusammenfassung Strafrecht" }
+      ]
+    },
+
+    {
+      // Freitag, 07.11. – Straf- & Strafverfahrensrecht
+      weekday: "Freitag",
+      module: "Straf- & Strafverfahrensrecht",
+      units: [
+        { ue: 153, time: "09:00–09:45", topic: "Simulation Strafverfahren – schriftliche Übung" },
+        { ue: 154, time: "09:45–10:30", topic: "Besprechung schriftliche Übung" },
+        { ue: 155, time: "10:45–11:30", topic: "Praxis – Notwehr / Notstand" },
+        { ue: 156, time: "11:30–12:15", topic: "Praxis – Festnahme §127 StPO" },
+        { ue: 157, time: "13:00–13:45", topic: "Praxis – Anzeige & Beweissicherung" },
+        { ue: 158, time: "13:45–14:30", topic: "Vertiefung Fallanalyse" },
+        { ue: 159, time: "14:45–15:30", topic: "Besprechung & Rückmeldung" },
+        { ue: 160, time: "15:30–16:15", topic: "Lernzielkontrolle Strafrecht" }
+      ]
+    }
+  ]
+},
+
+            {
+  id: 5,
+  label: "Woche 5",
+  days: [
+    {
+      // Montag, 10.11. – Straf- & Strafverfahrensrecht
+      weekday: "Montag",
+      module: "Straf- & Strafverfahrensrecht",
+      units: [
+        { ue: 161, time: "09:00–09:45", topic: "Wiederholung – Materielles Strafrecht" },
+        { ue: 162, time: "09:45–10:30", topic: "Wiederholung – Aufbau einer Straftat" },
+        { ue: 163, time: "10:45–11:30", topic: "Fallanalysen – Unterlassungsdelikte / Notwehr" },
+        { ue: 164, time: "11:30–12:15", topic: "Fallanalyse – Notstand & Verhältnismäßigkeit" },
+        { ue: 165, time: "13:00–13:45", topic: "Rollenspiel – Festnahme durch Privatperson §127 StPO" },
+        { ue: 166, time: "13:45–14:30", topic: "Dokumentation & Berichterstattung" },
+        { ue: 167, time: "14:45–15:30", topic: "Lernzielkontrolle Strafrecht" },
+        { ue: 168, time: "15:30–16:15", topic: "Strafrecht Abschlussbesprechung" }
+      ]
+    },
+
+    {
+      // Dienstag, 11.11. – Jedermannsrechte – Ausnahmerechte
+      weekday: "Dienstag",
+      module: "Jedermannsrechte – Ausnahmerechte",
+      units: [
+        { ue: 169, time: "09:00–09:45", topic: "Einführung in Jedermannsrechte" },
+        { ue: 170, time: "09:45–10:30", topic: "Abgrenzung Rechtfertigungs- und Entschuldigungsgründe" },
+        { ue: 171, time: "10:45–11:30", topic: "Festnahmerechte §127 (1) StPO / §229 BGB" },
+        { ue: 172, time: "11:30–12:15", topic: "Jedermannsrechte StGB §§32, 33, 34, 35" },
+        { ue: 173, time: "13:00–13:45", topic: "Jedermannsrechte BGB §§227, 228, 859, 860, 904" },
+        { ue: 174, time: "13:45–14:30", topic: "Jedermannsrechte OWiG §15" },
+        { ue: 175, time: "14:45–15:30", topic: "Theoretische Übungen – Eingriffsrechte" },
+        { ue: 176, time: "15:30–16:15", topic: "Rollenspiele – Notwehrsituationen & Selbsthilfe" }
+      ]
+    },
+
+    {
+      // Mittwoch, 12.11. – Jedermannsrechte – Ausnahmerechte
+      weekday: "Mittwoch",
+      module: "Jedermannsrechte – Ausnahmerechte",
+      units: [
+        { ue: 177, time: "09:00–09:45", topic: "Rollenspiele – Festnahme & Selbsthilfe" },
+        { ue: 178, time: "09:45–10:30", topic: "Praxisübungen – Eingriffsrechte & Notwehrsituationen" },
+        { ue: 179, time: "10:45–11:30", topic: "Fallbeispiele – Sicherheitsdienst / Zutrittskontrollen" },
+        { ue: 180, time: "11:30–12:15", topic: "Dokumentation & Berichterstattung" },
+        { ue: 181, time: "13:00–13:45", topic: "Besprechung der Rollenspiele / Reflexion" },
+        { ue: 182, time: "13:45–14:30", topic: "Lernzielkontrolle Jedermannsrechte" },
+        { ue: 183, time: "14:45–15:30", topic: "Feedback & offene Fragen Jedermannsrechte" },
+        { ue: 184, time: "15:30–16:15", topic: "Zusammenfassung & Wiederholung Jedermannsrechte" }
+      ]
+    },
+
+    {
+      // Donnerstag, 13.11. – Datenschutz
+      weekday: "Donnerstag",
+      module: "Datenschutz",
+      units: [
+        { ue: 185, time: "09:00–09:45", topic: "Grundlagen DSGVO & BDSG, Rechte Betroffener" },
+        { ue: 186, time: "09:45–10:30", topic: "Datenschutz bei Videoüberwachung & Zutrittskontrollen" },
+        { ue: 187, time: "10:45–11:30", topic: "Datenerfassung & Speicherung" },
+        { ue: 188, time: "11:30–12:15", topic: "Schweigepflicht, Datenweitergabe, Dokumentationspflichten" },
+        { ue: 189, time: "13:00–13:45", topic: "Zusammenhang Datenschutz & StGB" },
+        { ue: 190, time: "13:45–14:30", topic: "Aufgaben & Voraussetzungen Datenschutzbeauftragter" },
+        { ue: 191, time: "14:45–15:30", topic: "Technische Maßnahmen – Zugriffskontrollen & Verschlüsselung" },
+        { ue: 192, time: "15:30–16:15", topic: "Organisatorische Maßnahmen – Protokollierung & Datensicherung" }
+      ]
+    },
+
+    {
+      // Freitag, 14.11. – Datenschutz
+      weekday: "Freitag",
+      module: "Datenschutz",
+      units: [
+        { ue: 193, time: "09:00–09:45", topic: "Updates & Mitarbeiterschulung" },
+        { ue: 194, time: "09:45–10:30", topic: "Praktische Übungen Datensicherung" },
+        { ue: 195, time: "10:45–11:30", topic: "Fallbeispiele aus Sicherheitsdienst" },
+        { ue: 196, time: "11:30–12:15", topic: "Übung – Datenschutz bei Zutrittskontrollen" },
+        { ue: 197, time: "13:00–13:45", topic: "Dokumentation & Berichterstattung" },
+        { ue: 198, time: "13:45–14:30", topic: "Rollenspiel – Datenschutzkonflikt" },
+        { ue: 199, time: "14:45–15:30", topic: "Wiederholung & Lernzielkontrolle Datenschutz" },
+        { ue: 200, time: "15:30–16:15", topic: "Abschlussbesprechung Datenschutz" }
+      ]
+    }
+  ]
+},
+
+            {
+  id: 6,
+  label: "Woche 6",
+  days: [
+    {
+      // Montag, 17.11. – Umgang mit Menschen
+      weekday: "Montag",
+      module: "Umgang mit Menschen",
+      units: [
+        { ue: 201, time: "09:00–09:45", topic: "Einführung – Bedürfnisse, Motive, Motivation" },
+        { ue: 202, time: "09:45–10:30", topic: "Selbstwertgefühl & Wahrnehmung" },
+        { ue: 203, time: "10:45–11:30", topic: "Diversität & Vorurteile" },
+        { ue: 204, time: "11:30–12:15", topic: "Menschenkenntnis & erster Eindruck" },
+        { ue: 205, time: "13:00–13:45", topic: "Verhalten des Menschen & Steuerung" },
+        { ue: 206, time: "13:45–14:30", topic: "Interkulturelle Kompetenz" },
+        { ue: 207, time: "14:45–15:30", topic: "Kommunikationsarten & Modelle" },
+        { ue: 208, time: "15:30–16:15", topic: "Eisberg-Modell – Sachebene / Beziehungsebene" }
+      ]
+    },
+
+    {
+      // Dienstag, 18.11. – Umgang mit Menschen
+      weekday: "Dienstag",
+      module: "Umgang mit Menschen",
+      units: [
+        { ue: 209, time: "09:00–09:45", topic: "Gesprächstechniken: Schallplatte mit Sprung, Vernebelung" },
+        { ue: 210, time: "09:45–10:30", topic: "Kommunikationsabstände" },
+        { ue: 211, time: "10:45–11:30", topic: "Maslow-Pyramide" },
+        { ue: 212, time: "11:30–12:15", topic: "Stress und Auswirkung auf Gesundheit" },
+        { ue: 213, time: "13:00–13:45", topic: "Frustration, Aggression, Resignation & Zusammenhang" },
+        { ue: 214, time: "13:45–14:30", topic: "Deeskalation, Konflikte & Konfliktlösung" },
+        { ue: 215, time: "14:45–15:30", topic: "Aktives Zuhören, Sender & Empfänger" },
+        { ue: 216, time: "15:30–16:15", topic: "Gruppen, Menschenmengen, Menschenmassen" }
+      ]
+    },
+
+    {
+      // Mittwoch, 19.11. – Umgang mit Menschen
+      weekday: "Mittwoch",
+      module: "Umgang mit Menschen",
+      units: [
+        { ue: 217, time: "09:00–09:45", topic: "Besonderheiten & Verhaltensweisen besonderer Personengruppen" },
+        { ue: 218, time: "09:45–10:30", topic: "Jugendliche, Betrunkene, Drogenabhängige, Senioren" },
+        { ue: 219, time: "10:45–11:30", topic: "Massenpsychologische Phänomene" },
+        { ue: 220, time: "11:30–12:15", topic: "Massenpanik, Panikarten & Verhaltensweisen" },
+        { ue: 221, time: "13:00–13:45", topic: "Besonderheiten Großveranstaltungen" },
+        { ue: 222, time: "13:45–14:30", topic: "Besonderheiten Flüchtlingsunterkünfte" },
+        { ue: 223, time: "14:45–15:30", topic: "Praxisbeispiele Sicherheitsdienst" },
+        { ue: 224, time: "15:30–16:15", topic: "Fallanalysen & Diskussion" }
+      ]
+    },
+
+    {
+      // Donnerstag, 20.11. – Umgang mit Menschen
+      weekday: "Donnerstag",
+      module: "Umgang mit Menschen",
+      units: [
+        { ue: 225, time: "09:00–09:45", topic: "Kommunikationsübungen – Rollenspiele" },
+        { ue: 226, time: "09:45–10:30", topic: "Konfliktmanagement in Gruppen" },
+        { ue: 227, time: "10:45–11:30", topic: "Deeskalationsstrategien" },
+        { ue: 228, time: "11:30–12:15", topic: "Praxis: Intervention bei Konflikten" },
+        { ue: 229, time: "13:00–13:45", topic: "Simulationen – Menschenmengensteuerung" },
+        { ue: 230, time: "13:45–14:30", topic: "Beobachtung & Verhaltenstraining" },
+        { ue: 231, time: "14:45–15:30", topic: "Reflexion & Feedback" },
+        { ue: 232, time: "15:30–16:15", topic: "Besprechung – Rollenspielauswertung" }
+      ]
+    },
+
+    {
+      // Freitag, 21.11. – Umgang mit Menschen
+      weekday: "Freitag",
+      module: "Umgang mit Menschen",
+      units: [
+        { ue: 233, time: "09:00–09:45", topic: "Wiederholung – Bedürfnisse & Motivation" },
+        { ue: 234, time: "09:45–10:30", topic: "Wiederholung – Kommunikationsarten & Eisberg-Modell" },
+        { ue: 235, time: "10:45–11:30", topic: "Praxisbeispiele – Konfliktbewältigung" },
+        { ue: 236, time: "11:30–12:15", topic: "Fallanalyse – Menschenmassensteuerung" },
+        { ue: 237, time: "13:00–13:45", topic: "Lernzielkontrolle Umgang mit Menschen" },
+        { ue: 238, time: "13:45–14:30", topic: "Besprechung der Ergebnisse" },
+        { ue: 239, time: "14:45–15:30", topic: "Feedback & offene Fragen" },
+        { ue: 240, time: "15:30–16:15", topic: "Zusammenfassung Umgang mit Menschen" }
+      ]
+    }
+  ]
+},
+
+           {
+  id: 7,
+  label: "Woche 7",
+  days: [
+    {
+      // Montag, 24.11. – Umgang mit Verteidigungswaffen
+      weekday: "Montag",
+      module: "Umgang mit Verteidigungswaffen",
+      units: [
+        { ue: 241, time: "09:00–09:45", topic: "Einführung – Waffengesetz (WaffG) §§1–10, 25, 27, 42" },
+        { ue: 242, time: "09:45–10:30", topic: "Bewachungsverordnung (BewachV)" },
+        { ue: 243, time: "10:45–11:30", topic: "Grenzen der Notwehr und des Notstands (§§32, 34 StGB)" },
+        { ue: 244, time: "11:30–12:15", topic: "Haftung, straf- und zivilrechtliche Folgen unsachgemäßen Einsatzes" },
+        { ue: 245, time: "13:00–13:45", topic: "Besitz: Wer eine Schusswaffe rechtmäßig besitzt (§§14–17 WaffG)" },
+        { ue: 246, time: "13:45–14:30", topic: "Erwerb: Erwerbsvoraussetzungen, Genehmigungen (§§21–23 WaffG)" },
+        { ue: 247, time: "14:45–15:30", topic: "Führen: Transport & Mitführen im öffentlichen Raum (§§25–27 WaffG)" },
+        { ue: 248, time: "15:30–16:15", topic: "Verbotene Waffen: Definitionen, Beispiele" }
+      ]
+    },
+
+    {
+      // Dienstag, 25.11. – Umgang mit Verteidigungswaffen
+      weekday: "Dienstag",
+      module: "Umgang mit Verteidigungswaffen",
+      units: [
+        { ue: 249, time: "09:00–09:45", topic: "Arten von Verteidigungswaffen" },
+        { ue: 250, time: "09:45–10:30", topic: "Praktische Handhabung – Sicherheitsregeln" },
+        { ue: 251, time: "10:45–11:30", topic: "Praktische Übungen – Handhabung und Einsatzlimits" },
+        { ue: 252, time: "11:30–12:15", topic: "Rollenspiele – Einsatz im Bewachungsdienst" },
+        { ue: 253, time: "13:00–13:45", topic: "Rechtliche Grenzen beim Einsatz von Verteidigungswaffen" },
+        { ue: 254, time: "13:45–14:30", topic: "Dokumentation von Vorfällen mit Verteidigungswaffen" },
+        { ue: 255, time: "14:45–15:30", topic: "Fallbeispiele – Einsatzanalyse" },
+        { ue: 256, time: "15:30–16:15", topic: "Besprechung & Feedback" }
+      ]
+    },
+
+    {
+      // Mittwoch, 26.11. – Umgang mit Verteidigungswaffen
+      weekday: "Mittwoch",
+      module: "Umgang mit Verteidigungswaffen",
+      units: [
+        { ue: 257, time: "09:00–09:45", topic: "Wiederholung – Waffengesetz & Bewachungsverordnung" },
+        { ue: 258, time: "09:45–10:30", topic: "Praxisübungen – Handhabung & Einsatz" },
+        { ue: 259, time: "10:45–11:30", topic: "Simulation – Notwehr & Verteidigungswaffen" },
+        { ue: 260, time: "11:30–12:15", topic: "Dokumentation & Berichtswesen" },
+        { ue: 261, time: "13:00–13:45", topic: "Rollenspiele – Einsatzübungen" },
+        { ue: 262, time: "13:45–14:30", topic: "Praxisübungen – Einsatzlimits beachten" },
+        { ue: 263, time: "14:45–15:30", topic: "Lernzielkontrolle Umgang mit Verteidigungswaffen" },
+        { ue: 264, time: "15:30–16:15", topic: "Besprechung & Feedback" }
+      ]
+    },
+
+    {
+      // Donnerstag, 27.11. – Verteidigungswaffen + Erste Hilfe
+      weekday: "Donnerstag",
+      module: "Verteidigungswaffen & Erste Hilfe",
+      units: [
+        { ue: 265, time: "09:00–09:45", topic: "Wiederholung – Umgang mit Verteidigungswaffen" },
+        { ue: 266, time: "09:45–10:30", topic: "Fallbeispiele – Einsatz im Sicherheitsdienst" },
+        { ue: 267, time: "10:45–11:30", topic: "Besprechung – Praxisübungen & Dokumentation" },
+        { ue: 268, time: "11:30–12:15", topic: "Abschlussbesprechung Umgang mit Verteidigungswaffen" },
+        { ue: 269, time: "13:00–13:45", topic: "Lebensrettende Sofortmaßnahmen – HLW" },
+        { ue: 270, time: "13:45–14:30", topic: "Stabile Seitenlage & Bewusstseinskontrolle" },
+        { ue: 271, time: "14:45–15:30", topic: "Umgang mit Blutungen, Schock & Bewusstlosigkeit" },
+        { ue: 272, time: "15:30–16:15", topic: "Notfallmanagement & Kommunikation mit Rettungsdiensten" }
+      ]
+    },
+
+    {
+      // Freitag, 28.11. – Erste Hilfe & Evakuierungshelfer
+      weekday: "Freitag",
+      module: "Erste Hilfe & Evakuierungshelfer",
+      units: [
+        { ue: 273, time: "09:00–09:45", topic: "Praktische Übungen – HLW & stabile Seitenlage" },
+        { ue: 274, time: "09:45–10:30", topic: "Praktische Übungen – Blutungen, Schock & Bewusstlosigkeit" },
+        { ue: 275, time: "10:45–11:30", topic: "Fallbeispiele & Notfallmanagement" },
+        { ue: 276, time: "11:30–12:15", topic: "Abschlusszertifikat Erste Hilfe & Besprechung" },
+        { ue: 277, time: "13:00–13:45", topic: "Brandklassen, Feuerlöscher, Brandverhütung" },
+        { ue: 278, time: "13:45–14:30", topic: "Evakuierungspläne, Alarmierungsmaßnahmen, Personenrettung" },
+        { ue: 279, time: "14:45–15:30", topic: "Praktische Übungen Brandschutz & Evakuierung" },
+        { ue: 280, time: "15:30–16:15", topic: "Abschlussbesprechung & Zertifikat" }
+      ]
+    }
+  ]
+},
+
+           {
+  id: 8,
+  label: "Woche 8",
+  days: [
+    {
+      // Montag, 01.12. – Sicherheitstechnik
+      weekday: "Montag",
+      module: "Grundzüge der Sicherheitstechnik",
+      units: [
+        { ue: 281, time: "09:00–09:45", topic: "Einführung Sicherheitstechnik – Aufgaben, Prävention" },
+        { ue: 282, time: "09:45–10:30", topic: "Sicherheitsorganisation – Grundlagen" },
+        { ue: 283, time: "10:45–11:30", topic: "Drei Säulen der Sicherheit: Einsatz, Inhalt, Zusammenwirken" },
+        { ue: 284, time: "11:30–12:15", topic: "Mechanische Sicherungseinrichtungen: Zäune, Gitter, Türen" },
+        { ue: 285, time: "13:00–13:45", topic: "Schutzziele von Sicherheitszäunen" },
+        { ue: 286, time: "13:45–14:30", topic: "Verschiedene Zaunanlagen" },
+        { ue: 287, time: "14:45–15:30", topic: "Widerstandsklassen der Verglasung" },
+        { ue: 288, time: "15:30–16:15", topic: "Einfriedungsdurchlässe, automatische Türsysteme, Vereinzelungsanlagen" }
+      ]
+    },
+
+    {
+      // Dienstag, 02.12. – Sicherheitstechnik
+      weekday: "Dienstag",
+      module: "Grundzüge der Sicherheitstechnik",
+      units: [
+        { ue: 289, time: "09:00–09:45", topic: "Schlösser & Schließzylinder" },
+        { ue: 290, time: "09:45–10:30", topic: "Schließanlagen – Organisation & Sicherheit" },
+        { ue: 291, time: "10:45–11:30", topic: "Zutrittskontrollsysteme – Grundlagen" },
+        { ue: 292, time: "11:30–12:15", topic: "Praxisbeispiele Zutrittskontrolle" },
+        { ue: 293, time: "13:00–13:45", topic: "Elektronische Sicherungseinrichtungen – Gefahrmeldeanlagen" },
+        { ue: 294, time: "13:45–14:30", topic: "Videoüberwachungssysteme – Technik & Recht" },
+        { ue: 295, time: "14:45–15:30", topic: "Kommunikationsmittel im Sicherheitsdienst" },
+        { ue: 296, time: "15:30–16:15", topic: "Aufgabenbereiche Einbruch- & Überfallmeldeanlagen" }
+      ]
+    },
+
+    {
+      // Mittwoch, 03.12. – Sicherheitstechnik
+      weekday: "Mittwoch",
+      module: "Grundzüge der Sicherheitstechnik",
+      units: [
+        { ue: 297, time: "09:00–09:45", topic: "Brandmeldeanlagen – Aufbau & Bedeutung" },
+        { ue: 298, time: "09:45–10:30", topic: "Störmeldeanlagen – Einsatzbereiche" },
+        { ue: 299, time: "10:45–11:30", topic: "Feuer- & Rauchschutzabschlüsse" },
+        { ue: 300, time: "11:30–12:15", topic: "Feststellanlagen – Funktionsweise" },
+        { ue: 301, time: "13:00–13:45", topic: "Sprachalarmierungs- & Evakuierungsanlagen" },
+        { ue: 302, time: "13:45–14:30", topic: "Automatische Löschanlagen" },
+        { ue: 303, time: "14:45–15:30", topic: "Bündelfunk – Grundlagen & Einsatz" },
+        { ue: 304, time: "15:30–16:15", topic: "Analog vs. digitaler Betriebsfunk" }
+      ]
+    },
+
+    {
+      // Donnerstag, 04.12. – Sicherheitstechnik
+      weekday: "Donnerstag",
+      module: "Grundzüge der Sicherheitstechnik",
+      units: [
+        { ue: 305, time: "09:00–09:45", topic: "Mechanische Stechuhr & Wächterkontrollsysteme" },
+        { ue: 306, time: "09:45–10:30", topic: "Todmannschalter – Einsatz & Bedeutung" },
+        { ue: 307, time: "10:45–11:30", topic: "Notruf- & Serviceleitstellen – Aufbau" },
+        { ue: 308, time: "11:30–12:15", topic: "Organisation der Alarmverfolgung" },
+        { ue: 309, time: "13:00–13:45", topic: "Prozesse & Verantwortlichkeiten im Notfallplan" },
+        { ue: 310, time: "13:45–14:30", topic: "Kommunikationstechnik – Überblick" },
+        { ue: 311, time: "14:45–15:30", topic: "Brandschutz – Brandklassen & Feuerlöscher" },
+        { ue: 312, time: "15:30–16:15", topic: "Evakuierungspläne & Alarmierungsmaßnahmen" }
+      ]
+    },
+
+    {
+      // Freitag, 05.12. – Sicherheitstechnik
+      weekday: "Freitag",
+      module: "Grundzüge der Sicherheitstechnik",
+      units: [
+        { ue: 313, time: "09:00–09:45", topic: "Personenrettung – Grundlagen" },
+        { ue: 314, time: "09:45–10:30", topic: "Praxisübung – Feuerlöscher & Rettung" },
+        { ue: 315, time: "10:45–11:30", topic: "Sicherheitsorganisation in Betrieben" },
+        { ue: 316, time: "11:30–12:15", topic: "Wiederholung & Vertiefung der Sicherheitstechnik" },
+        { ue: 317, time: "13:00–13:45", topic: "Abschlussübung – Sicherheitstechnik" },
+        { ue: 318, time: "13:45–14:30", topic: "Praktische Fallanalyse" },
+        { ue: 319, time: "14:45–15:30", topic: "Modulabschlussprüfung Sicherheitstechnik" },
+        { ue: 320, time: "15:30–16:15", topic: "Besprechung & Feedback" }
+      ]
+    }
+  ]
+},
+
+            {
+  id: 9,
+  label: "Woche 9",
+  days: [
+    {
+      weekday: "Montag",
+      module: "Unfallverhütungsvorschriften",
+      units: [
+        { ue: 321, time: "09:00–09:45", topic: "DGUV Vorschrift 1 – Grundsätze der Prävention" },
+        { ue: 322, time: "09:45–10:30", topic: "Grundpflichten des Unternehmers (§2)" },
+        { ue: 323, time: "10:45–11:30", topic: "Unterweisung der Versicherten (§4)" },
+        { ue: 324, time: "11:30–12:15", topic: "Zutritts- und Aufenthaltsverbote (§9)" },
+        { ue: 325, time: "13:00–13:45", topic: "Zugang zu Vorschriften & Regeln (§12)" },
+        { ue: 326, time: "13:45–14:30", topic: "Erste Hilfe – Pflichten des Unternehmers (§24)" },
+        { ue: 327, time: "14:45–15:30", topic: "Erforderliche Einrichtungen & Sachmittel (§25)" },
+        { ue: 328, time: "15:30–16:15", topic: "Zahl & Ausbildung der Ersthelfer (§26)" }
+      ]
+    },
+
+    {
+      weekday: "Dienstag",
+      module: "Unfallverhütungsvorschriften",
+      units: [
+        { ue: 329, time: "09:00–09:45", topic: "DGUV Vorschrift 23 – Wach- & Sicherungsdienste" },
+        { ue: 330, time: "09:45–10:30", topic: "Dienstanweisung & Arbeitssicherheit" },
+        { ue: 331, time: "10:45–11:30", topic: "Verbot berauschender Mittel" },
+        { ue: 332, time: "11:30–12:15", topic: "Objektsicherung & besondere Gefahren" },
+        { ue: 333, time: "13:00–13:45", topic: "Überprüfung & Objekteinweisung (§9)" },
+        { ue: 334, time: "13:45–14:30", topic: "Ausrüstung des Personals (§10), Brillenträger (§11)" },
+        { ue: 335, time: "14:45–15:30", topic: "Hunde – Haltung, Führung, Transport (§12–17)" },
+        { ue: 336, time: "15:30–16:15", topic: "Schusswaffen – Ausrüstung & Beschusszeichen (§18–19)" }
+      ]
+    },
+
+    {
+      weekday: "Mittwoch",
+      module: "Unfallverhütungsvorschriften",
+      units: [
+        { ue: 337, time: "09:00–09:45", topic: "Führung & Aufbewahrung von Munition (§20–22)" },
+        { ue: 338, time: "09:45–10:30", topic: "Eignung (§24) & Geldtransporte (§25–26)" },
+        { ue: 339, time: "10:45–11:30", topic: "Führungspflichten & Dokumentation (§16)" },
+        { ue: 340, time: "11:30–12:15", topic: "ASR A1.3 – Sicherheits- & Gesundheitsschutzkennzeichnung" },
+        { ue: 341, time: "13:00–13:45", topic: "Verbotszeichen, Warnzeichen, Gebotszeichen" },
+        { ue: 342, time: "13:45–14:30", topic: "Rettungszeichen, Brandschutzzeichen, Zusatzzeichen" },
+        { ue: 343, time: "14:45–15:30", topic: "Grafische Symbole, Farben & deren Bedeutung" },
+        { ue: 344, time: "15:30–16:15", topic: "Flucht- & Rettungspläne – Praxis & Übungen" }
+      ]
+    },
+
+    {
+      weekday: "Donnerstag",
+      module: "Waffensachkunde §7 WaffG",
+      units: [
+        { ue: 345, time: "09:00–09:45", topic: "Waffengesetz – Definitionen & Kategorien" },
+        { ue: 346, time: "09:45–10:30", topic: "Arten von Waffen – Überblick" },
+        { ue: 347, time: "10:45–11:30", topic: "Munition – Klassifizierung & Umgang" },
+        { ue: 348, time: "11:30–12:15", topic: "Rechtliche Grundlagen Besitz/Erwerb (§§14–17, 21–23 WaffG)" },
+        { ue: 349, time: "13:00–13:45", topic: "Transport & Führen von Schusswaffen (§§25–27 WaffG)" },
+        { ue: 350, time: "13:45–14:30", topic: "Aufbewahrungspflichten (§36 WaffG)" },
+        { ue: 351, time: "14:45–15:30", topic: "Verbotene Waffen (§2 WaffG) – Beispiele" },
+        { ue: 352, time: "15:30–16:15", topic: "BewachV – Regelungen zum Waffeneinsatz" }
+      ]
+    },
+
+    {
+      weekday: "Freitag",
+      module: "Waffensachkunde §7 WaffG",
+      units: [
+        { ue: 353, time: "09:00–09:45", topic: "Grenzen der Notwehr & Notstands (§§32, 34 StGB)" },
+        { ue: 354, time: "09:45–10:30", topic: "Haftung, straf- & zivilrechtliche Folgen" },
+        { ue: 355, time: "10:45–11:30", topic: "Sicherheitsrelevante Einsatzszenarien" },
+        { ue: 356, time: "11:30–12:15", topic: "Fallanalyse Waffenmissbrauch" },
+        { ue: 357, time: "13:00–13:45", topic: "Dokumentation & Nachweispflichten" },
+        { ue: 358, time: "13:45–14:30", topic: "Kontrollmechanismen & Aufsichtspflichten" },
+        { ue: 359, time: "14:45–15:30", topic: "Vorbereitung auf praktische Schulung" },
+        { ue: 360, time: "15:30–16:15", topic: "Wiederholung & Quiz" }
+      ]
+    }
+  ]
+},
+
+            {
+  id: 10,
+  label: "Woche 10",
+  days: [
+    {
+      weekday: "Montag",
+      module: "Waffensachkunde §7 WaffG",
+      units: [
+        { ue: 361, time: "09:00–09:45", topic: "Praktische Schulung – Waffenhandhabung (Theorie)" },
+        { ue: 362, time: "09:45–10:30", topic: "Sicherheitsvorschriften im Umgang" },
+        { ue: 363, time: "10:45–11:30", topic: "Lagerung & Transport praktisch" },
+        { ue: 364, time: "11:30–12:15", topic: "Kontrollübung Waffenrecht" },
+        { ue: 365, time: "13:00–13:45", topic: "Schießstandordnung – Grundlagen" },
+        { ue: 366, time: "13:45–14:30", topic: "Verhalten am Schießstand" },
+        { ue: 367, time: "14:45–15:30", topic: "Munition praktisch – Zuweisung & Kontrolle" },
+        { ue: 368, time: "15:30–16:15", topic: "Besprechung Tagespraxis" }
+      ]
+    },
+
+    {
+      weekday: "Dienstag",
+      module: "Waffensachkunde §7 WaffG",
+      units: [
+        { ue: 369, time: "09:00–09:45", topic: "Praktische Schulung – Handhabung Waffenattrappen" },
+        { ue: 370, time: "09:45–10:30", topic: "Zielübungen (Trockenübungen)" },
+        { ue: 371, time: "10:45–11:30", topic: "Sicherheitscheck Waffen" },
+        { ue: 372, time: "11:30–12:15", topic: "Ablauf einer Waffenkontrolle" },
+        { ue: 373, time: "13:00–13:45", topic: "Aufbewahrung & Übergabe – Praxis" },
+        { ue: 374, time: "13:45–14:30", topic: "Dokumentationsübung Waffenbuch" },
+        { ue: 375, time: "14:45–15:30", topic: "Rechtliche Wiederholung WaffG" },
+        { ue: 376, time: "15:30–16:15", topic: "Diskussion – Sicherheitsrisiken" }
+      ]
+    },
+
+    {
+      weekday: "Mittwoch",
+      module: "Waffensachkunde §7 WaffG",
+      units: [
+        { ue: 377, time: "09:00–09:45", topic: "Prüfungsvorbereitung Waffensachkunde" },
+        { ue: 378, time: "09:45–10:30", topic: "Fallstudien & Übungen" },
+        { ue: 379, time: "10:45–11:30", topic: "Schriftliche Testsimulation" },
+        { ue: 380, time: "11:30–12:15", topic: "Mündliche Übungssimulation" },
+        { ue: 381, time: "13:00–13:45", topic: "Praxisübung – Verhalten in Notwehrsituationen" },
+        { ue: 382, time: "13:45–14:30", topic: "Praxisübung – Übergabe/Transport Waffen" },
+        { ue: 383, time: "14:45–15:30", topic: "Abschlussprüfungsvorbereitung" },
+        { ue: 384, time: "15:30–16:15", topic: "Besprechung & Waffensachkunde" }
+      ]
+    },
+
+    {
+      weekday: "Donnerstag",
+      module: "Prüfungsvorbereitung",
+      units: [
+        { ue: 385, time: "09:00–09:45", topic: "Wiederholung Strafrecht – Tatbestände" },
+        { ue: 386, time: "09:45–10:30", topic: "Wiederholung Strafverfahrensrecht" },
+        { ue: 387, time: "10:45–11:30", topic: "Jedermannsrechte – Übungen" },
+        { ue: 388, time: "11:30–12:15", topic: "Datenschutz – Grundlagen & Wiederholung" },
+        { ue: 389, time: "13:00–13:45", topic: "Kommunikationspraxis & Deeskalation" },
+        { ue: 390, time: "13:45–14:30", topic: "Wiederholung Sicherheitsdienste – Hausrecht" },
+        { ue: 391, time: "14:45–15:30", topic: "Fallübungen Sicherheitsdienst" },
+        { ue: 392, time: "15:30–16:15", topic: "Dokumentations- & Berichtswesen" }
+      ]
+    },
+
+    {
+      weekday: "Freitag",
+      module: "Prüfungsvorbereitung",
+      units: [
+        { ue: 393, time: "09:00–09:45", topic: "Prüfungstraining schriftlich – Block 1" },
+        { ue: 394, time: "09:45–10:30", topic: "Prüfungstraining schriftlich – Block 2" },
+        { ue: 395, time: "10:45–11:30", topic: "Prüfungstraining schriftlich – Block 3" },
+        { ue: 396, time: "11:30–12:15", topic: "Besprechung & Korrektur der Tests" },
+        { ue: 397, time: "13:00–13:45", topic: "Praxisbeispiele – Sicherheitsdienst Alltag" },
+        { ue: 398, time: "13:45–14:30", topic: "Praxisbeispiele – Notwehr/Notstand" },
+        { ue: 399, time: "14:45–15:30", topic: "Praxisbeispiele – Festnahmerechte" },
+        { ue: 400, time: "15:30–16:15", topic: "Rollenspiel – Konfliktlösung" }
+      ]
+    }
+  ]
+},
+
+           {
+  id: 11,
+  label: "Woche 11",
+  days: [
+    {
+      weekday: "Montag",
+      module: "Prüfungsvorbereitung",
+      units: [
+        { ue: 401, time: "09:00–09:45", topic: "Überblick & Ziele der Prüfungsvorbereitung" },
+        { ue: 402, time: "09:45–10:30", topic: "Wiederholung Rechtsgebiete – Öffentliches Recht" },
+        { ue: 403, time: "10:45–11:30", topic: "Wiederholung Gewerberecht" },
+        { ue: 404, time: "11:30–12:15", topic: "Wiederholung Bürgerliches Recht (BGB)" },
+        { ue: 405, time: "13:00–13:45", topic: "Wiederholung Strafrecht – Tatbestände" },
+        { ue: 406, time: "13:45–14:30", topic: "Wiederholung Strafverfahrensrecht" },
+        { ue: 407, time: "14:45–15:30", topic: "Jedermannsrechte – Anwendungsübungen" },
+        { ue: 408, time: "15:30–16:15", topic: "Datenschutz – Wiederholung & Fallbeispiele" }
+      ]
+    },
+
+    {
+      weekday: "Dienstag",
+      module: "Prüfungsvorbereitung",
+      units: [
+        { ue: 409, time: "09:00–09:45", topic: "Wiederholung Umgang mit Menschen – Kommunikation" },
+        { ue: 410, time: "09:45–10:30", topic: "Deeskalation & Konfliktlösung (Übungen)" },
+        { ue: 411, time: "10:45–11:30", topic: "Wiederholung Verteidigungswaffen – rechtliche Grenzen" },
+        { ue: 412, time: "11:30–12:15", topic: "Erste Hilfe – Kurzwiederholung" },
+        { ue: 413, time: "13:00–13:45", topic: "Brandschutz – Grundlagen & Übungen" },
+        { ue: 414, time: "13:45–14:30", topic: "Wiederholung Sicherheitstechnik" },
+        { ue: 415, time: "14:45–15:30", topic: "Unfallverhütungsvorschriften – Fallbeispiele" },
+        { ue: 416, time: "15:30–16:15", topic: "Wiederholung Waffensachkunde" }
+      ]
+    },
+
+    {
+      weekday: "Mittwoch",
+      module: "Prüfungsvorbereitung",
+      units: [
+        { ue: 417, time: "09:00–09:45", topic: "Prüfungstraining schriftlich – Übungsblock 1" },
+        { ue: 418, time: "09:45–10:30", topic: "Prüfungstraining schriftlich – Übungsblock 2" },
+        { ue: 419, time: "10:45–11:30", topic: "Prüfungstraining schriftlich – Übungsblock 3" },
+        { ue: 420, time: "11:30–12:15", topic: "Korrektur & Besprechung der Tests" },
+        { ue: 421, time: "13:00–13:45", topic: "Praxisbeispiele Sicherheitsdienst – Hausrecht" },
+        { ue: 422, time: "13:45–14:30", topic: "Praxisbeispiele – Notwehr/Notstand" },
+        { ue: 423, time: "14:45–15:30", topic: "Praxisbeispiele – Festnahmerechte" },
+        { ue: 424, time: "15:30–16:15", topic: "Rollenspiel – Konfliktlösung" }
+      ]
+    },
+
+    {
+      weekday: "Donnerstag",
+      module: "Prüfungsvorbereitung",
+      units: [
+        { ue: 425, time: "09:00–09:45", topic: "Prüfungsvorbereitung – mündliche Übung 1" },
+        { ue: 426, time: "09:45–10:30", topic: "Mündliche Übung 2" },
+        { ue: 427, time: "10:45–11:30", topic: "Mündliche Übung 3" },
+        { ue: 428, time: "11:30–12:15", topic: "Rollenspiele – Sicherheitslagen" },
+        { ue: 429, time: "13:00–13:45", topic: "Rollenspiele – Bedrohungslagen" },
+        { ue: 430, time: "13:45–14:30", topic: "Simulation – Kontrollgang & Berichtswesen" },
+        { ue: 431, time: "14:45–15:30", topic: "Simulation – Zutrittskontrolle" },
+        { ue: 432, time: "15:30–16:15", topic: "Simulation – Evakuierungsübung" }
+      ]
+    },
+
+    {
+      weekday: "Freitag",
+      module: "Prüfungsvorbereitung",
+      units: [
+        { ue: 433, time: "09:00–09:45", topic: "Wiederholung schwierige Paragraphen" },
+        { ue: 434, time: "09:45–10:30", topic: "Training Fachbegriffe & Definitionen" },
+        { ue: 435, time: "10:45–11:30", topic: "Abschluss schriftliche Probeklausur" },
+        { ue: 436, time: "11:30–12:15", topic: "Besprechung Probeklausur" },
+        { ue: 437, time: "13:00–13:45", topic: "Mündliche Prüfungssimulation (Gruppe A)" },
+        { ue: 438, time: "13:45–14:30", topic: "Mündliche Prüfungssimulation (Gruppe B)" },
+        { ue: 439, time: "14:45–15:30", topic: "Mündliche Prüfungssimulation (Gruppe C)" },
+        { ue: 440, time: "15:30–16:15", topic: "Feedback & Lernstrategien" }
     ]
   }
 ]              // Schließt: days von Woche 12
