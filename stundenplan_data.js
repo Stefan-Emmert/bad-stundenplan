@@ -3931,6 +3931,87 @@ const data = {
         { ue: 438, time: "13:45–14:30", topic: "Mündliche Prüfungssimulation (Gruppe B)" },
         { ue: 439, time: "14:45–15:30", topic: "Mündliche Prüfungssimulation (Gruppe C)" },
         { ue: 440, time: "15:30–16:15", topic: "Feedback & Lernstrategien" }
+      ]
+    }
+  ]
+},
+
+           {
+  id: 12,
+  label: "Woche 12",
+  days: [
+    {
+      weekday: "Montag",
+      module: "Prüfungsvorbereitung",
+      units: [
+        { ue: 441, time: "09:00–09:45", topic: "Überblick & Ziele der Prüfungsvorbereitung" },
+        { ue: 442, time: "09:45–10:30", topic: "Wiederholung Rechtsgebiete – Öffentliches Recht" },
+        { ue: 443, time: "10:45–11:30", topic: "Wiederholung Gewerberecht" },
+        { ue: 444, time: "11:30–12:15", topic: "Wiederholung Bürgerliches Recht (BGB)" },
+        { ue: 445, time: "13:00–13:45", topic: "Wiederholung Strafrecht – Tatbestände" },
+        { ue: 446, time: "13:45–14:30", topic: "Wiederholung Strafverfahrensrecht" },
+        { ue: 447, time: "14:45–15:30", topic: "Jedermannsrechte – Anwendungsübungen" },
+        { ue: 448, time: "15:30–16:15", topic: "Datenschutz – Wiederholung & Fallbeispiele" }
+      ]
+    },
+
+    {
+      weekday: "Dienstag",
+      module: "Prüfungsvorbereitung",
+      units: [
+        { ue: 449, time: "09:00–09:45", topic: "Wiederholung Umgang mit Menschen – Kommunikation" },
+        { ue: 450, time: "09:45–10:30", topic: "Deeskalation & Konfliktlösung (Übungen)" },
+        { ue: 451, time: "10:45–11:30", topic: "Wiederholung Verteidigungswaffen – rechtliche Grenzen" },
+        { ue: 452, time: "11:30–12:15", topic: "Erste Hilfe – Kurzwiederholung" },
+        { ue: 453, time: "13:00–13:45", topic: "Brandschutz – Grundlagen & Übungen" },
+        { ue: 454, time: "13:45–14:30", topic: "Wiederholung Sicherheitstechnik" },
+        { ue: 455, time: "14:45–15:30", topic: "Unfallverhütungsvorschriften – Fallbeispiele" },
+        { ue: 456, time: "15:30–16:15", topic: "Wiederholung Waffensachkunde" }
+      ]
+    },
+
+    {
+      weekday: "Mittwoch",
+      module: "Prüfungsvorbereitung",
+      units: [
+        { ue: 457, time: "09:00–09:45", topic: "Prüfungstraining schriftlich – Übungsblock 1" },
+        { ue: 458, time: "09:45–10:30", topic: "Prüfungstraining schriftlich – Übungsblock 2" },
+        { ue: 459, time: "10:45–11:30", topic: "Prüfungstraining schriftlich – Übungsblock 3" },
+        { ue: 460, time: "11:30–12:15", topic: "Korrektur & Besprechung der Tests" },
+        { ue: 461, time: "13:00–13:45", topic: "Praxisbeispiele Sicherheitsdienst – Hausrecht" },
+        { ue: 462, time: "13:45–14:30", topic: "Praxisbeispiele – Notwehr/Notstand" },
+        { ue: 463, time: "14:45–15:30", topic: "Praxisbeispiele – Festnahmerechte" },
+        { ue: 464, time: "15:30–16:15", topic: "Rollenspiel – Konfliktlösung" }
+      ]
+    },
+
+    {
+      weekday: "Donnerstag",
+      module: "Prüfungsvorbereitung",
+      units: [
+        { ue: 465, time: "09:00–09:45", topic: "Prüfungsvorbereitung – mündliche Übung 1" },
+        { ue: 466, time: "09:45–10:30", topic: "Mündliche Übung 2" },
+        { ue: 467, time: "10:45–11:30", topic: "Mündliche Übung 3" },
+        { ue: 468, time: "11:30–12:15", topic: "Rollenspiele – Sicherheitslagen" },
+        { ue: 469, time: "13:00–13:45", topic: "Rollenspiele – Bedrohungslagen" },
+        { ue: 470, time: "13:45–14:30", topic: "Simulation – Kontrollgang & Berichtswesen" },
+        { ue: 471, time: "14:45–15:30", topic: "Simulation – Zutrittskontrolle" },
+        { ue: 472, time: "15:30–16:15", topic: "Simulation – Evakuierungsübung" }
+      ]
+    },
+
+    {
+      weekday: "Freitag",
+      module: "Prüfungsvorbereitung",
+      units: [
+        { ue: 473, time: "09:00–09:45", topic: "Wiederholung schwierige Paragraphen" },
+        { ue: 474, time: "09:45–10:30", topic: "Training Fachbegriffe & Definitionen" },
+        { ue: 475, time: "10:45–11:30", topic: "Abschluss schriftliche Probeklausur" },
+        { ue: 476, time: "11:30–12:15", topic: "Besprechung Probeklausur" },
+        { ue: 477, time: "13:00–13:45", topic: "Mündliche Prüfungssimulation (Gruppe A)" },
+        { ue: 478, time: "13:45–14:30", topic: "Mündliche Prüfungssimulation (Gruppe B)" },
+        { ue: 479, time: "14:45–15:30", topic: "Mündliche Prüfungssimulation (Gruppe C)" },
+        { ue: 480, time: "15:30–16:15", topic: "Feedback & Lernstrategien" }
     ]
   }
 ]              // Schließt: days von Woche 12
