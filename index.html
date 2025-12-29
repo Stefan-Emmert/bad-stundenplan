@@ -512,7 +512,6 @@
 
 <!-- 2) App-Logik -->
 <script>
-  let renderWeeks = [];
   // ------------------------------------
   // Berliner Feiertage 2024–2030
   // ------------------------------------
@@ -1120,7 +1119,6 @@ function injectHolidayCards(renderDays) {
     const weekSelect = document.getElementById("weekSelect");
     const course = getSelectedCourse();
     weekSelect.innerHTML = "";
-renderWeeks = buildCourseRenderWeeks(course);
 
     if (!course) return;
 
@@ -1175,7 +1173,7 @@ renderWeeks = buildCourseRenderWeeks(course);
 
     const weekIndex = course.weeks.findIndex(w => String(w.id) === String(weekId));
     if (weekIndex === -1) return;
-    const week = renderWeeks[weekIndex];
+    const week = course.weeks[weekIndex];
 
     const plan = getCourseTeachingPlan(course);
 
