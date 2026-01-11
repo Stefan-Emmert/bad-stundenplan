@@ -5894,3 +5894,49 @@ const data = {
     }
   ]
 };
+// ------------------------------------------------------------
+// Auto-added courses (generated)
+// Adds:
+// - Herr Koch: 3 Monate ab 05.01.2026 (uses same Wochenplan wie bestehender 3M-Kurs)
+// - Herr Vespermann: 6 Monate ab 05.01.2026 (uses weeks6Monatskurs)
+// ------------------------------------------------------------
+(function addGeneratedCourses() {
+  const findTrainer = (id) => (data.trainers || []).find(t => t.id === id);
+
+  // --- Herr Koch: 3 Monate ab 05.01.2026 ---
+  const koch = findTrainer("koch");
+  if (koch && Array.isArray(koch.courses)) {
+    const newId = "koch-3m-2026-01-05";
+    const exists = koch.courses.some(c => c.id === newId);
+    const base = koch.courses.find(c => c.type === "3 Monate" && Array.isArray(c.weeks) && c.weeks.length > 0);
+    if (!exists && base) {
+      koch.courses.push({
+        id: newId,
+        label: "3 Monate · Start 05.01.",
+        type: "3 Monate",
+        startDate: "2026-01-05",
+        weeks: base.weeks
+      });
+    }
+  }
+
+  // --- Herr Vespermann: 6 Monate ab 05.01.2026 ---
+  const vespermann = findTrainer("vespermann");
+  if (vespermann && Array.isArray(vespermann.courses)) {
+    const newId = "vespermann-6m-2026-01-05";
+    const exists = vespermann.courses.some(c => c.id === newId);
+    if (!exists) {
+      vespermann.courses.push({
+        id: newId,
+        label: "6 Monate · Start 05.01.",
+        type: "6 Monate",
+        startDate: "2026-01-05",
+        weeks: weeks6Monatskurs
+      });
+    }
+  }
+})();
+
+
+// Expose for browser
+window.data = data;
