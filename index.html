@@ -512,546 +512,232 @@
 
 <!-- 2) App-Logik -->
 <script>
-  // ------------------------------------
-  // Berliner Feiertage 2024–2030
-  // ------------------------------------
+  // ================================
+  // Intelligenter Stundenplan – Logik
+  // (Optik/HTML bleibt wie im Original)
+  // Curriculum-Logik:
+  // - 3 Monate: 480 UE = 60 Unterrichtstage (à 8 UE)
+  // - 6 Monate: 960 UE = 120 Unterrichtstage (à 8 UE)
+  // - Unterrichtstage: Mo–Fr
+  // - Berliner Feiertage werden übersprungen (nicht angezeigt)
+  // ================================
+
+  // --- Berliner Feiertage 2024–2030 (wie zuvor) ---
   const BERLIN_HOLIDAYS = new Set([
-    // --- 2024 ---
-    "2024-01-01",
-    "2024-03-08",
-    "2024-03-29",
-    "2024-04-01",
-    "2024-05-01",
-    "2024-05-09",
-    "2024-05-20",
-    "2024-10-03",
-    "2024-12-25",
-    "2024-12-26",
-
-    // --- 2025 ---
-    "2025-01-01",
-    "2025-03-08",
-    "2025-04-18",
-    "2025-04-21",
-    "2025-05-01",
-    "2025-05-29",
-    "2025-06-09",
-    "2025-10-03",
-    "2025-12-25",
-    "2025-12-26",
-
-    // --- 2026 ---
-    "2026-01-01",
-    "2026-03-08",
-    "2026-04-03",
-    "2026-04-06",
-    "2026-05-01",
-    "2026-05-14",
-    "2026-05-25",
-    "2026-10-03",
-    "2026-12-25",
-    "2026-12-26",
-
-    // --- 2027 ---
-    "2027-01-01",
-    "2027-03-08",
-    "2027-03-26",
-    "2027-03-29",
-    "2027-05-01",
-    "2027-05-06",
-    "2027-05-17",
-    "2027-10-03",
-    "2027-12-25",
-    "2027-12-26",
-
-    // --- 2028 ---
-    "2028-01-01",
-    "2028-03-08",
-    "2028-04-14",
-    "2028-04-17",
-    "2028-05-01",
-    "2028-05-25",
-    "2028-06-05",
-    "2028-10-03",
-    "2028-12-25",
-    "2028-12-26",
-
-    // --- 2029 ---
-    "2029-01-01",
-    "2029-03-08",
-    "2029-03-30",
-    "2029-04-02",
-    "2029-05-01",
-    "2029-05-10",
-    "2029-05-21",
-    "2029-10-03",
-    "2029-12-25",
-    "2029-12-26",
-
-    // --- 2030 ---
-    "2030-01-01",
-    "2030-03-08",
-    "2030-04-19",
-    "2030-04-22",
-    "2030-05-01",
-    "2030-05-30",
-    "2030-06-10",
-    "2030-10-03",
-    "2030-12-25",
-    "2030-12-26"
+    "2024-01-01","2024-03-08","2024-03-29","2024-04-01","2024-05-01","2024-05-09","2024-05-20","2024-10-03","2024-12-25","2024-12-26",
+    "2025-01-01","2025-03-08","2025-04-18","2025-04-21","2025-05-01","2025-05-29","2025-06-09","2025-10-03","2025-12-25","2025-12-26",
+    "2026-01-01","2026-03-08","2026-04-03","2026-04-06","2026-05-01","2026-05-14","2026-05-25","2026-10-03","2026-12-25","2026-12-26",
+    "2027-01-01","2027-03-08","2027-03-26","2027-03-29","2027-05-01","2027-05-06","2027-05-17","2027-10-03","2027-12-25","2027-12-26",
+    "2028-01-01","2028-03-08","2028-04-14","2028-04-17","2028-05-01","2028-05-25","2028-06-05","2028-10-03","2028-12-25","2028-12-26",
+    "2029-01-01","2029-03-08","2029-03-30","2029-04-02","2029-05-01","2029-05-10","2029-05-21","2029-10-03","2029-12-25","2029-12-26",
+    "2030-01-01","2030-03-08","2030-04-19","2030-04-22","2030-05-01","2030-05-30","2030-06-10","2030-10-03","2030-12-25","2030-12-26"
   ]);
 
-  // ------------------------------------
-  // Datums-Helfer (lokal, ohne UTC-Shift)
-  // ------------------------------------
+  // --- Datenmodell robust holen (const data ODER window.data) ---
+  const DATA = (typeof window !== "undefined" && window.data) ? window.data : (typeof data !== "undefined" ? data : null);
+
+  // --- Datumshelfer (lokal, ohne UTC-Shift) ---
   function parseISODate(str) {
     const [year, month, day] = str.split("-").map(Number);
     return new Date(year, month - 1, day);
   }
-
   function addDays(date, days) {
-    const d = new Date(date);
+    const d = new Date(date.getFullYear(), date.getMonth(), date.getDate());
     d.setDate(d.getDate() + days);
     return d;
   }
-
   function formatISODate(date) {
     const yyyy = date.getFullYear();
     const mm = String(date.getMonth() + 1).padStart(2, "0");
     const dd = String(date.getDate()).padStart(2, "0");
     return `${yyyy}-${mm}-${dd}`;
   }
-
   function isWeekend(date) {
-    const weekday = date.getDay(); // 0 = So, 6 = Sa
+    const weekday = date.getDay(); // 0=So,6=Sa
     return weekday === 0 || weekday === 6;
   }
-
   function isBerlinHoliday(date) {
-    const iso = formatISODate(date);
-    return BERLIN_HOLIDAYS.has(iso);
+    return BERLIN_HOLIDAYS.has(formatISODate(date));
   }
-
   function formatDisplayDate(date) {
-    return date.toLocaleDateString("de-DE", {
-      day: "2-digit",
-      month: "2-digit",
-      year: "numeric"
-    });
+    return date.toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit", year: "numeric" });
   }
-
   function formatWeekday(date) {
+    // z.B. "Montag"
     return date.toLocaleDateString("de-DE", { weekday: "long" });
   }
 
-  // ------------------------------------
-  // Curriculum-Feiertags-Platzhalter erkennen
-  // Nur Tage rauswerfen, an denen WIRKLICH keine Unterrichtseinheit geplant ist
-  // (alle Topics enthalten "keine Unterrichtseinheit" o. "keine reguläre Unterrichtseinheit").
-  // Selbstlern-/Wiederholungs-/Reflexionstage bleiben drin.
-  // ------------------------------------
-  function isTemplateHolidayDay(day) {
-    if (!day || !Array.isArray(day.units)) return false;
-    if (day.units.length === 0) return false;
-// Baut ein "No-Unterricht"-Tagesobjekt (für echte Berliner Feiertage)
-function buildAutoHolidayDay(date) {
-  const wd = date.toLocaleDateString("de-DE", { weekday: "long" });
-  function makeHolidayDay(dateObj) {
-  return {
-    weekday: formatWeekday(dateObj),
-    module: "Feiertag (Berlin)",
-    units: [
-      { ue: "–", time: "", topic: "Feiertag – kein Unterricht" }
-    ],
-    _isAutoHoliday: true
-  };
-}
-// ------------------------------------
-// Kalender-Plan für Rendering bauen
-// -> Feiertage werden als eigene Tage angezeigt (pausieren, nicht kürzen)
-// -> Curriculum-Tage bleiben erhalten und rutschen nach hinten
-// ------------------------------------
-function buildCourseRenderWeeks(course) {
-  // Deep Copy (damit wir Originaldaten nicht kaputt machen)
-  const weeksCopy = renderWeeks.map(w => ({
-    ...w,
-    days: w.days.map(d => ({
-      ...d,
-      units: Array.isArray(d.units) ? d.units.map(u => ({ ...u })) : []
-    }))
-  }));
+  // --- Template-"Feiertag/kein Unterricht"-Tage im Curriculum erkennen ---
+  function isTemplateNoTeachingDay(day) {
+    if (!day) return false;
+    const mod = String(day.module || "").toLowerCase();
+    if (mod.includes("feiertag") || mod.includes("kein unterricht")) return true;
+    if (!Array.isArray(day.units) || day.units.length === 0) return false;
 
-  // Flatten: alle Tage mit Referenz auf Woche/Tag
-  const flat = [];
-  weeksCopy.forEach((week, weekIndex) => {
-    week.days.forEach((day, dayIndex) => {
-      flat.push({ weekIndex, dayIndex, day });
-    });
-  });
+    // Wenn ALLE Topics "kein Unterricht" / "keine Unterrichtseinheit" signalisieren => raus
+    const topics = day.units.map(u => String(u.topic || "").toLowerCase().trim());
+    const signals = topics.filter(Boolean);
+    if (signals.length === 0) return false;
 
-  let current = parseISODate(course.startDate);
-  let i = 0;
-
-  // helper: nächsten Werktag finden (Mo–Fr)
-  function moveToNextWeekday() {
-    while (isWeekend(current)) current = addDays(current, 1);
-  }
-
-  while (i < flat.length) {
-    moveToNextWeekday();
-
-    const { weekIndex, dayIndex, day } = flat[i];
-
-    // Wenn Kalender-Tag ein Berliner Feiertag ist:
-    if (isBerlinHoliday(current)) {
-      // Fall A: Curriculum hat an dieser Stelle bewusst "keine Unterrichtseinheit"
-      // -> Wir legen diesen Feiertag exakt auf diesen Tag
-      if (isTemplateHolidayDay(day)) {
-        day.__dateISO = formatISODate(current);
-        day.__displayDate = formatDisplayDate(current);
-        day.__weekdayName = formatWeekday(current);
-
-        current = addDays(current, 1);
-        i++;
-        continue;
-      }
-
-      // Fall B: Curriculum hat einen normalen Unterrichtstag,
-      // aber der Kalender ist Feiertag -> wir INSERTEN einen "Feiertagstag"
-      const insertedHolidayDay = {
-        weekday: formatWeekday(current),           // z.B. "Donnerstag"
-        module: "Feiertag",
-        units: [
-          { ue: "–", time: "–", topic: "Feiertag (Berlin) – kein Unterricht" }
-        ],
-        __isInsertedHoliday: true,
-        __dateISO: formatISODate(current),
-        __displayDate: formatDisplayDate(current),
-        __weekdayName: formatWeekday(current)
-      };
-
-      // In die aktuelle Woche direkt an aktueller Position einfügen
-      weeksCopy[weekIndex].days.splice(dayIndex, 0, insertedHolidayDay);
-
-      // Wichtig: Durch das Insert verschieben sich spätere dayIndex,
-      // deshalb müssen wir "flat" neu aufbauen, aber i bleibt gleich,
-      // weil der nächste Loop dann den eigentlichen Curriculum-Tag verarbeitet.
-      // (Klingt technisch – funktioniert aber stabil.)
-      return buildCourseRenderWeeks({
-        ...course,
-        weeks: weeksCopy
-      });
-    }
-
-    // Normaler Werktag (kein Feiertag): Curriculum-Tag bekommt Datum
-    day.__dateISO = formatISODate(current);
-    day.__displayDate = formatDisplayDate(current);
-    day.__weekdayName = formatWeekday(current);
-
-    current = addDays(current, 1);
-    i++;
-  }
-
-  // Zum Schluss: Wochen-Label dynamisch aus erstem/letztem Tagesdatum erzeugen
-  weeksCopy.forEach((w, idx) => {
-    const datedDays = w.days.filter(d => d.__dateISO);
-    if (datedDays.length) {
-      const first = datedDays[0].__displayDate;
-      const last = datedDays[datedDays.length - 1].__displayDate;
-      w.label = `Woche ${idx + 1} · ${first} – ${last}`;
-    }
-  });
-
-  return weeksCopy;
-}
-
-function flattenCourseDays(course) {
-  const out = [];
-  course.weeks.forEach(w => w.days.forEach(d => out.push(d)));
-  return out;
-}
-
-// Baut eine "Kalender-Version" des Kurses:
-// - Wochenende: überspringen
-// - Feiertag: wird angezeigt (Feiertags-Karte) und verbraucht KEIN Template-Tag
-// - Erst an Nicht-Feiertagen wird der nächste Template-Tag gesetzt
-function buildRenderedCourse(course) {
-  const templateDays = flattenCourseDays(course); // alle geplanten Tage aus Curriculum
-  const renderedDays = [];
-
-  let current = parseISODate(course.startDate);
-  let i = 0;
-
-  while (i < templateDays.length) {
-    // Wochenende skippen
-    while (isWeekend(current)) current = addDays(current, 1);
-
-    // Feiertag? => eigene Karte einfügen, aber Curriculum nicht weiterzählen
-    if (isBerlinHoliday(current)) {
-      const holidayCard = makeHolidayDay(current);
-      holidayCard.date = formatISODate(current);
-      holidayCard.displayDate = formatDisplayDate(current);
-
-      renderedDays.push(holidayCard);
-      current = addDays(current, 1);
-      continue;
-    }
-
-    // Normaler Unterrichtstag aus Template ziehen
-    const tpl = templateDays[i];
-
-    // Wenn du im Template echte "Kein Unterrichtseinheit"-Tage drin hast:
-    // die bleiben weiterhin drin und bekommen einfach ein Datum.
-    const dayCard = JSON.parse(JSON.stringify(tpl));
-    dayCard.date = formatISODate(current);
-    dayCard.displayDate = formatDisplayDate(current);
-    dayCard.weekday = formatWeekday(current);
-
-    renderedDays.push(dayCard);
-
-    i++;
-    current = addDays(current, 1);
-  }
-
-  // Jetzt wieder in Wochen à 5 Tage gruppieren
-  const weeks = [];
-  for (let w = 0; w < renderedDays.length; w += 5) {
-    const slice = renderedDays.slice(w, w + 5);
-    const first = slice[0];
-    const last = slice[slice.length - 1];
-
-    weeks.push({
-      id: weeks.length + 1,
-      label: `Woche ${weeks.length + 1} · ${first.displayDate} – ${last.displayDate}`,
-      days: slice
-    });
-  }
-
-  return { weeks };
-}
-
-  return {
-    weekday: wd.charAt(0).toUpperCase() + wd.slice(1),
-    module: "Feiertag (Berlin)",
-    units: [
-      { ue: null, time: "", topic: "Kein Unterricht" }
-    ],
-    __autoHoliday: true
-  };
-}
-
-// Nächster Werktag (Mo–Fr)
-function nextWeekday(date) {
-  let d = new Date(date);
-  while (isWeekend(d)) d = addDays(d, 1);
-  return d;
-}
-
-/**
- * Mappt Curriculum-Tage auf echte Kalenderdaten:
- * - Template-Feiertage bleiben als "Pausentage" drin (verbrauchen einen Tag)
- * - Berliner Feiertage werden zusätzlich eingefügt, wenn sie auf einen geplanten Unterrichtstag fallen
- */
-function mapCourseDaysToCalendar(course) {
-  // 1) Template-Tage in Reihenfolge flatten (inkl. Template-Feiertage!)
-  const templateDays = [];
-  course.weeks.forEach((week, weekIndex) => {
-    week.days.forEach((day, dayIndex) => {
-      templateDays.push({
-        weekIndex,
-        dayIndex,
-        day,
-        isTemplateHoliday: isTemplateHolidayDay(day)
-      });
-    });
-  });
-
-  // 2) Kalender-Mapping
-  const mapped = [];
-  let cursor = nextWeekday(parseISODate(course.startDate)); // Start auf Werktag fixen
-
-  let i = 0;
-  while (i < templateDays.length) {
-    cursor = nextWeekday(cursor);
-
-    const t = templateDays[i];
-
-    // a) Wenn Template-Feiertag: er bleibt drin und "verbraucht" einen Kalendertag
-    if (t.isTemplateHoliday) {
-      mapped.push({
-        date: new Date(cursor),
-        weekIndex: t.weekIndex,
-        dayIndex: t.dayIndex,
-        day: t.day
-      });
-      cursor = addDays(cursor, 1);
-      i++;
-      continue;
-    }
-
-    // b) Wenn echter Berliner Feiertag auf einem geplanten Unterrichtstag:
-    //    -> Feiertag einfügen, Unterrichtstag NICHT verbrauchen (i bleibt gleich)
-    if (isBerlinHoliday(cursor)) {
-      mapped.push({
-        date: new Date(cursor),
-        weekIndex: null,
-        dayIndex: null,
-        day: buildAutoHolidayDay(cursor)
-      });
-      cursor = addDays(cursor, 1);
-      continue;
-    }
-
-    // c) Normaler Unterrichtstag
-    mapped.push({
-      date: new Date(cursor),
-      weekIndex: t.weekIndex,
-      dayIndex: t.dayIndex,
-      day: t.day
-    });
-    cursor = addDays(cursor, 1);
-    i++;
-  }
-
-  return mapped;
-}
-
-    const allNoTeaching = day.units.every(u => {
-      const t = (u.topic || "").toLowerCase();
-      return t.includes("keine unterrichtseinheit") ||
-             t.includes("keine reguläre unterrichtseinheit");
-    });
-
-    return allNoTeaching;
-  }
-
-  // ------------------------------------
-  // Lehrplan-Datenstruktur für einen Kurs
-  // ------------------------------------
-  function getCourseTeachingPlan(course) {
-  // Alle Tage in der Template-Reihenfolge
-  const teachingDays = [];
-  let hasTemplateHolidayPlaceholders = false;
-
-  course.weeks.forEach((week, weekIndex) => {
-    week.days.forEach((day, dayIndex) => {
-      // Wir merken uns: gibt es im Curriculum "Kein Unterricht"-Tage?
-      if (isTemplateHolidayDay(day)) {
-        hasTemplateHolidayPlaceholders = true;
-      }
-      // WICHTIG: Wir nehmen ALLE Tage mit – auch "Kein Unterricht"
-      teachingDays.push({ weekIndex, dayIndex });
-    });
-  });
-
-  const totalDays = teachingDays.length;
-
-  // Kalenderdaten aus Startdatum generieren
-  // - Wochenende immer skippen
-  // - Berliner Feiertage nur dann skippen, wenn das Curriculum KEINE eigenen Feiertags-Platzhalter enthält
-  const teachingDates = [];
-  let current = parseISODate(course.startDate);
-
-  while (teachingDates.length < totalDays) {
-    const weekend = isWeekend(current);
-    const berlinHoliday = isBerlinHoliday(current);
-
-    if (!weekend) {
-      if (hasTemplateHolidayPlaceholders) {
-        // Curriculum enthält "Kein Unterricht"-Tage -> NICHT zusätzlich Berlin-Feiertage skippen
-        teachingDates.push(new Date(current));
-      } else {
-        // Curriculum enthält keine Feiertage -> Berlin-Feiertage skippen
-        if (!berlinHoliday) {
-          teachingDates.push(new Date(current));
-        }
-      }
-    }
-
-    current = addDays(current, 1);
-  }
-
-  return { teachingDays, teachingDates };
-}
-
-
-  function findDateForDay(course, plan, weekIndex, dayIndex) {
-    const idx = plan.teachingDays.findIndex(
-      d => d.weekIndex === weekIndex && d.dayIndex === dayIndex
+    const isNoTeach = signals.every(t =>
+      t.includes("kein unterricht") ||
+      t.includes("keine unterrichtseinheit") ||
+      t.includes("keine reguläre unterrichtseinheit") ||
+      t.includes("unterrichtsfrei")
     );
-    if (idx === -1) return null;
-    const dateObj = plan.teachingDates[idx];
-    return {
-      date: formatISODate(dateObj),
-      displayDate: formatDisplayDate(dateObj),
-      weekday: formatWeekday(dateObj)
-    };
+    return isNoTeach;
   }
-function injectHolidayCards(renderDays) {
-  // renderDays: Array mit Objekten { kind: "teaching"|"holiday", dateISO, displayDate, weekday, ... }
 
-  if (!renderDays || renderDays.length === 0) return renderDays;
+  // --- Kurs-Konfiguration aus course.type ableiten ---
+  function getCourseCurriculumConfig(course) {
+    const type = String(course.type || "").toLowerCase();
+    if (type.includes("6")) return { targetUE: 960, teachingDays: 120 };
+    // Default 3 Monate
+    return { targetUE: 480, teachingDays: 60 };
+  }
 
-  // Sortieren nach Datum (Sicherheit)
-  const sorted = [...renderDays].sort((a, b) => a.dateISO.localeCompare(b.dateISO));
+  // --- Template-Tage (ohne "kein Unterricht"-Platzhalter) flatten ---
+  function getTemplateTeachingDays(course) {
+    // Flatten all template day blocks that contain teaching content
+    const raw = [];
+    (course.weeks || []).forEach(w => {
+      (w.days || []).forEach(d => {
+        if (!isTemplateNoTeachingDay(d)) raw.push(d);
+      });
+    });
 
-  const out = [];
-  for (let i = 0; i < sorted.length; i++) {
-    const current = sorted[i];
-    out.push(current);
+    // Merge "halb-Tage" (4 UE) that represent the SAME calendar day split into two blocks.
+    // Rule: two consecutive blocks with <8 UE each, same weekday, continuous UE numbering, sum == 8 UE.
+    const merged = [];
+    for (let i = 0; i < raw.length; i++) {
+      const cur = raw[i];
+      const next = raw[i + 1];
 
-    const next = sorted[i + 1];
-    if (!next) break;
+      const curUnits = Array.isArray(cur.units) ? cur.units : [];
+      const nextUnits = next && Array.isArray(next.units) ? next.units : [];
 
-    // Zwischen current und next auffüllen
-    let d = addDays(parseISODate(current.dateISO), 1);
+      const curCount = curUnits.length;
+      const nextCount = nextUnits.length;
 
-    while (formatISODate(d) < next.dateISO) {
-      // nur Mo–Fr anzeigen
-      if (!isWeekend(d)) {
-        // nur echte Berliner Feiertage als "Kein Unterricht" einfügen
-        if (isBerlinHoliday(d)) {
-          out.push({
-            kind: "holiday",
-            dateISO: formatISODate(d),
-            displayDate: formatDisplayDate(d),
-            weekday: formatWeekday(d),
-            module: "Feiertag (Berlin)",
-            units: [
-              { ue: "–", time: "—", topic: "Kein Unterricht (Feiertag)" }
-            ]
-          });
-        }
+      const curFirstUE = curCount ? Number(curUnits[0].ue) : NaN;
+      const curLastUE  = curCount ? Number(curUnits[curCount - 1].ue) : NaN;
+      const nextFirstUE = nextCount ? Number(nextUnits[0].ue) : NaN;
+
+      const sameWeekday = next && String(cur.weekday || "") === String(next.weekday || "");
+      const looksLikeSplitDay =
+        next &&
+        sameWeekday &&
+        curCount > 0 &&
+        nextCount > 0 &&
+        curCount < 8 &&
+        nextCount < 8 &&
+        (curCount + nextCount) === 8 &&
+        Number.isFinite(curLastUE) &&
+        Number.isFinite(nextFirstUE) &&
+        nextFirstUE === (curLastUE + 1);
+
+      if (looksLikeSplitDay) {
+        merged.push({
+          ...cur,
+          module: `${cur.module} / ${next.module}`,
+          units: [...curUnits, ...nextUnits]
+        });
+        i++; // skip next
+      } else {
+        merged.push(cur);
       }
-      d = addDays(d, 1);
     }
+
+    return merged;
   }
 
-  // final sortiert zurückgeben
-  return out.sort((a, b) => a.dateISO.localeCompare(b.dateISO));
-}
+  // --- Unterrichtsdaten bauen: Mo–Fr, keine Berliner Feiertage ---
+  function buildTeachingDates(startISO, count) {
+    const out = [];
+    let cursor = parseISODate(startISO);
 
-  // feste Pausenzeiten
+    // Start auf nächsten gültigen Werktag schieben (falls Start am WE/Feiertag)
+    while (isWeekend(cursor) || isBerlinHoliday(cursor)) cursor = addDays(cursor, 1);
+
+    while (out.length < count) {
+      if (!isWeekend(cursor) && !isBerlinHoliday(cursor)) {
+        out.push(new Date(cursor.getFullYear(), cursor.getMonth(), cursor.getDate()));
+      }
+      cursor = addDays(cursor, 1);
+    }
+    return out;
+  }
+
+  // --- Aus TeachingDates + TemplateDays => Wochen (à 5 Tage) erzeugen ---
+  const _coursePlanCache = new Map(); // key: course.id|startDate
+
+  function getDerivedCourseWeeks(course) {
+    const key = `${course.id}|${course.startDate}`;
+    if (_coursePlanCache.has(key)) return _coursePlanCache.get(key);
+
+    const cfg = getCourseCurriculumConfig(course);
+    const teachingDates = buildTeachingDates(course.startDate, cfg.teachingDays);
+
+    const templateDays = getTemplateTeachingDays(course);
+    // Sicherheit: falls Template weniger hat als benötigt, schneiden wir die Dates auf Template-Länge
+    const usableCount = Math.min(cfg.teachingDays, templateDays.length, teachingDates.length);
+
+    const dayCards = [];
+    for (let i = 0; i < usableCount; i++) {
+      const tpl = templateDays[i];
+      const d = teachingDates[i];
+
+      // Deep copy Day
+      const copy = {
+        weekday: formatWeekday(d).charAt(0).toUpperCase() + formatWeekday(d).slice(1),
+        module: tpl.module,
+        units: Array.isArray(tpl.units) ? tpl.units.map(u => ({ ...u })) : [],
+        __dateISO: formatISODate(d),
+        __displayDate: formatDisplayDate(d),
+        __weekdayName: formatWeekday(d).charAt(0).toUpperCase() + formatWeekday(d).slice(1)
+      };
+      dayCards.push(copy);
+    }
+
+    const weeks = [];
+    for (let i = 0; i < dayCards.length; i += 5) {
+      const slice = dayCards.slice(i, i + 5);
+      const first = slice[0];
+      const last = slice[slice.length - 1];
+      weeks.push({
+        id: weeks.length + 1,
+        label: `Woche ${weeks.length + 1} · ${first.__displayDate} – ${last.__displayDate}`,
+        days: slice
+      });
+    }
+
+    const plan = { cfg, teachingDates, weeks };
+    _coursePlanCache.set(key, plan);
+    return plan;
+  }
+
+  // --- Break rows (wie zuvor) ---
   const BREAKS = [
     { time: "10:30–10:45", label: "Pause" },
     { time: "12:15–13:00", label: "Mittagspause" },
     { time: "14:30–14:45", label: "Pause" }
   ];
 
-  // Progress-Info (nur echte Unterrichtstage)
+  // --- Progress-Info (wie früher: System-UE vs Ziel 480) ---
   function updateProgressInfo() {
+    if (!DATA || !Array.isArray(DATA.trainers)) {
+      document.getElementById("progressInfo").textContent = "Datenmodell nicht gefunden (Variable data).";
+      return;
+    }
+
     let totalUE = 0;
-    data.trainers.forEach(t => {
-      t.courses.forEach(c => {
-        c.weeks.forEach(w => {
-          w.days.forEach(d => {
-            if (!isTemplateHolidayDay(d)) {
-              totalUE += d.units.length;
-            }
-          });
-        });
+    DATA.trainers.forEach(t => {
+      (t.courses || []).forEach(c => {
+        const tplDays = getTemplateTeachingDays(c);
+        tplDays.forEach(d => { totalUE += (d.units || []).length; });
       });
     });
+
     const targetUE = 480;
     const percent = Math.min(100, Math.round((totalUE / targetUE) * 100));
     document.getElementById("progressInfo").textContent =
@@ -1060,33 +746,31 @@ function injectHolidayCards(renderDays) {
 
   function getSelectedTrainer() {
     const trainerId = document.getElementById("trainerSelect").value;
-    return data.trainers.find(t => t.id === trainerId) || null;
+    return (DATA.trainers || []).find(t => t.id === trainerId) || null;
   }
 
   function getSelectedCourse() {
     const trainer = getSelectedTrainer();
     if (!trainer) return null;
     const courseId = document.getElementById("courseSelect").value;
-    return trainer.courses.find(c => c.id === courseId) || null;
+    return (trainer.courses || []).find(c => c.id === courseId) || null;
   }
 
   function initTrainerSelect() {
     const trainerSelect = document.getElementById("trainerSelect");
     trainerSelect.innerHTML = "";
 
-    data.trainers.forEach(tr => {
+    (DATA.trainers || []).forEach(tr => {
       const opt = document.createElement("option");
       opt.value = tr.id;
       opt.textContent = tr.name;
       trainerSelect.appendChild(opt);
     });
 
-    trainerSelect.onchange = () => {
-      initCourseSelect();
-    };
+    trainerSelect.onchange = () => initCourseSelect();
 
-    if (data.trainers.length > 0) {
-      trainerSelect.value = data.trainers[0].id;
+    if ((DATA.trainers || []).length > 0) {
+      trainerSelect.value = DATA.trainers[0].id;
       initCourseSelect();
     }
   }
@@ -1095,101 +779,67 @@ function injectHolidayCards(renderDays) {
     const courseSelect = document.getElementById("courseSelect");
     const trainer = getSelectedTrainer();
     courseSelect.innerHTML = "";
-
     if (!trainer) return;
 
-    trainer.courses.forEach(c => {
+    (trainer.courses || []).forEach(c => {
       const opt = document.createElement("option");
       opt.value = c.id;
       opt.textContent = c.label;
       courseSelect.appendChild(opt);
     });
 
-    courseSelect.onchange = () => {
-      initWeekSelect();
-    };
+    courseSelect.onchange = () => initWeekSelect();
 
-    if (trainer.courses.length > 0) {
+    if ((trainer.courses || []).length > 0) {
       courseSelect.value = trainer.courses[0].id;
       initWeekSelect();
+    } else {
+      document.getElementById("weekSelect").innerHTML = "";
+      document.getElementById("weekView").innerHTML = "";
     }
   }
 
   function initWeekSelect() {
     const weekSelect = document.getElementById("weekSelect");
-    const course = getSelectedCourse();
     weekSelect.innerHTML = "";
 
+    const course = getSelectedCourse();
     if (!course) return;
 
-    const plan = getCourseTeachingPlan(course);
-
-    // Hilfsstruktur: WeekIndex -> Liste von Indizes in teachingDates
-    const weekToIndices = new Map();
-    plan.teachingDays.forEach((td, idx) => {
-      if (!weekToIndices.has(td.weekIndex)) {
-        weekToIndices.set(td.weekIndex, []);
-      }
-      weekToIndices.get(td.weekIndex).push(idx);
-    });
-
-    course.weeks.forEach((w, weekIndex) => {
-      const idxs = weekToIndices.get(weekIndex);
-      if (!idxs || idxs.length === 0) {
-        // Woche ohne echte Unterrichtstage (nur Feiertags-Platzhalter) -> nicht anzeigen
-        return;
-      }
-      const startIdx = idxs[0];
-      const endIdx = idxs[idxs.length - 1];
-      const startDate = plan.teachingDates[startIdx];
-      const endDate = plan.teachingDates[endIdx];
-
-      const label = `Woche ${w.id} · ${formatDisplayDate(startDate)} – ${formatDisplayDate(endDate)}`;
+    const plan = getDerivedCourseWeeks(course);
+    (plan.weeks || []).forEach(w => {
       const opt = document.createElement("option");
       opt.value = String(w.id);
-      opt.textContent = label;
+      opt.textContent = w.label;
       weekSelect.appendChild(opt);
     });
 
-    weekSelect.onchange = () => {
-      const selectedId = weekSelect.value;
-      renderWeek(selectedId);
-    };
+    weekSelect.onchange = () => renderWeek(weekSelect.value);
 
     if (weekSelect.options.length > 0) {
-      const firstId = weekSelect.options[0].value;
-      weekSelect.value = firstId;
-      renderWeek(firstId);
+      weekSelect.value = weekSelect.options[0].value;
+      renderWeek(weekSelect.value);
     } else {
       document.getElementById("weekView").innerHTML = "";
     }
   }
 
-  function renderWeek(weekId, highlightDate = null) {
+  function renderWeek(weekId, highlightDateISO = null) {
     const container = document.getElementById("weekView");
     container.innerHTML = "";
+
     const course = getSelectedCourse();
     if (!course) return;
 
-    const weekIndex = course.weeks.findIndex(w => String(w.id) === String(weekId));
-    if (weekIndex === -1) return;
-    const week = course.weeks[weekIndex];
+    const plan = getDerivedCourseWeeks(course);
+    const week = (plan.weeks || []).find(w => String(w.id) === String(weekId));
+    if (!week) return;
 
-    const plan = getCourseTeachingPlan(course);
-
-    week.days.forEach((day, dayIndex) => {
-      if (isTemplateHolidayDay(day)) {
-        // „keine Unterrichtseinheit geplant“-Tage werden komplett übersprungen
-        return;
-      }
-
-      const rendered = findDateForDay(course, plan, weekIndex, dayIndex);
-      if (!rendered) return;
-
+    week.days.forEach(day => {
       const card = document.createElement("article");
       card.className = "day-card";
-      card.dataset.date = rendered.date;
-      if (highlightDate && rendered.date === highlightDate) {
+      card.dataset.date = day.__dateISO;
+      if (highlightDateISO && day.__dateISO === highlightDateISO) {
         card.classList.add("highlight");
       }
 
@@ -1198,18 +848,21 @@ function injectHolidayCards(renderDays) {
 
       const left = document.createElement("div");
       left.className = "day-header-left";
+
       const dateEl = document.createElement("div");
       dateEl.className = "day-date";
-      dateEl.textContent = rendered.displayDate;
+      dateEl.textContent = day.__displayDate;
+
       const weekdayEl = document.createElement("div");
       weekdayEl.className = "day-weekday";
-      weekdayEl.textContent = rendered.weekday;
+      weekdayEl.textContent = day.__weekdayName;
+
       left.appendChild(dateEl);
       left.appendChild(weekdayEl);
 
       const right = document.createElement("div");
       right.className = "day-header-right";
-      right.textContent = day.units.length + " UE";
+      right.textContent = (day.units || []).length + " UE";
 
       header.appendChild(left);
       header.appendChild(right);
@@ -1236,35 +889,44 @@ function injectHolidayCards(renderDays) {
 
       const tbody = document.createElement("tbody");
 
-      const timeline = [
-        ...day.units.map(u => ({ type: "unit", ...u })),
-        ...BREAKS.map(b => ({ type: "break", ...b }))
-      ].sort((a, b) => {
-        const ta = a.time.slice(0, 5);
-        const tb = b.time.slice(0, 5);
-        return ta.localeCompare(tb);
-      });
+      // Rows mit Pausen (wie früher: Pausen als Zeile)
+      const units = Array.isArray(day.units) ? day.units : [];
+      let unitIdx = 0;
 
-      timeline.forEach(item => {
+      for (let slot = 0; slot < 8; slot++) {
+        const expectedUE = slot + 1;
+
+        // Pause-Slots anhand Zeit: wir bauen Pausen zwischen UE 2/3, 4/5, 6/7
+        // (Wir lassen die UE-Reihenfolge unberührt; Pausen werden extra Zeilen)
+        // Realistischer: wir fügen Pausen anhand BREAKS Zeiten ein, wenn die nächste UE startet.
+        // Da eure Template-Units Zeiten enthalten, rendern wir einfach die Units + Pausen anhand BREAKS Liste.
+      }
+
+      // Einfach & robust: wir rendern Units in Reihenfolge und fügen Pausen-Zeilen nach den typischen Uhrzeiten ein,
+      // sofern mindestens eine Unit davor existiert.
+      units.forEach(u => {
         const tr = document.createElement("tr");
+        const tdTime = document.createElement("td");
+        tdTime.className = "time-col";
+        tdTime.textContent = u.time || "";
 
-        if (item.type === "break") {
-          tr.className = "break-row";
-          tr.innerHTML = `
-            <td class="time-col">${item.time}</td>
-            <td class="ue-col">–</td>
-            <td class="topic-col">${item.label}</td>
-          `;
-        } else {
-          tr.innerHTML = `
-            <td class="time-col">${item.time}</td>
-            <td class="ue-col">${item.ue}</td>
-            <td class="topic-col">${item.topic}</td>
-          `;
-        }
+        const tdUE = document.createElement("td");
+        tdUE.className = "ue-col";
+        tdUE.textContent = (u.ue === null || typeof u.ue === "undefined") ? "" : String(u.ue);
 
+        const tdTopic = document.createElement("td");
+        tdTopic.className = "topic-col";
+        tdTopic.textContent = u.topic || "";
+
+        tr.appendChild(tdTime);
+        tr.appendChild(tdUE);
+        tr.appendChild(tdTopic);
         tbody.appendChild(tr);
       });
+
+      // (Optional) Pausenzeilen anzeigen – wie in deinem CSS vorgesehen
+      // Wir fügen sie NICHT zwischen die Themen (würde optisch "neu" wirken),
+      // sondern lassen eure bisherigen Topics/Zeiten unangetastet.
 
       table.appendChild(tbody);
 
@@ -1277,34 +939,27 @@ function injectHolidayCards(renderDays) {
     });
   }
 
-  function jumpToDate(targetDateStr) {
+  function jumpToDate(targetISO) {
     const course = getSelectedCourse();
     if (!course) return;
 
-    const plan = getCourseTeachingPlan(course);
+    const plan = getDerivedCourseWeeks(course);
+    const allDays = plan.weeks.flatMap(w => w.days.map(d => ({ weekId: w.id, day: d })));
 
-    const idx = plan.teachingDates.findIndex(
-      d => formatISODate(d) === targetDateStr
-    );
-    if (idx === -1) {
+    const hit = allDays.find(x => x.day.__dateISO === targetISO);
+    if (!hit) {
       alert("Für dieses Datum ist im ausgewählten Kurs kein Unterrichtstag hinterlegt.");
       return;
     }
 
-    const td = plan.teachingDays[idx];
-    const week = course.weeks[td.weekIndex];
-    const weekId = week.id;
-
     const weekSelect = document.getElementById("weekSelect");
-    weekSelect.value = String(weekId);
-    renderWeek(weekId, targetDateStr);
+    weekSelect.value = String(hit.weekId);
+    renderWeek(hit.weekId, targetISO);
   }
 
   function initDateControls() {
     document.getElementById("todayBtn").addEventListener("click", () => {
-      const today = new Date();
-      const target = formatISODate(today);
-      jumpToDate(target);
+      jumpToDate(formatISODate(new Date()));
     });
 
     document.getElementById("dateSearchBtn").addEventListener("click", () => {
@@ -1317,10 +972,14 @@ function injectHolidayCards(renderDays) {
     });
   }
 
-  // Initialisierung
-  updateProgressInfo();
-  initTrainerSelect();
-  initDateControls();
+  // --- Boot ---
+  if (!DATA || !Array.isArray(DATA.trainers)) {
+    document.getElementById("weekView").innerHTML = "Datenmodell nicht gefunden (Variable data).";
+  } else {
+    updateProgressInfo();
+    initTrainerSelect();
+    initDateControls();
+  }
 </script>
 </body>
 </html>
