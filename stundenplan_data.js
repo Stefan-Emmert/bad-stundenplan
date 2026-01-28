@@ -5935,6 +5935,41 @@ const data = {
       });
     }
   }
+
+  // --- Herr : 3 Monate ab 02.02.2026 ---
+  // nutzt den gleichen 3-Monats-Template-Wochenplan wie die bestehenden 3M-Kurse
+  const getAny3mTemplateWeeks = () => {
+    for (const t of (data.trainers || [])) {
+      for (const c of (t.courses || [])) {
+        if (String(c.type || "").toLowerCase().includes("3") && Array.isArray(c.weeks) && c.weeks.length > 0) {
+          return c.weeks;
+        }
+      }
+    }
+    return null;
+  };
+
+  let behr = findTrainer("behr");
+  if (!behr) {
+    behr = { id: "behr", name: "Herr Behr", courses: [] };
+    (data.trainers || []).push(behr);
+  }
+
+  if (behr && Array.isArray(behr.courses)) {
+    const newId = "behr-3m-2026-02-02";
+    const exists = behr.courses.some(c => c.id === newId);
+    const tplWeeks = getAny3mTemplateWeeks();
+    if (!exists && tplWeeks) {
+      behr.courses.push({
+        id: newId,
+        label: "3 Monate · Start 02.02.",
+        type: "3 Monate",
+        startDate: "2026-02-02",
+        weeks: tplWeeks
+      });
+    }
+  }
+
 })();
 
 
