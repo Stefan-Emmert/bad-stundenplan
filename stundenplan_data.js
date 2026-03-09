@@ -5936,7 +5936,7 @@ const data = {
     }
   }
 
-  // --- Herr : 3 Monate ab 02.02.2026 ---
+  // --- Herr Behr: 3 Monate ab 02.02.2026 ---
   // nutzt den gleichen 3-Monats-Template-Wochenplan wie die bestehenden 3M-Kurse
   const getAny3mTemplateWeeks = () => {
     for (const t of (data.trainers || [])) {
@@ -5965,6 +5965,69 @@ const data = {
         label: "3 Monate · Start 02.02.",
         type: "3 Monate",
         startDate: "2026-02-02",
+        weeks: tplWeeks
+      });
+    }
+  }
+
+  // --- Herr Klein: 3 Monate ab 09.02.2026 ---
+  let klein = findTrainer("klein");
+  if (!klein) {
+    klein = { id: "klein", name: "Herr Klein", courses: [] };
+    (data.trainers || []).push(klein);
+  }
+  if (klein && Array.isArray(klein.courses)) {
+    const newId = "klein-3m-2026-02-09";
+    const exists = klein.courses.some(c => c.id === newId);
+    const tplWeeks = getAny3mTemplateWeeks();
+    if (!exists && tplWeeks) {
+      klein.courses.push({
+        id: newId,
+        label: "3 Monate · Start 09.02.",
+        type: "3 Monate",
+        startDate: "2026-02-09",
+        weeks: tplWeeks
+      });
+    }
+  }
+
+  // --- Frau Engelmann: 3 Monate ab 09.03.2026 ---
+  let engelmann = findTrainer("engelmann");
+  if (!engelmann) {
+    engelmann = { id: "engelmann", name: "Frau Engelmann", courses: [] };
+    (data.trainers || []).push(engelmann);
+  }
+  if (engelmann && Array.isArray(engelmann.courses)) {
+    const newId = "engelmann-3m-2026-03-09";
+    const exists = engelmann.courses.some(c => c.id === newId);
+    const tplWeeks = getAny3mTemplateWeeks();
+    if (!exists && tplWeeks) {
+      engelmann.courses.push({
+        id: newId,
+        label: "3 Monate · Start 09.03.",
+        type: "3 Monate",
+        startDate: "2026-03-09",
+        weeks: tplWeeks
+      });
+    }
+  }
+
+  // --- Herr Böschek: 3 Monate ab 09.03.2026 ---
+  let boeschek = findTrainer("boeschek");
+  if (!boeschek) {
+    boeschek = { id: "boeschek", name: "Herr Böschek", courses: [] };
+    (data.trainers || []).push(boeschek);
+  }
+  if (boeschek && Array.isArray(boeschek.courses)) {
+    const newId = "boeschek-3m-2026-03-09";
+    const exists = boeschek.courses.some(c => c.id === newId);
+    const tplWeeks = getAny3mTemplateWeeks();
+    if (!exists && tplWeeks) {
+      boeschek.courses.push({
+        id: newId,
+        label: "3 Monate · Start 09.03.",
+        type: "3 Monate",
+        startDate: "2026-03-09",
         weeks: tplWeeks
       });
     }
