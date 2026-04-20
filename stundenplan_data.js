@@ -6032,7 +6032,39 @@ const data = {
       });
     }
   }
+  // --- Herr Koch: zusätzlicher 3-Monats-Kurs ab 13.04.2026 ---
+  const kochApril = findTrainer("koch");
+  if (kochApril && Array.isArray(kochApril.courses)) {
+    const newId = "koch-3m-2026-04-13";
+    const exists = kochApril.courses.some(c => c.id === newId);
+    const tplWeeks = getAny3mTemplateWeeks();
+    if (!exists && tplWeeks) {
+      kochApril.courses.push({
+        id: newId,
+        label: "3 Monate · Start 13.04.",
+        type: "3 Monate",
+        startDate: "2026-04-13",
+        weeks: tplWeeks
+      });
+    }
+  }
 
+  // --- Herr Behr: zusätzlicher 3-Monats-Kurs ab 13.04.2026 ---
+  const behrApril = findTrainer("behr");
+  if (behrApril && Array.isArray(behrApril.courses)) {
+    const newId = "behr-3m-2026-04-13";
+    const exists = behrApril.courses.some(c => c.id === newId);
+    const tplWeeks = getAny3mTemplateWeeks();
+    if (!exists && tplWeeks) {
+      behrApril.courses.push({
+        id: newId,
+        label: "3 Monate · Start 13.04.",
+        type: "3 Monate",
+        startDate: "2026-04-13",
+        weeks: tplWeeks
+      });
+    }
+  }
 })();
 
 
