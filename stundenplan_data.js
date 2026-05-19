@@ -6065,6 +6065,52 @@ const data = {
       });
     }
   }
+    // --- Herr Klein: zusätzlicher 3-Monats-Kurs ab 18.05.2026 ---
+  const kleinMai = findTrainer("klein");
+  if (kleinMai && Array.isArray(kleinMai.courses)) {
+    const newId = "klein-3m-2026-05-18";
+    const exists = kleinMai.courses.some(c => c.id === newId);
+    const tplWeeks = getAny3mTemplateWeeks();
+
+    if (!exists && tplWeeks) {
+      kleinMai.courses.push({
+        id: newId,
+        label: "3 Monate · Start 18.05.",
+        type: "3 Monate",
+        startDate: "2026-05-18",
+        weeks: tplWeeks
+      });
+    }
+  }
+
+  // --- Herr Bardak: 3 Monate ab 18.05.2026 ---
+  let bardak = findTrainer("bardak");
+
+  if (!bardak) {
+    bardak = {
+      id: "bardak",
+      name: "Herr Bardak",
+      courses: []
+    };
+
+    (data.trainers || []).push(bardak);
+  }
+
+  if (bardak && Array.isArray(bardak.courses)) {
+    const newId = "bardak-3m-2026-05-18";
+    const exists = bardak.courses.some(c => c.id === newId);
+    const tplWeeks = getAny3mTemplateWeeks();
+
+    if (!exists && tplWeeks) {
+      bardak.courses.push({
+        id: newId,
+        label: "3 Monate · Start 18.05.",
+        type: "3 Monate",
+        startDate: "2026-05-18",
+        weeks: tplWeeks
+      });
+    }
+  }
 })();
 
 
