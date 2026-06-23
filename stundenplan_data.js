@@ -6111,6 +6111,41 @@ const data = {
       });
     }
   }
+    // --- Frau Engelmann: zusätzlicher 3-Monats-Kurs ab 22.06.2026 ---
+  const engelmannJuni = findTrainer("engelmann");
+  if (engelmannJuni && Array.isArray(engelmannJuni.courses)) {
+    const newId = "engelmann-3m-2026-06-22";
+    const exists = engelmannJuni.courses.some(c => c.id === newId);
+    const tplWeeks = getAny3mTemplateWeeks();
+
+    if (!exists && tplWeeks) {
+      engelmannJuni.courses.push({
+        id: newId,
+        label: "3 Monate · Start 22.06.",
+        type: "3 Monate",
+        startDate: "2026-06-22",
+        weeks: tplWeeks
+      });
+    }
+  }
+
+  // --- Herr Böschek: zusätzlicher 3-Monats-Kurs ab 22.06.2026 ---
+  const boeschekJuni = findTrainer("boeschek");
+  if (boeschekJuni && Array.isArray(boeschekJuni.courses)) {
+    const newId = "boeschek-3m-2026-06-22";
+    const exists = boeschekJuni.courses.some(c => c.id === newId);
+    const tplWeeks = getAny3mTemplateWeeks();
+
+    if (!exists && tplWeeks) {
+      boeschekJuni.courses.push({
+        id: newId,
+        label: "3 Monate · Start 22.06.",
+        type: "3 Monate",
+        startDate: "2026-06-22",
+        weeks: tplWeeks
+      });
+    }
+  }
 })();
 
 
